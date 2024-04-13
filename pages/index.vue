@@ -1,24 +1,24 @@
 <template>
   <div class="container mx-auto">
-    <div class="relative flex flex-col items-center h-[400]" id="starts">
+    <div class="relative flex flex-col items-center h-[400px]" id="stars" ref="stars">
       <div class="bg-[#D9D9D9] rounded-full absolute -z-10" ref="dot"
-           :style="['box-shadow: 0 0 10 0 #D9D9D9B2;',`width: ${dotRadius}px;height:${dotRadius}px;`]"></div>
-      <span class="text-[50] font-lalezar text-[#D7D7D7] mt-16">به یولرنیت خوش آمدید</span>
-      <p class="w-[460] text-center my-9 font-normal">
+           :style="['box-shadow: 0 0 10px 0 #D9D9D9B2;',`width: ${dotRadius}px;height:${dotRadius}px;`]"></div>
+      <span class="text-[50px] font-lalezar text-[#D7D7D7] mt-16">به یولرنیت خوش آمدید</span>
+      <p class="w-[460px] text-center my-9 font-normal">
         در یولرنیت شما به صورت پروژه محور و کاملا عملی، بازی‌سازی و برنامه نویسی را یاد می‌گیرید و به یک متخصص تبدیل می‌شوید.
       </p>
-      <a href="" class="bg-[#F9FAFB] px-4 py-2 rounded-lg text-[#884FE4] font-semibold" style="box-shadow: 0 10px 20px rgba(245, 245, 245, 0.15);">
+      <button @click="generateStars('stars')" class="bg-[#F9FAFB] px-4 py-2 rounded-lg text-[#884FE4] font-semibold" style="box-shadow: 0 10px 20px rgba(245, 245, 245, 0.15);">
         مشاهده دوره ها
-      </a>
-      <img src="~/assets/images/starter-image.png" alt="starter image" class="max-w-[360] absolute left-[300] top-6 -z-10">
+      </button>
+      <img src="~/assets/images/starter-image.png" alt="starter image" class="max-w-[360px] absolute left-[300px] top-6 -z-10">
     </div>
 
-    <div class="rounded-[50] px-[58px] pt-9 mt-[100] max-w-[1040] mx-auto"
+    <div class="rounded-[50px] px-[58px] pt-9 mt-[100px] max-w-[1040px] mx-auto"
          style="border-image: linear-gradient(180deg,#1A9DF366,#1A9DF300) 1 / 5px;">
       <!--    style="background: linear-gradient(to bottom,#101529 70%, #0e112200),linear-gradient(to bottom,#1A9DF366, #1A9DF300);background-clip: padding-box,border-box;background-origin: padding-box,border-box;">-->
-      <h2 class="font-bold text-center text-xl">برترین  دوره ها</h2>
-      <div class="grid grid-cols-2 gap-[50] mt-9">
-        <div class="flex items-center justify-between px-8 rounded-[10] w-[440] h-[240]" style="background: linear-gradient(180deg, #121825 -4.73%, #090D16 88.73%);">
+      <h2 class="font-bold text-center text-xl relative" >برترین  دوره ها</h2>
+      <div class="grid grid-cols-2 gap-[50px] mt-9">
+        <div class="flex items-center justify-between px-8 rounded-[10px] w-[440px] h-[240px]" style="background: linear-gradient(180deg, #121825 -4.73%, #090D16 88.73%);">
           <div class="flex flex-col items-start space-y-6">
             <h3 class="font-lalezar text-3xl">دوره یونیتی انجین</h3>
             <div class="flex flex-col space-y-3">
@@ -46,9 +46,9 @@
               مشاهده دوره
             </a>
           </div>
-          <img src="~/assets/images/unity.png" alt="unity" class="w-[150]">
+          <img src="~/assets/images/unity.png" alt="unity" class="w-[150px]">
         </div>
-        <div class="flex items-center justify-between px-8 rounded-[10] w-[440] h-[240]" style="background: linear-gradient(180deg, #121825 -4.73%, #090D16 88.73%);">
+        <div class="flex items-center justify-between px-8 rounded-[10px] w-[440px] h-[240px]" style="background: linear-gradient(180deg, #121825 -4.73%, #090D16 88.73%);">
           <div class="flex flex-col items-start space-y-6">
             <h3 class="font-lalezar text-3xl">دوره آنریل انجین</h3>
             <div class="flex flex-col space-y-3">
@@ -76,10 +76,10 @@
               مشاهده دوره
             </a>
           </div>
-          <img src="~/assets/images/unreal.png" alt="unity" class="w-[150]">
+          <img src="~/assets/images/unreal.png" alt="unity" class="w-[150px]">
         </div>
       </div>
-      <div class="flex items-center gap-8 mt-[70]">
+      <div class="flex items-center gap-8 mt-[70px]">
         <div class="h-px bg-[#2D3340] flex-1"></div>
         <strong class="text-2xl">آخرین دوره ها</strong>
         <div class="h-px bg-[#2D3340] flex-1"></div>
@@ -130,10 +130,10 @@
       </div>
     </div>
 
-    <section class=" relative mt-[200] max-w-[1040] mx-auto">
+    <section class=" relative mt-[200px] max-w-[1040px] mx-auto">
       <div class="flex justify-between">
         <div class="flex flex-col space-y-8 items-start">
-          <span class="font-lalezar text-[30]">با یولرنیت بروز باش</span>
+          <span class="font-lalezar text-[30px]">با یولرنیت بروز باش</span>
           <p class="text-justify w-[473px]">
             بیش از ده ها مقاله در زمینه های مختلف از جمله هوش مصنوعی ، بازی سازی ، برنامه نویسی ، فتوشاپ و ... توسط تیم یولرنیت جمع آوری شده و همچنین اخبار روز در زمینه تکنولوژِی را با یولرنیت مطلع شوید
           </p>
@@ -142,7 +142,7 @@
             همین الان بخوان
           </a>
         </div>
-        <div class="w-[1274px] h-[590] absolute rounded-full -top-full -left-1/2 -z-20 blur-[400] opacity-30"
+        <div class="w-[1274px] h-[590px] absolute rounded-full -top-full -left-1/2 -z-20 blur-[400px] opacity-30"
              style="background: linear-gradient(270.58deg, rgba(6, 100, 235, 1) -14.1%, rgba(179, 83, 253, 1) 112.6%);"></div>
         <div class="flex flex-row-reverse gap-2">
           <div class="flex flex-col gap-2">
@@ -159,19 +159,19 @@
       </div>
     </section>
 
-    <section class="relative mt-[200] rounded-2xl max-w-[1040] mx-auto py-[70]"
+    <section class="relative mt-[200px] rounded-2xl max-w-[1040px] mx-auto py-[70px]"
     style="background: linear-gradient(180deg, #0D111A 0%, #090D16 100%);">
-      <div class="w-[450] h-[435px] absolute rounded-full top-1/2 -right-1/2 -z-20 blur-[400] opacity-100"
+      <div class="w-[450px] h-[435px] absolute rounded-full top-1/2 -right-1/2 -z-20 blur-[400px] opacity-100"
            style="background: linear-gradient(270.58deg, rgba(6, 100, 235, 1) -14.1%, rgba(179, 83, 253, 1) 112.6%);"></div>
 
       <div class="flex flex-col items-center">
-        <h3 class="font-lalezar text-[30]">به انجمن ما ملحق شو !</h3>
-        <p class="w-[700] text-justify mt-8">
+        <h3 class="font-lalezar text-[30px]">به انجمن ما ملحق شو !</h3>
+        <p class="w-[700px] text-justify mt-8">
           ما را در هر یک از پلتفرم های رسانه های اجتماعی مورد علاقه خود پیدا کنید و به انجمن مشتاق ما بپیوندید! با آخرین به‌روزرسانی‌ها همراه باشید، در بحث‌ها شرکت کنید و مستقیماً بر آینده
           <a href="#" class="font-lalezar text-[#3357DB]">یولرنیت</a> تأثیر بگذارید. همه پیشنهادات شما در مورد بهبود و ارتقای بیشتر برنامه مورد استقبال و قدردانی قرار می گیرد!
         </p>
-        <div class="grid grid-cols-2 gap-4 w-[510] mt-10">
-          <a href="" class="w-[250] border border-[#293041] p-2 px-3 rounded-[10] flex items-center">
+        <div class="grid grid-cols-2 gap-4 w-[510px] mt-10">
+          <a href="" class="w-[250px] border border-[#293041] p-2 px-3 rounded-[10px] flex items-center">
             <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
               <rect width="50" height="50" fill="url(#pattern0_1346_211)"/>
               <defs>
@@ -182,11 +182,11 @@
               </defs>
             </svg>
             <div class="flex flex-col mr-4">
-              <span class="font-lalezar text-[20] text-[#DDDDDD]">تلگرام</span>
+              <span class="font-lalezar text-[20px] text-[#DDDDDD]">تلگرام</span>
               <small class="font-light text-[#606777]">گروه رسمی</small>
             </div>
           </a>
-          <a href="" class="w-[250] border border-[#293041] p-2 px-3 rounded-[10] flex items-center">
+          <a href="" class="w-[250px] border border-[#293041] p-2 px-3 rounded-[10px] flex items-center">
             <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
               <rect width="50" height="50" fill="url(#pattern0_1346_211)"/>
               <defs>
@@ -197,11 +197,11 @@
               </defs>
             </svg>
             <div class="flex flex-col mr-4">
-              <span class="font-lalezar text-[20] text-[#DDDDDD]">تلگرام</span>
+              <span class="font-lalezar text-[20px] text-[#DDDDDD]">تلگرام</span>
               <small class="font-light text-[#606777]">کانال رسمی</small>
             </div>
           </a>
-          <a href="" class="w-[250] border border-[#293041] p-2 px-3 rounded-[10] flex items-center">
+          <a href="" class="w-[250px] border border-[#293041] p-2 px-3 rounded-[10px] flex items-center">
             <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
               <rect width="50" height="50" fill="url(#pattern0_1346_219)"/>
               <defs>
@@ -212,11 +212,11 @@
               </defs>
             </svg>
             <div class="flex flex-col mr-4">
-              <span class="font-lalezar text-[20] text-[#DDDDDD]">اینستاگرام</span>
+              <span class="font-lalezar text-[20px] text-[#DDDDDD]">اینستاگرام</span>
               <small class="font-light text-[#606777]">پیج رسمی یولرنیت</small>
             </div>
           </a>
-          <a href="" class="w-[250] border border-[#293041] p-2 px-3 rounded-[10] flex items-center">
+          <a href="" class="w-[250px] border border-[#293041] p-2 px-3 rounded-[10px] flex items-center">
             <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
               <rect width="50" height="50" fill="url(#pattern0_1346_223)"/>
               <defs>
@@ -227,11 +227,11 @@
               </defs>
             </svg>
             <div class="flex flex-col mr-4">
-              <span class="font-lalezar text-[20] text-[#DDDDDD]">یوتیوب</span>
+              <span class="font-lalezar text-[20px] text-[#DDDDDD]">یوتیوب</span>
               <small class="font-light text-[#606777]">کانال رسمی یولرنیت</small>
             </div>
           </a>
-          <a href="" class="w-[250] col-span-2 mx-auto border border-[#293041] p-2 px-3 rounded-[10] flex items-center">
+          <a href="" class="w-[250px] col-span-2 mx-auto border border-[#293041] p-2 px-3 rounded-[10px] flex items-center">
             <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
               <rect width="50" height="50" fill="url(#pattern0_1346_227)"/>
               <defs>
@@ -242,7 +242,7 @@
               </defs>
             </svg>
             <div class="flex flex-col mr-4">
-              <span class="font-lalezar text-[20] text-[#DDDDDD]">دیسکورد</span>
+              <span class="font-lalezar text-[20px] text-[#DDDDDD]">دیسکورد</span>
               <small class="font-light text-[#606777]">انجمن یولرنیت</small>
             </div>
           </a>
@@ -257,6 +257,7 @@
 
     let dot = ref();
 let dotRadius = ref(5);
+const stars = ref();
 
 onMounted(()=>{
   /*document.addEventListener('mousemove',(event)=>{
@@ -267,43 +268,48 @@ onMounted(()=>{
     let threshold = (event.deltaY / 100) * -1;
     dotRadius.value += threshold;
   })*/
-  return;
+})
 
-  /*const starsDiv = document.getElementById("starts");
-  for (let i=0; i < 20; i++){
-    const x = getRandom(400,550);
-    const y = getRandom(0 - 50,starsDiv.getBoundingClientRect().height);
-    const radius = getRandom(2,5);
+const generateStars = (container:string,count:number = 20) =>{
+  const starsDiv = document.getElementById(container);
+  starsDiv.querySelectorAll('div').forEach(e=>{
+    e.remove();
+  });
+
+  for (let i=0; i < count; i++){
+    const x:number = getRandom(400,550);
+    const y:number = getRandom(0 - 50,starsDiv.getBoundingClientRect().height);
+    const radius:number = getRandom(2,5);
     const div = `
-      <div class="bg-[#D9D9D9] rounded-full absolute -z-10 animate-pulse delay-150"
-           style="width: ${radius}px;height:${radius}px;top:${y}px;left:${x}px; box-shadow: 0 0 10 0 #D9D9D9B2;">
+      <div class="bg-[#D9D9D9] rounded-full absolute -z-10 animate-pulse delay-150 pointer-events-none"
+           style="width: ${radius}px;height:${radius}px; top:${y}px ;left:${x}px; box-shadow: 0 0 10px 0 #D9D9D9B2;">
       </div>
     `;
-    starsDiv.innerHTML +=div;
+    starsDiv.innerHTML += div;
   }
-  for (let i=0; i < 20; i++){
+  for (let i=0; i < count; i++){
     const x = getRandom(550,starsDiv.getBoundingClientRect().width - 550);
     const y = getRandom(0 - 50,starsDiv.getBoundingClientRect().height - getRandom(50 ,100));
     const radius = getRandom(2,5);
     const div = `
-      <div class="bg-[#D9D9D9] rounded-full absolute -z-10 animate-pulse delay-150"
-           style="width: ${radius}px;height:${radius}px;top:${y}px;left:${x}px; box-shadow: 0 0 10 0 #D9D9D9B2;">
+      <div class="bg-[#D9D9D9] rounded-full absolute -z-10 animate-pulse delay-150 pointer-events-none"
+           style="width: ${radius}px;height:${radius}px;top:${y}px;left:${x}px; box-shadow: 0 0 10px 0 #D9D9D9B2;">
       </div>
     `;
     starsDiv.innerHTML +=div;
   }
-  for (let i=0; i < 20; i++){
+  for (let i=0; i < count; i++){
     const x = getRandom(starsDiv.getBoundingClientRect().width - 550,starsDiv.getBoundingClientRect().width - 400);
     const y = getRandom(0 - 50,starsDiv.getBoundingClientRect().height);
     const radius = getRandom(2,5);
     const div = `
-      <div class="bg-[#D9D9D9] rounded-full absolute -z-10 animate-pulse delay-150"
-           style="width: ${radius}px;height:${radius}px;top:${y}px;left:${x}px; box-shadow: 0 0 10 0 #D9D9D9B2;">
+      <div class="bg-[#D9D9D9] rounded-full absolute -z-10 animate-pulse delay-150 pointer-events-none"
+           style="width: ${radius}px;height:${radius}px;top:${y}px;left:${x}px; box-shadow: 0 0 10px 0 #D9D9D9B2;">
       </div>
     `;
     starsDiv.innerHTML +=div;
-  }*/
-})
+  }
+}
 
 const getRandom = (min, max) => Math.floor(Math.random()*(max-min+1)+min);
 </script>
