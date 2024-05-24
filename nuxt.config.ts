@@ -5,7 +5,7 @@ export default defineNuxtConfig({
       htmlAttrs:{dir:'rtl',lang:'fa'}
     },
   },
-  devtools: { enabled: true },
+  devtools: { enabled: false },
   css: ['~/assets/css/main.css'],
   postcss: {
     plugins: {

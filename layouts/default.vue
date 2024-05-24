@@ -11,7 +11,9 @@
         <li><NuxtLink>تماس با ما</NuxtLink></li>
         <li><NuxtLink>درباره ما</NuxtLink></li>
       </ul>
-      <a href="" class="px-6 py-2 rounded-full" style="background: linear-gradient(90deg, #0065EB 0%, #BE52FE 100%);" >ورود/ثبت نام</a>
+      <a href="" class="px-6 py-2 rounded-full grid place-items-center" style="background: linear-gradient(90deg, #0065EB 0%, #BE52FE 100%);" >
+        <span>ورود/ثبت نام</span>
+      </a>
     </div>
   </header>
   <div class="w-[767px] h-[767px] absolute -top-1/3 rounded-full right-1/2 translate-x-1/2 -z-20 blur-[400px] opacity-70"
