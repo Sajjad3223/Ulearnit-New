@@ -1,5 +1,7 @@
 <template>
   <div class="container mx-auto">
+    <div class="w-[1274px] h-[590px] absolute rounded-full top-0 -translate-y-2/3 left-0 -z-20 blur-[400px] opacity-30"
+         style="background: linear-gradient(270.58deg, rgba(6, 100, 235, 1) -14.1%, rgba(179, 83, 253, 1) 112.6%);"></div>
     <div class="relative flex flex-col items-center h-[400px]" id="stars" ref="stars">
       <div class="bg-[#D9D9D9] rounded-full absolute -z-10" ref="dot"
            :style="['box-shadow: 0 0 10px 0 #D9D9D9B2;',`width: ${dotRadius}px;height:${dotRadius}px;`]"></div>

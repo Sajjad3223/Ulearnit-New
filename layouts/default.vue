@@ -19,7 +19,7 @@
             درباره ما
           </NuxtLink>
         </div>
-        <button class="relative group grid w-max place-items-center">
+        <button class="relative group grid w-max place-items-center" @click="authStore.showAuthModal = true">
           <svg class="absolute transition-all duration-200 text-white group-hover:text-indigo-600" width="178" height="57" viewBox="0 0 178 57" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect opacity="0.5" x="1" y="1" width="176" height="55" rx="9" stroke="url(#paint0_linear_1570_789)" stroke-width="2"/>
             <defs>
@@ -49,6 +49,9 @@
 
 <script setup lang="ts">
 
+import {useAuthStore} from "~/stores/authStore";
+
+const authStore = useAuthStore();
 </script>
 
 <style>
