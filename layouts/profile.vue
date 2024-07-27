@@ -2,13 +2,13 @@
 <div>
   <header class="py-10">
     <div class="container mx-auto flex items-center gap-12">
-      <div class="w-1/5 flex items-center gap-4">
+      <NuxtLink to="/" class="w-1/5 flex items-center gap-4">
         <img src="~/assets/images/logo.png" alt="logo" class="max-w-[50px]">
         <div class="flex flex-col">
           <span class="text-2xl font-lalezar">یولرنیت</span>
-          <span>ULearnit</span>
+          <span class="font-monserrat text-sm">ULearnit</span>
         </div>
-      </div>
+      </NuxtLink>
       <div class="flex-1 flex items-center justify-between">
         <div class="flex items-center gap-12">
           <h3>
@@ -37,7 +37,7 @@
       </div>
     </div>
   </header>
-  <div class="container mx-auto flex items-stretch gap-10 relative">
+  <div class="container mx-auto flex items-stretch gap-10 relative pb-10 ">
     <aside class="w-1/5">
       <ul class="flex flex-col gap-5 mt-16">
         <li v-for="i in 10">
@@ -77,7 +77,7 @@
     </aside>
     <div class="w-[400px] aspect-square bg-[#452ED4]/60 blur-[200px] absolute right-[15%] top-0 -translate-y-1/3 -z-[1]"></div>
     <div class="w-[500px] aspect-square bg-[#1FA7F4]/20 blur-[200px] absolute -left-[10%] bottom-0 translate-y-1/2 -z-[1]"></div>
-    <main class="flex-1 bg-[#111723]/50 backdrop-blur-lg rounded-2xl border border-white/20 py-5 px-10">
+    <main class="flex-1 bg-[#111723]/50 backdrop-blur-lg rounded-2xl border border-white/20 py-6 px-8">
       <slot></slot>
     </main>
   </div>
@@ -88,8 +88,8 @@
 
 </script>
 
-<style scoped>
+<style>
 body{
-  @apply bg-[#090D16];
+  @apply bg-[#090D16] text-white font-vazir;
 }
 </style>

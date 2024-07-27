@@ -11,7 +11,9 @@ export default {
   theme: {
     extend: {
       fontFamily:{
-        lalezar:'Lalezar'
+        lalezar:'Lalezar',
+        vazir:['"Vazir FD-WOL"'],
+        monserrat:['Montserrat'],
       }
     },
   },
