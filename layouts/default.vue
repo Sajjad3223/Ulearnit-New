@@ -1,6 +1,6 @@
 <template>
   <div class="overflow-hidden">
-    <header class="w-full">
+<!--    <header class="w-full">
       <div class="flex items-center justify-between container mx-auto my-6">
         <NuxtLink to="/" class="flex items-center gap-4">
           <img src="~/assets/images/logo.png" alt="logo" class="max-w-[50px]">
@@ -43,7 +43,8 @@
           </span>
         </button>
       </div>
-    </header>
+    </header>-->
+    <UHeader />
     <main>
       <slot></slot>
     </main>
@@ -51,16 +52,12 @@
   </div>
 </template>
 
-<script setup lang="ts">
-
-import {useAuthStore} from "~/stores/authStore";
-
-const authStore = useAuthStore();
-</script>
-
 <style>
 body{
-  @apply bg-[#090D16] text-white;
+  @apply bg-[#03060D] text-white;
   font-family: 'Yekan Bakh FaNum',serif;
+}
+.container{
+  @apply px-4 md:px-0;
 }
 </style>
