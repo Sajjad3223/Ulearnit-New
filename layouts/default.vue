@@ -48,7 +48,7 @@
     <main>
       <slot></slot>
     </main>
-    <footer class="mt-12"></footer>
+    <UFooter />
   </div>
 </template>
 
