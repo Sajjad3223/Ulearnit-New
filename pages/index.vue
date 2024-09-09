@@ -256,21 +256,21 @@
 
 <div>
   <section class="container mx-auto flex items-center relative mt-20 min-h-[65vh]">
-    <div class="w-1/2 flex flex-col gap-12">
-      <h2 class="font-black text-5xl leading-tight">
-        با یولرنیت، بازی سازی رو <br>
+    <div class="w-1/2 flex flex-col md:gap-8 2xl:gap-12">
+      <h2 class="font-black text-5xl leading-tight origin-right md:scale-110 2xl:scale-125">
+        با <span class="text-[#046BEC]">یولرنیت</span>، بازی سازی رو <br>
         مثل آب خوردن یاد بگیر !
       </h2>
-      <p class="text-xl font-light opacity-70">
+      <p class="md:text-lg 2xl:text-xl font-light opacity-70">
         ما اینجا همه تلاشمون رو میکنیم تا بازی سازی و برنامه نویسی رو اصولی <br>
         و با بهترین کیفیت بهتون آموزش بدیم؛ پس همین الان شروع کنید ...
       </p>
-      <button class="relative w-max flex items-center">
+      <button class="relative w-max flex items-center justify-center group">
         <svg width="224" height="73" viewBox="0 0 224 73" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M223 72V6.96777H25.9942L6.96875 25.1299V72H223Z" stroke="white" stroke-opacity="0.2"/>
-          <path d="M216.031 65.0323V0H19.0255L0 18.1622V65.0323H216.031Z" fill="#046BEC"/>
+          <path d="M216.031 65.0323V0H19.0255L0 18.1622V65.0323H216.031Z" fill="#046BEC" class="group-hover:translate-x-2 group-hover:translate-y-1.5 transition-all duration-200 group-hover:fill-[#046BAA]"/>
         </svg>
-        <span class="absolute left-1/2 -translate-x-1/2 -translate-y-1">شروع یادگیری</span>
+        <span class="text-xl text-nowrap absolute left-1/4 -translate-y-1 group-hover:translate-x-2 group-hover:translate-y-0 transition-all duration-200">شروع یادگیری</span>
       </button>
       <div class="grid grid-cols-2 gap-4">
         <div class="flex items-center gap-3">
@@ -318,22 +318,22 @@
         </div>
       </div>
     </div>
-    <div class="flex-1 flex items-center relative">
-      <img src="~/assets/images/landing-banner.png" alt="landing banner" class="z-[2]">
+    <div class="flex-1 flex items-center relative justify-center md:scale-90 translate-x-10 2xl:translate-x-0 2xl:rotate-0 2xl:scale-100">
+      <img src="~/assets/images/landing-banner.png" alt="landing banner" class="z-[2] ">
       <div class="absolute translate-x-1/2 -z-[1] blur-[200px] w-[480px] h-[360px] rotate-[-23deg] bg-[#791791]"></div>
-      <div class="absolute left-0 -top-0 -translte-y-full flex flex-col -rotate-[10deg]">
+      <div class="absolute md:left-10 2xl:left-0 -top-0 -translte-y-full flex flex-col md:rotate-12 2xl:-rotate-[10deg]">
         <img src="~/assets/images/godot-logo.png" alt="godot icon" class="max-w-14 rounded-lg absolute top-0 -left-2 origin-bottom-right -translate-x-full -translate-y-full -rotate-[35deg]">
         <svg width="75" height="87" viewBox="0 0 75 87" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path opacity="0.5" d="M0.721993 0.634891C42.1044 19.8207 59.0155 37.6946 74.2368 86.296" stroke="white" stroke-dasharray="12 12"/>
         </svg>
       </div>
-      <div class="absolute left-20 -top-10 -translte-y-full flex flex-col rotate-[20deg]">
+      <div class="absolute md:left-40 2xl:left-20 -top-10 -translte-y-full flex flex-col rotate-[20deg]">
         <img src="~/assets/images/unity-logo.png" alt="unity icon" class="max-w-14 rounded-lg absolute top-0 -left-2 origin-bottom-right -translate-x-full -translate-y-full -rotate-[23deg]">
         <svg width="75" height="87" viewBox="0 0 75 87" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path opacity="0.5" d="M0.721993 0.634891C42.1044 19.8207 59.0155 37.6946 74.2368 86.296" stroke="white" stroke-dasharray="12 12"/>
         </svg>
       </div>
-      <div class="absolute right-0 -top-10 -translte-y-full flex flex-col ">
+      <div class="absolute md:right-20 2xl:right-0 -top-10 -translte-y-full flex flex-col ">
         <img src="~/assets/images/unreal-logo.png" alt="unreal icon" class="max-w-14 rounded-lg absolute top-0 -right-2 origin-bottom-left translate-x-full -translate-y-full rotate-[23deg]">
         <svg width="75" height="87" viewBox="0 0 75 87" fill="none" xmlns="http://www.w3.org/2000/svg" class="-scale-x-100">
           <path opacity="0.5" d="M0.721993 0.634891C42.1044 19.8207 59.0155 37.6946 74.2368 86.296" stroke="white" stroke-dasharray="12 12"/>
