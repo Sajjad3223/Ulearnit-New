@@ -255,24 +255,33 @@
   </div>-->
 
 <div>
-  <section class="container mx-auto flex items-center relative mt-20 min-h-[65vh]">
-    <div class="w-1/2 flex flex-col md:gap-8 2xl:gap-12">
-      <h2 class="font-black text-5xl leading-tight origin-right md:scale-110 2xl:scale-125">
+  <section class="container mx-auto flex flex-col-reverse xl:flex-row items-center relative mt-20 min-h-[65vh] xl:gap-0 gap-12">
+    <div class="xl:w-1/2 z-[1] flex flex-col items-center xl:items-start gap-8 2xl:gap-12">
+      <h2 class="font-black text-3xl md:text-5xl leading-tight origin-right md:scale-110 2xl:scale-125 bg-gradient-to-b from-white to-[#046BEC] text-transparent bg-clip-text">
         با <span class="text-[#046BEC]">یولرنیت</span>، بازی سازی رو <br>
         مثل آب خوردن یاد بگیر !
       </h2>
-      <p class="md:text-lg 2xl:text-xl font-light opacity-70">
+      <p class="text-xs md:text-lg 2xl:text-xl font-light opacity-70">
         ما اینجا همه تلاشمون رو میکنیم تا بازی سازی و برنامه نویسی رو اصولی <br>
         و با بهترین کیفیت بهتون آموزش بدیم؛ پس همین الان شروع کنید ...
       </p>
-      <button class="relative w-max flex items-center justify-center group">
-        <svg width="224" height="73" viewBox="0 0 224 73" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M223 72V6.96777H25.9942L6.96875 25.1299V72H223Z" stroke="white" stroke-opacity="0.2"/>
-          <path d="M216.031 65.0323V0H19.0255L0 18.1622V65.0323H216.031Z" fill="#046BEC" class="group-hover:translate-x-2 group-hover:translate-y-1.5 transition-all duration-200 group-hover:fill-[#046BAA]"/>
-        </svg>
-        <span class="text-xl text-nowrap absolute left-1/4 -translate-y-1 group-hover:translate-x-2 group-hover:translate-y-0 transition-all duration-200">شروع یادگیری</span>
-      </button>
-      <div class="grid grid-cols-2 gap-4">
+      <div class="flex gap-5 md:gap-10 flex-col md:flex-row">
+        <button class="relative w-max flex items-center justify-center group">
+          <svg width="224" height="73" viewBox="0 0 224 73" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M223 72V6.96777H25.9942L6.96875 25.1299V72H223Z" stroke="white" stroke-opacity="0.2"/>
+            <path d="M216.031 65.0323V0H19.0255L0 18.1622V65.0323H216.031Z" fill="#046BEC" class="group-hover:translate-x-2 group-hover:translate-y-1.5 transition-all duration-200 group-hover:fill-[#046BAA]"/>
+          </svg>
+          <span class="text-nowrap absolute left-1/4 -translate-x-1 -translate-y-1 group-hover:translate-x-2 group-hover:translate-y-1 transition-all duration-300">شروع یادگیری</span>
+        </button>
+        <button class="relative w-max flex items-center justify-center group">
+          <svg width="224" height="73" viewBox="0 0 224 73" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M223 72V6.96777H25.9942L6.96875 25.1299V72H223Z" stroke="white" stroke-opacity="0.2"/>
+            <path d="M216.031 65.0323V0H19.0255L0 18.1622V65.0323H216.031Z" fill="#0A0E22" class="group-hover:translate-x-2 group-hover:translate-y-1.5 transition-all duration-200 group-hover:fill-[#046BAA]"/>
+          </svg>
+          <span class="text-nowrap  absolute left-1/4 -translate-x-1 -translate-y-1 group-hover:translate-x-2 group-hover:translate-y-1 transition-all duration-300">درخواست مشاوره</span>
+        </button>
+      </div>
+      <div class="grid md:grid-cols-2 gap-4 self-start">
         <div class="flex items-center gap-3">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g opacity="0.7">
@@ -318,47 +327,108 @@
         </div>
       </div>
     </div>
-    <div class="flex-1 flex items-center relative justify-center md:scale-90 translate-x-10 2xl:translate-x-0 2xl:rotate-0 2xl:scale-100">
-      <img src="~/assets/images/landing-banner.png" alt="landing banner" class="z-[2] ">
-      <div class="absolute translate-x-1/2 -z-[1] blur-[200px] w-[480px] h-[360px] rotate-[-23deg] bg-[#791791]"></div>
-      <div class="absolute md:left-10 2xl:left-0 -top-0 -translte-y-full flex flex-col md:rotate-12 2xl:-rotate-[10deg]">
-        <img src="~/assets/images/godot-logo.png" alt="godot icon" class="max-w-14 rounded-lg absolute top-0 -left-2 origin-bottom-right -translate-x-full -translate-y-full -rotate-[35deg]">
+    <div class="flex-1 flex flex-col items-center relative justify-center mt-5 xl:mt-0 xl:ml-10 2xl:ml-0">
+      <img src="~/assets/images/landing-banner2.png" alt="landing banner" class="z-[2] max-w-[300px] xl:max-w-[500px]">
+<!--      <div>
+        <img src="~/assets/images/img_6.png" alt="" class="w-[400px] h-[300px] rounded-xl" style="perspective: 100px;transform-style: preserve-3d;transform:rotateX(-20deg) rotateY(40deg) rotateZ(-5deg);transform-origin: center;box-shadow: 5px 5px 7px 0 rgba(0,0,0,0.2)">
+      </div>-->
+      <div class="absolute top-1/2 xl:top-0 xl:translate-x-full -z-[2] blur-[200px] w-[350px] xl:w-[200px] h-[360px] xl:h-[360px] rotate-[-23deg] bg-[#791791]"></div>
+      <div class="absolute left-10 2xl:left-20 top-0 xl:top-20 -translte-y-full flex flex-col md:rotate-12 2xl:-rotate-[10deg]">
+        <img src="~/assets/images/godot-logo.png" alt="godot icon" class="max-w-14 rounded-lg absolute top-0 -left-2 origin-bottom-right -translate-x-full -translate-y-full -rotate-[35deg]" style="filter: drop-shadow(0px 8px 12px rgba(0, 0, 0, 0.5));">
         <svg width="75" height="87" viewBox="0 0 75 87" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path opacity="0.5" d="M0.721993 0.634891C42.1044 19.8207 59.0155 37.6946 74.2368 86.296" stroke="white" stroke-dasharray="12 12"/>
         </svg>
       </div>
-      <div class="absolute md:left-40 2xl:left-20 -top-10 -translte-y-full flex flex-col rotate-[20deg]">
-        <img src="~/assets/images/unity-logo.png" alt="unity icon" class="max-w-14 rounded-lg absolute top-0 -left-2 origin-bottom-right -translate-x-full -translate-y-full -rotate-[23deg]">
+      <div class="absolute md:left-40 2xl:left-40 -top-4 xl:top-10 -translte-y-full flex flex-col rotate-[30deg]">
+        <img src="~/assets/images/unity-logo.png" alt="unity icon" class="max-w-14 rounded-lg absolute top-0 -left-2 origin-bottom-right -translate-x-full -translate-y-full -rotate-[23deg]" style="filter: drop-shadow(0px 8px 12px rgba(0, 0, 0, 0.5));">
         <svg width="75" height="87" viewBox="0 0 75 87" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path opacity="0.5" d="M0.721993 0.634891C42.1044 19.8207 59.0155 37.6946 74.2368 86.296" stroke="white" stroke-dasharray="12 12"/>
         </svg>
       </div>
-      <div class="absolute md:right-20 2xl:right-0 -top-10 -translte-y-full flex flex-col ">
-        <img src="~/assets/images/unreal-logo.png" alt="unreal icon" class="max-w-14 rounded-lg absolute top-0 -right-2 origin-bottom-left translate-x-full -translate-y-full rotate-[23deg]">
-        <svg width="75" height="87" viewBox="0 0 75 87" fill="none" xmlns="http://www.w3.org/2000/svg" class="-scale-x-100">
+      <div class="absolute right-12 xl:right-24 2xl:right-48 top-4 xl:top-8 z-[2] -translte-y-full flex flex-col ">
+        <img src="~/assets/images/unreal-logo.png" alt="unreal icon" class="max-w-14 rounded-lg absolute top-0 right-0 origin-bottom-left translate-x-full -translate-y-full rotate-[23deg]" style="filter: drop-shadow(0px 8px 12px rgba(0, 0, 0, 0.5));">
+
+        <svg width="75" height="87" viewBox="0 0 75 87" fill="none" xmlns="http://www.w3.org/2000/svg" class="-scale-x-100 hidden">
           <path opacity="0.5" d="M0.721993 0.634891C42.1044 19.8207 59.0155 37.6946 74.2368 86.296" stroke="white" stroke-dasharray="12 12"/>
         </svg>
       </div>
-      <svg width="219" height="276" viewBox="0 0 219 276" fill="none" xmlns="http://www.w3.org/2000/svg" class="bottom-1/4 translate-y-full absolute left-1/2 -rotate-[20deg]">
-        <path opacity="0.5" d="M33.6228 149.118L32.9208 150.444L33.6228 149.118ZM99.0878 59.8902L98.7648 61.355L99.0878 59.8902ZM210.918 274.925C211.676 275.259 212.562 274.916 212.896 274.158L218.345 261.806C218.68 261.048 218.336 260.163 217.578 259.828C216.82 259.494 215.935 259.837 215.6 260.595L210.757 271.574L199.778 266.731C199.02 266.396 198.134 266.74 197.8 267.498C197.465 268.255 197.809 269.141 198.567 269.475L210.918 274.925ZM7.9595 0.774026C2.434 27.0911 -1.19427 59.1504 1.42491 87.2478C4.03437 115.241 12.9036 139.844 32.9208 150.444L34.3247 147.792C15.7393 137.951 7.00328 114.768 4.41196 86.9694C1.83036 59.2752 5.40577 27.5371 10.8955 1.39046L7.9595 0.774026ZM32.9208 150.444C45.5414 157.127 60.0623 155.456 73.5571 149.241C87.0571 143.025 99.7319 132.183 108.901 120.122C118.043 108.097 123.871 94.6287 123.306 83.1211C123.022 77.3251 121.111 72.0053 117.167 67.687C113.233 63.3796 107.382 60.1831 99.4108 58.4254L98.7648 61.355C106.298 63.0162 111.537 65.9707 114.952 69.7102C118.358 73.4388 120.055 78.0618 120.31 83.2681C120.825 93.7653 115.458 106.54 106.513 118.306C97.595 130.037 85.2911 140.535 72.3023 146.516C59.3085 152.5 45.8307 153.885 34.3247 147.792L32.9208 150.444ZM99.4108 58.4254C87.2518 55.7441 76.9054 63.2052 69.139 75.4247C61.3454 87.6869 55.8269 105.164 53.2636 123.73C50.6985 142.309 51.0724 162.122 55.182 179.104C59.2831 196.051 67.1707 210.424 79.8457 217.723L81.3428 215.123C69.6895 208.413 62.1096 194.976 58.0978 178.398C54.0945 161.856 53.7102 142.43 56.2354 124.14C58.7625 105.837 64.183 88.8151 71.6708 77.034C79.1858 65.2101 88.4635 59.0834 98.7648 61.355L99.4108 58.4254ZM79.8457 217.723C92.2336 224.856 105.224 228.157 118.031 230.077C124.432 231.037 130.804 231.653 137.031 232.226C143.271 232.799 149.354 233.328 155.239 234.112C167.013 235.681 177.825 238.254 187.134 244.108C196.405 249.938 204.313 259.105 210.125 274.094L212.922 273.01C206.911 257.507 198.623 247.789 188.731 241.568C178.876 235.371 167.556 232.727 155.636 231.139C149.674 230.344 143.519 229.809 137.306 229.238C131.079 228.666 124.783 228.056 118.476 227.11C105.867 225.22 93.2832 221.999 81.3428 215.123L79.8457 217.723Z" fill="white"/>
+      <svg width="219" height="276" viewBox="0 0 219 276" fill="none" xmlns="http://www.w3.org/2000/svg" class="hidden xl:visible bottom-1/4 translate-y-full absolute left-1/2 -rotate-[20deg]">
+        <path opacity="0.2" fill="white" d="M33.6228 149.118L32.9208 150.444L33.6228 149.118ZM99.0878 59.8902L98.7648 61.355L99.0878 59.8902ZM210.918 274.925C211.676 275.259 212.562 274.916 212.896 274.158L218.345 261.806C218.68 261.048 218.336 260.163 217.578 259.828C216.82 259.494 215.935 259.837 215.6 260.595L210.757 271.574L199.778 266.731C199.02 266.396 198.134 266.74 197.8 267.498C197.465 268.255 197.809 269.141 198.567 269.475L210.918 274.925ZM7.9595 0.774026C2.434 27.0911 -1.19427 59.1504 1.42491 87.2478C4.03437 115.241 12.9036 139.844 32.9208 150.444L34.3247 147.792C15.7393 137.951 7.00328 114.768 4.41196 86.9694C1.83036 59.2752 5.40577 27.5371 10.8955 1.39046L7.9595 0.774026ZM32.9208 150.444C45.5414 157.127 60.0623 155.456 73.5571 149.241C87.0571 143.025 99.7319 132.183 108.901 120.122C118.043 108.097 123.871 94.6287 123.306 83.1211C123.022 77.3251 121.111 72.0053 117.167 67.687C113.233 63.3796 107.382 60.1831 99.4108 58.4254L98.7648 61.355C106.298 63.0162 111.537 65.9707 114.952 69.7102C118.358 73.4388 120.055 78.0618 120.31 83.2681C120.825 93.7653 115.458 106.54 106.513 118.306C97.595 130.037 85.2911 140.535 72.3023 146.516C59.3085 152.5 45.8307 153.885 34.3247 147.792L32.9208 150.444ZM99.4108 58.4254C87.2518 55.7441 76.9054 63.2052 69.139 75.4247C61.3454 87.6869 55.8269 105.164 53.2636 123.73C50.6985 142.309 51.0724 162.122 55.182 179.104C59.2831 196.051 67.1707 210.424 79.8457 217.723L81.3428 215.123C69.6895 208.413 62.1096 194.976 58.0978 178.398C54.0945 161.856 53.7102 142.43 56.2354 124.14C58.7625 105.837 64.183 88.8151 71.6708 77.034C79.1858 65.2101 88.4635 59.0834 98.7648 61.355L99.4108 58.4254ZM79.8457 217.723C92.2336 224.856 105.224 228.157 118.031 230.077C124.432 231.037 130.804 231.653 137.031 232.226C143.271 232.799 149.354 233.328 155.239 234.112C167.013 235.681 177.825 238.254 187.134 244.108C196.405 249.938 204.313 259.105 210.125 274.094L212.922 273.01C206.911 257.507 198.623 247.789 188.731 241.568C178.876 235.371 167.556 232.727 155.636 231.139C149.674 230.344 143.519 229.809 137.306 229.238C131.079 228.666 124.783 228.056 118.476 227.11C105.867 225.22 93.2832 221.999 81.3428 215.123L79.8457 217.723Z" />
       </svg>
     </div>
   </section>
   <div class="border-t opacity-10 border-dashed w-full my-20"></div>
   <section>
     <div class="flex flex-col items-center gap-5">
-      <svg width="33" height="29" viewBox="0 0 33 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0.285037 0.283775L32.3952 0.283774L16.3401 28.092L0.285037 0.283775Z" fill="#046BEC"/>
+      <svg width="51" height="67" viewBox="0 0 51 67" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M9.28504 16.2848L41.3952 16.2848L25.3401 44.093L9.28504 16.2848Z" fill="#046BEC"/>
+        <path opacity="0.5" d="M9.28504 32.0543L41.3952 32.0543L25.3401 59.8625L9.28504 32.0543Z" fill="#046BEC"/>
       </svg>
-      <strong>پرفروش ترین ها</strong>
+      <h4 class="font-extrabold text-4xl">پرفروش ترین ها</h4>
     </div>
-    <div class="container mx-auto grid grid-cols-2 gap-16 mt-20">
-      <NuxtLink>
+    <div class="container mx-auto grid xl:grid-cols-2 gap-16 mt-20">
+      <div class="relative">
+          <img src="~/assets/images/img_6.png" alt="course1" class="rounded-2xl border border-white/20 aspect-video object-cover">
+          <div class="absolute inset-x-4 bottom-4 flex items-center px-4 py-2 rounded-lg border border-white/20 backdrop-blur bg-black/30 gap-5">
+            <img src="~/assets/images/avatar.png" alt="avatar" class="rounded-2xl max-w-[80px]">
+            <div class="flex-1 flex items-center gap-5">
+              <div class="flex-1 flex items-center justify-between">
+                <div class="flex flex-col gap-2">
+                  <NuxtLink>
+                    <strong class="text-xl">دوره جامع آنریل انجین</strong>
+                  </NuxtLink>
+                  <div class="flex items-center gap-4 opacity-80 text-sm">
+                    <NuxtLink>
+                      سجاد میرشبی
+                    </NuxtLink>
+                    <div class="h-4 w-px bg-white opacity-30 rounded-full"></div>
+                    <span>8 جلسه</span>
+                    <div class="h-4 w-px bg-white opacity-30 rounded-full"></div>
+                    <span>24 ساعت آموزش</span>
+                  </div>
+                </div>
+                <div class="flex items-center gap-1">
+                  <span class="font-extrabold text-xl">499,000</span>
+                  <span class="text-[10px] font-light leading-[0.8]">تـــــو <br> مان</span>
+                </div>
+              </div>
+              <button class="px-5 py-2 bg-[#046BEC] rounded-lg">
+                شروع
+              </button>
+            </div>
+          </div>
+      </div>
+      <div class="relative">
         <img src="~/assets/images/img_6.png" alt="course1" class="rounded-2xl border border-white/20 aspect-video object-cover">
-      </NuxtLink>
-      <NuxtLink>
-        <img src="~/assets/images/img_6.png" alt="course1" class="rounded-2xl border border-white/20 aspect-video object-cover">
-      </NuxtLink>
+        <div class="absolute inset-x-4 bottom-4 flex items-center px-4 py-2 rounded-lg border border-white/20 backdrop-blur bg-black/30 gap-5">
+          <img src="~/assets/images/avatar.png" alt="avatar" class="rounded-2xl max-w-[80px]">
+          <div class="flex-1 flex items-center gap-5">
+            <div class="flex-1 flex items-center justify-between">
+              <div class="flex flex-col gap-2">
+                <NuxtLink>
+                  <strong class="text-xl">دوره جامع آنریل انجین</strong>
+                </NuxtLink>
+                <div class="flex items-center gap-4 opacity-80 text-sm">
+                  <NuxtLink>
+                    سجاد میرشبی
+                  </NuxtLink>
+                  <div class="h-4 w-px bg-white opacity-30 rounded-full"></div>
+                  <span>8 جلسه</span>
+                  <div class="h-4 w-px bg-white opacity-30 rounded-full"></div>
+                  <span>24 ساعت آموزش</span>
+                </div>
+              </div>
+              <div class="flex items-center gap-1">
+                <span class="font-extrabold text-xl">499,000</span>
+                <span class="text-[10px] font-light leading-[0.8]">تـــــو <br> مان</span>
+              </div>
+            </div>
+            <button class="px-5 py-2 bg-[#046BEC] rounded-lg">
+              شروع
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
   <div class="border-t opacity-10 border-dashed w-full my-20"></div>
@@ -366,12 +436,13 @@
     <div class="container mx-auto flex flex-col gap-10">
       <div class="flex items-center justify-between w-full">
         <div class="flex items-center gap-10">
-          <svg width="29" height="33" viewBox="0 0 29 33" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0.800781 16.3401L28.609 0.284988L28.609 32.3952L0.800781 16.3401Z" fill="#046BEC"/>
+          <svg width="51" height="38" viewBox="0 0 51 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M13.8008 19.3401L41.609 3.28499V35.3952L13.8008 19.3401Z" fill="#046BEC"/>
+            <path opacity="0.5" d="M0 19.3401L27.8082 3.28499L27.8082 35.3952L0 19.3401Z" fill="#046BEC"/>
           </svg>
-          <strong>آخرین دوره ها</strong>
+          <h4 class="font-extrabold text-4xl">آخرین دوره ها</h4>
         </div>
-        <button class="relative flex items-center justify-center">
+        <button class="relative hidden md:flex items-center justify-center">
           <svg width="217" height="66" viewBox="0 0 217 66" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M216.031 65.0323V0H19.0255L0 18.1622V65.0323H216.031Z" fill="#141A2B"/>
           </svg>
@@ -379,7 +450,7 @@
         </button>
       </div>
 
-      <div class="grid grid-cols-4 gap-10">
+      <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-10">
         <div class="flex flex-col bg-[#080F1F] border border-white/20 rounded-3xl">
             <NuxtLink to="/">
               <img src="~/assets/images/img_6.png" alt="banner" class="aspect-video object-cover w-full rounded-t-3xl h-full">
@@ -577,7 +648,7 @@
 
   <section class="my-[200px]">
     <div class="container mx-auto">
-      <div class="relative overflow-visible w-full px-14 py-10 flex flex-col gap-5 bg-gradient-to-r from-[#090D16] to-[#111723] rounded-3xl border border-white/10">
+      <div class="relative overflow-visible w-full px-14 py-12 flex flex-col gap-7 bg-gradient-to-r from-[#090D16] to-[#111723] rounded-3xl border border-white/10">
         <div class="flex items-center gap-3">
           <svg width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <rect width="37" height="37" fill="url(#pattern0_1643_348)"/>
@@ -588,15 +659,15 @@
               <image id="image0_1643_348" width="100" height="100" xlink:href="data:image/png;base64,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"/>
             </defs>
           </svg>
-          <span class="text-2xl font-bold">تدریس خصوصی در یولرنیــــت</span>
+          <span class="text-base md:text-xl lg:text-4xl font-bold opacity-80">تدریس خصوصی در یولرنیــــت</span>
         </div>
-        <p class="w-4/6">
+        <p class="md:w-[60%] xl:w-[80%] text-[10px] md:text-sm lg:text-xl opacity-60">
           تدریس در یولرنیت به دانش و تخصص شما دایره اثری به وسعت کل کشور می‌بخشد. دانش و تجربه‌ای که تاکنون محدود به زمان و جغرافیا بود، در یولرنیت اوج گرفته و فارغ از هر گونه مرزی می‌شود. تدریس در یولرنیت ، تدریس برای آرمان «دانش بدون مرز» است.
         </p>
-        <button class="bg-[#402EBD] text-white py-2 px-6 w-max rounded-xl" style="box-shadow: 0 0 15px 0 rgba(64,46,189,0.5)">
+        <button class="bg-[#402EBD] text-white text-sm md:text-base lg:text-2xl py-2 px-6 w-max rounded-xl" style="box-shadow: 0 0 15px 0 rgba(64,46,189,0.5)">
           شروع تدریس
         </button>
-        <img src="~/assets/images/private-teaching.png" alt="private teaching" class="absolute left-12 bottom-0 max-w-[350px]">
+        <img src="~/assets/images/private-teaching.png" alt="private teaching" class="hidden md:block absolute md:left-0 lg:left-8 bottom-0 w-1/2 xl:max-w-[350px]">
       </div>
     </div>
   </section>
@@ -608,19 +679,19 @@
           <svg width="29" height="33" viewBox="0 0 29 33" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M0.800781 16.3401L28.609 0.284988L28.609 32.3952L0.800781 16.3401Z" fill="#046BEC"/>
           </svg>
-          <strong>آخرین مقالات</strong>
+          <h4 class="text-4xl">آخرین مقالات</h4>
         </div>
-        <button class="relative flex items-center justify-center">
+        <button class="relative hidden md:flex items-center justify-center">
           <svg width="217" height="66" viewBox="0 0 217 66" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M216.031 65.0323V0H19.0255L0 18.1622V65.0323H216.031Z" fill="#141A2B"/>
           </svg>
           <span class="absolute">مشاهده همه</span>
         </button>
       </div>
-      <div class="grid grid-cols-4 gap-6">
-        <div class="flex items-end col-span-2 row-span-2 relative rounded-2xl overflow-hidden min-h-[580px]">
+      <div class="grid lg:grid-cols-4 gap-6">
+        <div class="flex items-end col-span-2 row-span-2 relative rounded-2xl overflow-hidden min-h-[300px] lg:min-h-[580px]">
           <div class="flex flex-col z-[2] w-full p-8 space-y-5">
-            <NuxtLink class="text-3xl font-black">
+            <NuxtLink class="lg:text-3xl font-extrabold">
               کنکور را خراب کردم، چیکار کنم؟
             </NuxtLink>
             <div class="flex items-center justify-between">
@@ -652,11 +723,11 @@
                     <path d="M6 1.33398H10" stroke="white" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
                   </g>
                 </svg>
-                <span class="text-xs">زمان مطالعه: 11 دقیقه</span>
+                <span class="text-xs opacity-70">زمان مطالعه: 11 دقیقه</span>
               </div>
             </div>
           </div>
-          <img src="~/assets/images/blog-banner.png" alt="blog banner" class="absolute z-0 inset-0 w-full h-full">
+          <img src="~/assets/images/blog-banner.png" alt="blog banner" class="absolute z-0 inset-0 w-full h-full object-cover">
           <div class="absolute z-[1] bg-gradient-to-b from-black/0 from-50% to-black/50 inset-0"></div>
         </div>
         <div class="flex items-end relative rounded-2xl overflow-hidden" v-for="i in 3">
@@ -715,7 +786,7 @@
   <section class="my-52">
     <div class="container mx-auto h-[170px] bg-gradient-to-r from-[#FF03D1] to-[#FF5900] flex items-center rounded-3xl ">
       <div class="w-full flex items-center relative justify-between px-10">
-        <img src="~/assets/images/insta.png" alt="instagram" class="absolute right-10 -bottom-1/2 w-[400px]">
+        <img src="~/assets/images/insta.png" alt="instagram" class="absolute right-10 -bottom-1/2 w-[250px]">
         <div class="flex flex-col mr-[400px] space-y-3">
           <span class="text-4xl font-black">یولرنیت رو در اینستاگرام دنبال کنید!</span>
           <span class="text-2xl">کلی پست و مطالب جالب و نکات آموزنده هم اونجا قرار میدیم!</span>
