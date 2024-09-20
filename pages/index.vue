@@ -281,7 +281,7 @@
           <span class="text-nowrap  absolute left-1/4 -translate-x-1 -translate-y-1 group-hover:translate-x-2 group-hover:translate-y-1 transition-all duration-300">درخواست مشاوره</span>
         </button>
       </div>
-      <div class="grid md:grid-cols-2 gap-4 self-start">
+      <div class="w-full grid md:grid-cols-2 gap-4 gap-y-6">
         <div class="flex items-center gap-3">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g opacity="0.7">
@@ -352,12 +352,12 @@
           <path opacity="0.5" d="M0.721993 0.634891C42.1044 19.8207 59.0155 37.6946 74.2368 86.296" stroke="white" stroke-dasharray="12 12"/>
         </svg>
       </div>
-      <svg width="219" height="276" viewBox="0 0 219 276" fill="none" xmlns="http://www.w3.org/2000/svg" class="hidden xl:visible bottom-1/4 translate-y-full absolute left-1/2 -rotate-[20deg]">
+      <svg width="219" height="276" viewBox="0 0 219 276" fill="none" xmlns="http://www.w3.org/2000/svg" class="hidden lg:block bottom-1/4 translate-y-full absolute left-1/2 -rotate-[20deg]">
         <path opacity="0.2" fill="white" d="M33.6228 149.118L32.9208 150.444L33.6228 149.118ZM99.0878 59.8902L98.7648 61.355L99.0878 59.8902ZM210.918 274.925C211.676 275.259 212.562 274.916 212.896 274.158L218.345 261.806C218.68 261.048 218.336 260.163 217.578 259.828C216.82 259.494 215.935 259.837 215.6 260.595L210.757 271.574L199.778 266.731C199.02 266.396 198.134 266.74 197.8 267.498C197.465 268.255 197.809 269.141 198.567 269.475L210.918 274.925ZM7.9595 0.774026C2.434 27.0911 -1.19427 59.1504 1.42491 87.2478C4.03437 115.241 12.9036 139.844 32.9208 150.444L34.3247 147.792C15.7393 137.951 7.00328 114.768 4.41196 86.9694C1.83036 59.2752 5.40577 27.5371 10.8955 1.39046L7.9595 0.774026ZM32.9208 150.444C45.5414 157.127 60.0623 155.456 73.5571 149.241C87.0571 143.025 99.7319 132.183 108.901 120.122C118.043 108.097 123.871 94.6287 123.306 83.1211C123.022 77.3251 121.111 72.0053 117.167 67.687C113.233 63.3796 107.382 60.1831 99.4108 58.4254L98.7648 61.355C106.298 63.0162 111.537 65.9707 114.952 69.7102C118.358 73.4388 120.055 78.0618 120.31 83.2681C120.825 93.7653 115.458 106.54 106.513 118.306C97.595 130.037 85.2911 140.535 72.3023 146.516C59.3085 152.5 45.8307 153.885 34.3247 147.792L32.9208 150.444ZM99.4108 58.4254C87.2518 55.7441 76.9054 63.2052 69.139 75.4247C61.3454 87.6869 55.8269 105.164 53.2636 123.73C50.6985 142.309 51.0724 162.122 55.182 179.104C59.2831 196.051 67.1707 210.424 79.8457 217.723L81.3428 215.123C69.6895 208.413 62.1096 194.976 58.0978 178.398C54.0945 161.856 53.7102 142.43 56.2354 124.14C58.7625 105.837 64.183 88.8151 71.6708 77.034C79.1858 65.2101 88.4635 59.0834 98.7648 61.355L99.4108 58.4254ZM79.8457 217.723C92.2336 224.856 105.224 228.157 118.031 230.077C124.432 231.037 130.804 231.653 137.031 232.226C143.271 232.799 149.354 233.328 155.239 234.112C167.013 235.681 177.825 238.254 187.134 244.108C196.405 249.938 204.313 259.105 210.125 274.094L212.922 273.01C206.911 257.507 198.623 247.789 188.731 241.568C178.876 235.371 167.556 232.727 155.636 231.139C149.674 230.344 143.519 229.809 137.306 229.238C131.079 228.666 124.783 228.056 118.476 227.11C105.867 225.22 93.2832 221.999 81.3428 215.123L79.8457 217.723Z" />
       </svg>
     </div>
   </section>
-  <div class="border-t opacity-10 border-dashed w-full my-20"></div>
+  <div class="w-full my-40"></div>
   <section>
     <div class="flex flex-col items-center gap-5">
       <svg width="51" height="67" viewBox="0 0 51 67" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -366,18 +366,18 @@
       </svg>
       <h4 class="font-extrabold text-4xl">پرفروش ترین ها</h4>
     </div>
-    <div class="container mx-auto grid xl:grid-cols-2 gap-16 mt-20">
-      <div class="relative">
+    <div class="container mx-auto grid xl:grid-cols-2 gap-8 2xl:gap-16 mt-20">
+      <div class="relative" v-for="i in 2">
           <img src="~/assets/images/img_6.png" alt="course1" class="rounded-2xl border border-white/20 aspect-video object-cover">
           <div class="absolute inset-x-4 bottom-4 flex items-center px-4 py-2 rounded-lg border border-white/20 backdrop-blur bg-black/30 gap-5">
-            <img src="~/assets/images/avatar.png" alt="avatar" class="rounded-2xl max-w-[80px]">
+            <img src="~/assets/images/avatar.png" alt="avatar" class="rounded-2xl max-w-[50px] 2xl:max-w-[80px]">
             <div class="flex-1 flex items-center gap-5">
               <div class="flex-1 flex items-center justify-between">
                 <div class="flex flex-col gap-2">
                   <NuxtLink>
-                    <strong class="text-xl">دوره جامع آنریل انجین</strong>
+                    <strong class="xl:text-xl">دوره جامع آنریل انجین</strong>
                   </NuxtLink>
-                  <div class="flex items-center gap-4 opacity-80 text-sm">
+                  <div class="flex items-center gap-4 opacity-80 text-xs 2xl:text-sm">
                     <NuxtLink>
                       سجاد میرشبی
                     </NuxtLink>
@@ -388,46 +388,15 @@
                   </div>
                 </div>
                 <div class="flex items-center gap-1">
-                  <span class="font-extrabold text-xl">499,000</span>
+                  <span class="font-extrabold text-lg 2xl:text-xl">499,000</span>
                   <span class="text-[10px] font-light leading-[0.8]">تـــــو <br> مان</span>
                 </div>
               </div>
-              <button class="px-5 py-2 bg-[#046BEC] rounded-lg">
+              <button class="px-5 py-2 bg-[#046BEC] rounded-lg text-sm 2xl:text-base">
                 شروع
               </button>
             </div>
           </div>
-      </div>
-      <div class="relative">
-        <img src="~/assets/images/img_6.png" alt="course1" class="rounded-2xl border border-white/20 aspect-video object-cover">
-        <div class="absolute inset-x-4 bottom-4 flex items-center px-4 py-2 rounded-lg border border-white/20 backdrop-blur bg-black/30 gap-5">
-          <img src="~/assets/images/avatar.png" alt="avatar" class="rounded-2xl max-w-[80px]">
-          <div class="flex-1 flex items-center gap-5">
-            <div class="flex-1 flex items-center justify-between">
-              <div class="flex flex-col gap-2">
-                <NuxtLink>
-                  <strong class="text-xl">دوره جامع آنریل انجین</strong>
-                </NuxtLink>
-                <div class="flex items-center gap-4 opacity-80 text-sm">
-                  <NuxtLink>
-                    سجاد میرشبی
-                  </NuxtLink>
-                  <div class="h-4 w-px bg-white opacity-30 rounded-full"></div>
-                  <span>8 جلسه</span>
-                  <div class="h-4 w-px bg-white opacity-30 rounded-full"></div>
-                  <span>24 ساعت آموزش</span>
-                </div>
-              </div>
-              <div class="flex items-center gap-1">
-                <span class="font-extrabold text-xl">499,000</span>
-                <span class="text-[10px] font-light leading-[0.8]">تـــــو <br> مان</span>
-              </div>
-            </div>
-            <button class="px-5 py-2 bg-[#046BEC] rounded-lg">
-              شروع
-            </button>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -450,45 +419,51 @@
         </button>
       </div>
 
-      <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-10">
-        <div class="flex flex-col bg-[#080F1F] border border-white/20 rounded-3xl">
-            <NuxtLink to="/">
-              <img src="~/assets/images/img_6.png" alt="banner" class="aspect-video object-cover w-full rounded-t-3xl h-full">
-            </NuxtLink>
-          <div class="flex py-4 px-6 flex-col gap-4">
+      <div class="w-4/5 mx-auto grid md:grid-cols-2 xl:grid-cols-3 gap-10">
+        <div class="relative flex flex-col bg-[#080F1F] border border-white/20 rounded-xl" v-for="i in 6" :key="i">
+          <NuxtLink to="/">
+            <img src="~/assets/images/img_6.png" alt="banner" class="aspect-video object-cover w-full rounded-t-3xl h-full">
+          </NuxtLink>
+          <div class="flex py-4 px-6 flex-col gap-3">
             <div class="flex flex-col">
               <NuxtLink class="font-extrabold text-xl">
                 دوره آموزش ++C در آنریل انجین
               </NuxtLink>
-              <div class="flex items-center gap-1">
-                <span class="text-xs font-light opacity-50">مدرس:</span>
-                <NuxtLink to="/" class="opacity-70 font-light text-sm">
-                  سجاد میرشبی
-                </NuxtLink>
-              </div>
             </div>
-            <p class="opacity-70 font-light">
+            <p class="opacity-70 font-light text-sm">
               دوره آموزش Next.js به شما کمک می‌کند SSR را برای React به سادگی راه‌اندازی کنید و یک وبسایت با سئو مناسب با React بوجود آورید.
             </p>
             <div class="flex items-center justify-between">
-              <div class="flex items-center gap-2">
-                <div class="flex items-center gap-1 py-1 px-2 rounded-md bg-[#D9D9D9]/10">
-                  <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <div class="flex flex-col gap-2">
+                <div class="flex items-center gap-1">
+                  <svg class="w-4" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g opacity="0.7">
+                      <path d="M8.00008 7.99967C9.84103 7.99967 11.3334 6.50729 11.3334 4.66634C11.3334 2.82539 9.84103 1.33301 8.00008 1.33301C6.15913 1.33301 4.66675 2.82539 4.66675 4.66634C4.66675 6.50729 6.15913 7.99967 8.00008 7.99967Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M13.7268 14.6667C13.7268 12.0867 11.1601 10 8.0001 10C4.8401 10 2.27344 12.0867 2.27344 14.6667" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </g>
+                  </svg>
+                  <span class="text-xs">سجاد میرشبی</span>
+                </div>
+                <div class="flex items-center gap-1">
+                  <svg class="w-4" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M11.5 6C11.5 8.76 9.26 11 6.5 11C3.74 11 1.5 8.76 1.5 6C1.5 3.24 3.74 1 6.5 1C9.26 1 11.5 3.24 11.5 6Z" stroke="white" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M8.35494 7.59085L6.80494 6.66585C6.53494 6.50585 6.31494 6.12085 6.31494 5.80585V3.75586" stroke="white" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
                   <span class="text-xs">02:22:45</span>
                 </div>
-                <div class="flex items-center gap-1 py-1 px-2 rounded-md bg-[#FF4444]/10 text-[#FF4444]">
-                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M6.31 10.4058C6.14 10.4658 5.86 10.4658 5.69 10.4058C4.24 9.91078 1 7.84578 1 4.34578C1 2.80078 2.245 1.55078 3.78 1.55078C4.69 1.55078 5.495 1.99078 6 2.67078C6.505 1.99078 7.315 1.55078 8.22 1.55078C9.755 1.55078 11 2.80078 11 4.34578C11 7.84578 7.76 9.91078 6.31 10.4058Z" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                  <span class="text-xs">45</span>
-                </div>
               </div>
-              <div class="flex items-center gap-1">
-                <span class="font-extrabold text-xl">499,000</span>
-                <span class="text-[10px] font-light leading-[0.8]">تـــــو <br> مان</span>
+              <div class="bg-[#046BEC] flex items-center px-2 py-1 rounded-lg text-xs font-light absolute left-4 top-4">
+                <span class="translate-y-0.5">20%</span>
+              </div>
+              <div class="flex flex-col items-end">
+                <div class="flex items-center gap-1 opacity-50">
+                  <span class="font-light text-sm line-through">599,000</span>
+                  <span class="text-[10px] font-light opacity-0 leading-[0.8]">تـــــو <br> مان</span>
+                </div>
+                <div class="flex items-center gap-1">
+                  <span class="font-extrabold text-xl">499,000</span>
+                  <span class="text-[10px] font-light leading-[0.8]">تـــــو <br> مان</span>
+                </div>
               </div>
             </div>
           </div>
@@ -499,148 +474,6 @@
               <path d="M8.99984 16.9201L2.47984 10.4001C1.70984 9.63008 1.70984 8.37008 2.47984 7.60008L8.99984 1.08008" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </NuxtLink>
-        </div>
-        <div class="flex flex-col bg-[#080F1F] border border-white/20 rounded-2xl h-max">
-            <NuxtLink to="/">
-              <img src="~/assets/images/img_6.png" alt="banner" class="aspect-video object-cover w-full rounded-t-3xl h-full">
-            </NuxtLink>
-          <div class="flex py-4 px-6 flex-col gap-4">
-            <div class="flex items-center gap-2">
-              <div class="px-2 py-1 rounded-md bg-[#FAFAFA]/20 text-[10px]">
-                بازی سازی
-              </div>
-              <div class="px-2 py-1 rounded-md bg-[#FAFAFA]/20 text-[10px]">
-                متوسط
-              </div>
-              <button class="mr-auto flex items-center gap-1 py-1 px-2 rounded-md hover:bg-[#FF4444]/20 text-[#FF4444] transition-colors duration-300">
-                <span class="text-xs font-light leading-tight">45</span>
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M6.31 10.4058C6.14 10.4658 5.86 10.4658 5.69 10.4058C4.24 9.91078 1 7.84578 1 4.34578C1 2.80078 2.245 1.55078 3.78 1.55078C4.69 1.55078 5.495 1.99078 6 2.67078C6.505 1.99078 7.315 1.55078 8.22 1.55078C9.755 1.55078 11 2.80078 11 4.34578C11 7.84578 7.76 9.91078 6.31 10.4058Z" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </button>
-            </div>
-            <NuxtLink class="text-xl">
-              دوره آموزش ++C در آنریل انجین
-            </NuxtLink>
-            <div class="flex items-center justify-between">
-              <div class="flex items-center gap-2">
-                <div class="flex items-center gap-1 py-1 px-2 rounded-md">
-                  <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg" class="opacity-60">
-                    <path d="M11.5 6C11.5 8.76 9.26 11 6.5 11C3.74 11 1.5 8.76 1.5 6C1.5 3.24 3.74 1 6.5 1C9.26 1 11.5 3.24 11.5 6Z" stroke="white" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M8.35494 7.59085L6.80494 6.66585C6.53494 6.50585 6.31494 6.12085 6.31494 5.80585V3.75586" stroke="white" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                  <span class="text-sm font-light">02:22:45</span>
-                </div>
-              </div>
-              <div class="flex items-center gap-1">
-                <span class="font-extrabold text-xl">499,000</span>
-                <span class="text-[10px] font-light leading-[0.8]">تـــــو <br> مان</span>
-              </div>
-            </div>
-          </div>
-          <hr class="opacity-20">
-          <NuxtLink to="/" class="flex items-center gap-2 text-[#046BEC] py-4 justify-center hover:text-white transition-colors duration-300">
-            <span>مشاهده دوره</span>
-            <svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="scale-75">
-              <path d="M8.99984 16.9201L2.47984 10.4001C1.70984 9.63008 1.70984 8.37008 2.47984 7.60008L8.99984 1.08008" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </NuxtLink>
-        </div>
-        <div class="flex flex-col bg-[#080F1F] border border-white/20 rounded-xl h-max relative">
-            <NuxtLink to="/">
-              <img src="~/assets/images/img_6.png" alt="banner" class="aspect-video object-cover w-full rounded-t-3xl h-full">
-            </NuxtLink>
-          <div class="flex py-4 px-6 flex-col gap-2">
-            <div class="flex items-center gap-2">
-              <div class="px-2 py-1 rounded-md bg-[#FAFAFA]/20 text-[10px]">
-                بازی سازی
-              </div>
-              <div class="px-2 py-1 rounded-md bg-[#FAFAFA]/20 text-[10px]">
-                متوسط
-              </div>
-              <button class="absolute left-3 top-3 flex items-center gap-1 py-1 px-2 rounded-md bg-[#FF4444]/20 hover:bg-[#FF4444]/50 text-[#FF4444] hover:text-[#FFEEEE] transition-colors duration-300">
-                <span class="text-xs font-light leading-tight">45</span>
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M6.31 10.4058C6.14 10.4658 5.86 10.4658 5.69 10.4058C4.24 9.91078 1 7.84578 1 4.34578C1 2.80078 2.245 1.55078 3.78 1.55078C4.69 1.55078 5.495 1.99078 6 2.67078C6.505 1.99078 7.315 1.55078 8.22 1.55078C9.755 1.55078 11 2.80078 11 4.34578C11 7.84578 7.76 9.91078 6.31 10.4058Z" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </button>
-            </div>
-            <NuxtLink class="text-xl">
-              دوره آموزش ++C در آنریل انجین
-            </NuxtLink>
-          </div>
-          <hr class="opacity-20">
-          <div class="flex items-center justify-between px-6 py-4">
-            <div class="flex items-center gap-2">
-              <div class="flex items-center gap-1 py-1 px-2 rounded-md">
-                <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg" class="opacity-60">
-                  <path d="M11.5 6C11.5 8.76 9.26 11 6.5 11C3.74 11 1.5 8.76 1.5 6C1.5 3.24 3.74 1 6.5 1C9.26 1 11.5 3.24 11.5 6Z" stroke="white" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M8.35494 7.59085L6.80494 6.66585C6.53494 6.50585 6.31494 6.12085 6.31494 5.80585V3.75586" stroke="white" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <span class="text-sm font-light">02:22:45</span>
-              </div>
-            </div>
-            <div class="flex items-center gap-1">
-              <span class="font-extrabold text-xl">499,000</span>
-              <span class="text-[10px] font-light leading-[0.8]">تـــــو <br> مان</span>
-            </div>
-          </div>
-        </div>
-        <div class="flex flex-col bg-[#080F1F] border border-white/20 rounded-xl h-max relative">
-          <NuxtLink to="/">
-            <img src="~/assets/images/img_6.png" alt="banner" class="aspect-video object-cover w-full rounded-t-3xl h-full">
-          </NuxtLink>
-          <div class="flex py-4 px-6 flex-col gap-4">
-            <NuxtLink class="font-extrabold text-xl">
-              دوره آموزش ++C در آنریل انجین
-            </NuxtLink>
-            <p class="opacity-70 font-light">
-              دوره آموزش Next.js به شما کمک می‌کند SSR را برای React به سادگی راه‌اندازی کنید و یک وبسایت با سئو مناسب با React بوجود آورید.
-            </p>
-            <div class="flex items-center justify-between">
-              <div class="flex items-center gap-1">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <g opacity="0.7">
-                    <path d="M8.00008 7.99967C9.84103 7.99967 11.3334 6.50729 11.3334 4.66634C11.3334 2.82539 9.84103 1.33301 8.00008 1.33301C6.15913 1.33301 4.66675 2.82539 4.66675 4.66634C4.66675 6.50729 6.15913 7.99967 8.00008 7.99967Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M13.7268 14.6667C13.7268 12.0867 11.1601 10 8.0001 10C4.8401 10 2.27344 12.0867 2.27344 14.6667" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  </g>
-                </svg>
-                <NuxtLink to="/" class="opacity-70 font-light text-sm hover:opacity-100">
-                  سجاد میرشبی
-                </NuxtLink>
-              </div>
-              <div class="flex items-center gap-1">
-                <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M11.5 6C11.5 8.76 9.26 11 6.5 11C3.74 11 1.5 8.76 1.5 6C1.5 3.24 3.74 1 6.5 1C9.26 1 11.5 3.24 11.5 6Z" stroke="white" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M8.35494 7.59085L6.80494 6.66585C6.53494 6.50585 6.31494 6.12085 6.31494 5.80585V3.75586" stroke="white" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <span class="text-xs">02:22:45</span>
-              </div>
-            </div>
-          </div>
-          <hr class="opacity-20">
-          <div class="flex items-center justify-between py-4 px-6">
-            <div class="flex items-center gap-1">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g opacity="0.7">
-                  <path d="M14.9999 5.967C14.9499 5.95866 14.8916 5.95866 14.8416 5.967C13.6916 5.92533 12.7749 4.98366 12.7749 3.81699C12.7749 2.62533 13.7332 1.66699 14.9249 1.66699C16.1166 1.66699 17.0749 2.63366 17.0749 3.81699C17.0666 4.98366 16.1499 5.92533 14.9999 5.967Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M14.1415 12.0338C15.2831 12.2255 16.5415 12.0255 17.4248 11.4338C18.5998 10.6505 18.5998 9.36713 17.4248 8.58379C16.5331 7.99213 15.2581 7.79212 14.1165 7.99212" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M4.9749 5.967C5.0249 5.95866 5.08324 5.95866 5.13324 5.967C6.28324 5.92533 7.1999 4.98366 7.1999 3.81699C7.1999 2.62533 6.24157 1.66699 5.0499 1.66699C3.85824 1.66699 2.8999 2.63366 2.8999 3.81699C2.90824 4.98366 3.8249 5.92533 4.9749 5.967Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M5.83328 12.0338C4.69162 12.2255 3.43328 12.0255 2.54995 11.4338C1.37495 10.6505 1.37495 9.36713 2.54995 8.58379C3.44162 7.99213 4.71662 7.79212 5.85828 7.99212" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M10.0001 12.1916C9.95014 12.1833 9.89181 12.1833 9.84181 12.1916C8.69181 12.1499 7.77515 11.2083 7.77515 10.0416C7.77515 8.84994 8.73348 7.8916 9.92514 7.8916C11.1168 7.8916 12.0751 8.85827 12.0751 10.0416C12.0668 11.2083 11.1501 12.1583 10.0001 12.1916Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M7.5751 14.8168C6.4001 15.6001 6.4001 16.8835 7.5751 17.6668C8.90843 18.5585 11.0918 18.5585 12.4251 17.6668C13.6001 16.8835 13.6001 15.6001 12.4251 14.8168C11.1001 13.9335 8.90843 13.9335 7.5751 14.8168Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </g>
-              </svg>
-              <NuxtLink to="/" class="opacity-70 font-light text-sm">
-                245 دانشجو
-              </NuxtLink>
-            </div>
-            <div class="bg-[#046BEC] px-2 py-1 rounded-md text-xs font-light absolute left-4 top-4">20%</div>
-            <div class="flex items-center gap-1">
-              <span class="font-extrabold text-xl">499,000</span>
-              <span class="text-[10px] font-light leading-[0.8]">تـــــو <br> مان</span>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -661,10 +494,10 @@
           </svg>
           <span class="text-base md:text-xl lg:text-4xl font-bold opacity-80">تدریس خصوصی در یولرنیــــت</span>
         </div>
-        <p class="md:w-[60%] xl:w-[80%] text-[10px] md:text-sm lg:text-xl opacity-60">
+        <p class="md:w-[60%] lg:w-[75%] 2xl:w-[80%] text-[10px] md:text-sm lg:text-xl opacity-60">
           تدریس در یولرنیت به دانش و تخصص شما دایره اثری به وسعت کل کشور می‌بخشد. دانش و تجربه‌ای که تاکنون محدود به زمان و جغرافیا بود، در یولرنیت اوج گرفته و فارغ از هر گونه مرزی می‌شود. تدریس در یولرنیت ، تدریس برای آرمان «دانش بدون مرز» است.
         </p>
-        <button class="bg-[#402EBD] text-white text-sm md:text-base lg:text-2xl py-2 px-6 w-max rounded-xl" style="box-shadow: 0 0 15px 0 rgba(64,46,189,0.5)">
+        <button class="bg-[#402EBD] text-white text-sm md:text-base 2xl:text-2xl py-2 px-6 w-max rounded-xl" style="box-shadow: 0 0 15px 0 rgba(64,46,189,0.5)">
           شروع تدریس
         </button>
         <img src="~/assets/images/private-teaching.png" alt="private teaching" class="hidden md:block absolute md:left-0 lg:left-8 bottom-0 w-1/2 xl:max-w-[350px]">
@@ -731,29 +564,29 @@
           <div class="absolute z-[1] bg-gradient-to-b from-black/0 from-50% to-black/50 inset-0"></div>
         </div>
         <div class="flex items-end relative rounded-2xl overflow-hidden" v-for="i in 3">
-          <div class="flex flex-col z-[2] w-full p-6 space-y-3">
-            <NuxtLink class="font-bold">
+          <div class="flex flex-col z-[2] w-full p-3 2xl:p-6 space-y-3">
+            <NuxtLink class="font-bold text-sm 2xl:text-base">
               کنکور را خراب کردم، چیکار کنم؟
             </NuxtLink>
             <div class="flex items-center justify-between">
               <div class="flex items-center gap-1">
                 <NuxtLink class="flex items-center gap-1">
                   <img src="~/assets/images/avatar.png" alt="writer avatar" class="w-6 h-6 rounded-full object-cover">
-                  <span class="text-[10px]">پشتیبانی یولرنیت</span>
+                  <span class="2xl:text-[10px]">پشتیبانی یولرنیت</span>
                 </NuxtLink>
-                <button class="flex items-center gap-2 px-2 py-1 bg-[#FF3F3F]/40 rounded-md text-[#FF6F6F]">
-                  <svg class="w-3" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <button class="flex items-center gap-1 2xl:gap-2 px-1 2xl:px-2 py-0.5 2xl:py-1 bg-[#FF3F3F]/40 rounded-sm 2xl:rounded-md text-[#FF6F6F]">
+                  <svg class="w-2 2xl:w-3" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M8.434 13.9393C8.196 14.0202 7.804 14.0202 7.566 13.9393C5.536 13.2719 1 10.4876 1 5.76854C1 3.68539 2.743 2 4.892 2C6.166 2 7.293 2.59326 8 3.51011C8.707 2.59326 9.841 2 11.108 2C13.257 2 15 3.68539 15 5.76854C15 10.4876 10.464 13.2719 8.434 13.9393Z" stroke="#FF6F6F" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
-                  <span class="text-[10px]">4</span>
+                  <span class="2xl:text-[10px]">4</span>
                 </button>
-                <div class="flex items-center gap-1 px-2 py-1 bg-[#3A6763]/40 rounded-md text-white">
-                  <svg class="w-3" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <div class="flex items-center gap-1 2xl:gap-2 px-1 2xl:px-2 py-0.5 2xl:py-1 bg-[#3A6763]/40 rounded-md 2xl:rounded-md text-white">
+                  <svg class="w-2 2xl:w-3" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M5.33333 12.3333H5C2.33333 12.3333 1 11.6667 1 8.33333V5C1 2.33333 2.33333 1 5 1H10.3333C13 1 14.3333 2.33333 14.3333 5V8.33333C14.3333 11 13 12.3333 10.3333 12.3333H10C9.79333 12.3333 9.59333 12.4333 9.46667 12.6L8.46667 13.9333C8.02667 14.52 7.30667 14.52 6.86667 13.9333L5.86667 12.6C5.76 12.4533 5.51333 12.3333 5.33333 12.3333Z" stroke="#79DFD6" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M4.33301 5H10.9997" stroke="#79DFD6" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M4.33301 8.33203H8.33301" stroke="#79DFD6" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
-                  <span class="text-[10px]">2</span>
+                  <span class="text-[8px] 2xl:text-[10px]">2</span>
                 </div>
               </div>
               <div class="flex items-center gap-1 px-2 py-1 rounded-md bg-[#FAFAFA]/10">
@@ -768,7 +601,7 @@
               </div>
             </div>
           </div>
-          <img src="~/assets/images/blog-banner.png" alt="blog banner" class="absolute z-0 inset-0">
+          <img src="~/assets/images/blog-banner.png" alt="blog banner" class="absolute z-0 inset-0 w-full h-full object-cover">
           <div class="absolute z-[1] bg-gradient-to-b from-black/0 from-50% to-black/50 inset-0"></div>
         </div>
         <div class="flex items-center justify-center">
