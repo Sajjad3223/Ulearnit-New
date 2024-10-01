@@ -14,6 +14,11 @@ export default {
         lalezar:'Lalezar',
         vazir:['"Vazir FD-WOL"'],
         monserrat:['Montserrat'],
+        yekanBakh:['"Yekan Bakh FaNum"']
+      },
+      colors:{
+        primary:'#402EBD',
+        secondary:'#0A0E22',
       }
     },
   },

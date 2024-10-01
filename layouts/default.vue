@@ -54,10 +54,9 @@
 
 <style>
 body{
-  @apply bg-[#03060D] text-white;
-  font-family: 'Yekan Bakh FaNum',serif;
+  @apply bg-[#03060D] text-white font-yekanBakh;
 }
 .container{
-  @apply px-4 md:px-0;
+  @apply px-4 lg:px-0;
 }
 </style>

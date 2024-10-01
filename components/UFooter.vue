@@ -1,20 +1,55 @@
-<script setup lang="ts">
-
-</script>
-
 <template>
-<footer class="bg-[#070B15] py-14">
-  <div class="container mx-auto flex flex-col gap-12">
-    <div class="flex items-center gap-4">
+<footer class="bg-[#070B15] py-14 mt-10">
+  <div class="lg:hidden fixed inset-x-0 bottom-0 py-5 bg-black/20 rounded-t-2xl backdrop-blur-md z-20 border-t border-white/20 flex items-center justify-center" style="box-shadow: 0 -5px 7px 0 rgba(0,0,50,0.3)">
+    <div class="flex w-full items-center justify-around [&>div>span]:hidden">
+      <div class="flex flex-col md:flex-row items-center gap-1 md:gap-2">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill="#046BEC77" d="M10.07 2.82L3.14002 8.37C2.36002 8.99 1.86002 10.3 2.03002 11.28L3.36002 19.24C3.60002 20.66 4.96002 21.81 6.40002 21.81H17.6C19.03 21.81 20.4 20.65 20.64 19.24L21.97 11.28C22.13 10.3 21.63 8.99 20.86 8.37L13.93 2.83C12.86 1.97 11.13 1.97 10.07 2.82Z" stroke="#046BEC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M12 18V15" stroke="#046BEC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="text-[10px] font-light">خانه</span>
+      </div>
+      <div class="flex flex-col md:flex-row items-center gap-1 md:gap-2">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M21.6601 10.44L20.6801 14.62C19.8401 18.23 18.1801 19.69 15.0601 19.39C14.5601 19.35 14.0201 19.26 13.4401 19.12L11.7601 18.72C7.59006 17.73 6.30006 15.67 7.28006 11.49L8.26006 7.30001C8.46006 6.45001 8.70006 5.71001 9.00006 5.10001C10.1701 2.68001 12.1601 2.03001 15.5001 2.82001L17.1701 3.21001C21.3601 4.19001 22.6401 6.26001 21.6601 10.44Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M15.06 19.39C14.44 19.81 13.66 20.16 12.71 20.47L11.13 20.99C7.15998 22.27 5.06997 21.2 3.77997 17.23L2.49997 13.28C1.21997 9.31001 2.27997 7.21001 6.24997 5.93001L7.82997 5.41001C8.23997 5.28001 8.62997 5.17001 8.99997 5.10001C8.69997 5.71001 8.45997 6.45001 8.25997 7.30001L7.27997 11.49C6.29997 15.67 7.58998 17.73 11.76 18.72L13.44 19.12C14.02 19.26 14.56 19.35 15.06 19.39Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M12.64 8.53L17.49 9.76" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M11.66 12.4L14.56 13.14" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="text-[10px] font-light">دوره ها</span>
+      </div>
+      <div class="flex flex-col md:flex-row items-center gap-1 md:gap-2">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8.81 2L5.19 5.63" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M15.19 2L18.81 5.63" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M2 7.85001C2 6.00001 2.99 5.85001 4.22 5.85001H19.78C21.01 5.85001 22 6.00001 22 7.85001C22 10 21.01 9.85001 19.78 9.85001H4.22C2.99 9.85001 2 10 2 7.85001Z" stroke="white" stroke-width="1.5"/>
+          <path d="M9.76001 14V17.55" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M14.36 14V17.55" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M3.5 10L4.91 18.64C5.23 20.58 6 22 8.86 22H14.89C18 22 18.46 20.64 18.82 18.76L20.5 10" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <span class="text-[10px] font-light">سبد خرید</span>
+      </div>
+      <div class="flex flex-col md:flex-row items-center gap-1 md:gap-2">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M20.5899 22C20.5899 18.13 16.7399 15 11.9999 15C7.25991 15 3.40991 18.13 3.40991 22" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="text-[10px] font-light">حساب کاربری</span>
+      </div>
+    </div>
+  </div>
+  <div class="pb-10 lg:pb-0 container mx-auto flex flex-col gap-5 md:gap-12">
+    <div class="flex items-center gap-4 flex-wrap lg:flex-nowrap">
+      <div class="md:hidden h-px flex-1 bg-white/30"></div>
       <NuxtLink to="/" class="flex items-center flex-row-reverse md:flex-row gap-2">
-        <img src="~/assets/images/logo.png" alt="logo" class="max-w-8 md:max-w-10">
+        <img src="~/assets/images/logo.png" alt="logo" class="max-w-8 md:max-w-10 lg:max-w-16">
         <div class="flex flex-col md:-space-y-1">
-          <span class="text-base md:text-xl font-bold">یولرنیــت</span>
-          <span class="text-sm md:text-base uppercase font-light">ULearnit</span>
+          <span class="text-base md:text-xl lg:text-3xl font-bold">یولرنیــت</span>
+          <span class="text-sm md:text-base lg:text-2xl uppercase font-light">ULearnit</span>
         </div>
       </NuxtLink>
       <div class="h-px flex-1 bg-white/30"></div>
-      <ul class="flex items-center gap-4">
+      <ul class="flex-1 shrink-0 lg:flex-grow-0 lg:shrink flex items-center justify-center gap-4">
         <li>
           <a href="" class="p-4 rounded-lg bg-[#046BEC]/10 hover:bg-[#046BEC]/50 hover:text-white text-[#046BEC] grid place-items-center transition-colors duration-200">
             <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -65,24 +100,24 @@
         </li>
       </ul>
     </div>
-    <div class="flex items-start gap-20">
-      <div class="flex-1 flex flex-col gap-5">
-        <h4 class="text-4xl font-bold">درباره یولرنیت</h4>
-        <p class="text-xl font-light opacity-70">
-          راکت یکی از پرتلاش‌ترین و بروزترین وبسایت های آموزشی در سطح ایران است که همیشه تلاش کرده تا بتواند جدیدترین و بروزترین مقالات و دوره‌های آموزشی را در اختیار علاقه‌مندان ایرانی قرار دهد. تبدیل کردن برنامه نویسان ایرانی به بهترین برنامه نویسان جهان هدف ماست.
+    <div class="mt-10 flex flex-col lg:flex-row items-center lg:items-start gap-14 md:gap-20">
+      <div class="flex-1 flex flex-col items-center lg:items-start gap-5">
+        <h4 class="text-xl md:text-3xl font-bold">درباره یولرنیت</h4>
+        <p class="w-5/6 lg:w-full text-xs md:text-xl text-justify lg:text-right font-light opacity-70">
+          یولرنیت یکی از پرتلاش‌ترین و بروزترین وبسایت های آموزشی در سطح ایران است که همیشه تلاش کرده تا بتواند جدیدترین و بروزترین مقالات و دوره‌های آموزشی را در اختیار علاقه‌مندان ایرانی قرار دهد. تبدیل کردن برنامه نویسان ایرانی به بهترین برنامه نویسان جهان هدف ماست.
         </p>
-        <button class="text-[#046BEC] gap-3 font-xl flex items-center">
+        <button class="text-[#046BEC] gap-3 text-sm md:text-xl flex items-center">
           <span>مطالعه بیشتر</span>
-          <svg width="9" height="18" viewBox="0 0 9 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg class="w-1.5 md:w-2" viewBox="0 0 9 18" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M8.0975 16.84L1.5775 10.32C0.8075 9.55 0.8075 8.29 1.5775 7.52L8.0975 1" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </button>
       </div>
-      <div class="flex w-1/5 flex-col gap-5">
-        <span class="text-3xl font-bold">
+      <div class="flex lg:w-1/5 flex-col items-center lg:items-start gap-5">
+        <span class="text-xl md:text-3xl font-bold">
           صفحات سایت
         </span>
-        <ul class="text-lg list-disc pr-6 flex flex-col gap-4">
+        <ul class="text-sm md:text-lg lg:list-disc lg:pr-6 flex flex-col items-center lg:items-start gap-4">
           <li>
             <NuxtLink>صفحه اصلی</NuxtLink>
           </li>
@@ -103,8 +138,8 @@
           </li>
         </ul>
       </div>
-      <div class="flex-1 flex flex-col gap-5">
-        <span class="text-3xl font-bold">
+      <div class="w-full flex-1 flex flex-col items-center lg:items-start gap-5">
+        <span class="text-xl md:text-3xl font-bold">
           ارتباط با ما
         </span>
         <div class="flex flex-col w-full gap-4">
@@ -116,18 +151,18 @@
                   <path d="M12.75 6.75L10.4025 8.625C9.63 9.24 8.3625 9.24 7.59 8.625L5.25 6.75" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
                 </g>
               </svg>
-              <span class="text-xl">ایمیل</span>
+              <span class="lg:text-xl">ایمیل</span>
             </div>
-            <span class="text-xl">info@ulearnit.ir</span>
+            <span class="lg:text-xl opacity-70">info@ulearnit.ir</span>
           </div>
           <div class="flex items-center justify-between">
             <div class="flex items-center gap-1.5">
               <svg width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path opacity="0.5" fill-rule="evenodd" clip-rule="evenodd" d="M1.23741 6.42172C6.06923 4.31657 9.29121 2.92873 10.9033 2.25819C15.5063 0.343671 16.4627 0.0110988 17.0861 0.00011709C17.2232 -0.00229822 17.5298 0.0316819 17.7284 0.192819C17.8961 0.328879 17.9422 0.512678 17.9643 0.641678C17.9864 0.770679 18.0139 1.06455 17.992 1.29416C17.7426 3.91499 16.6633 10.2751 16.1142 13.2104C15.8818 14.4525 15.4244 14.869 14.9815 14.9097C14.0189 14.9983 13.288 14.2736 12.3558 13.6625C10.897 12.7063 10.0729 12.111 8.65691 11.1779C7.02048 10.0995 8.08131 9.5068 9.0139 8.53817C9.25797 8.28468 13.4988 4.42728 13.5809 4.07735C13.5912 4.03359 13.6007 3.87046 13.5038 3.78432C13.4069 3.69818 13.2639 3.72763 13.1606 3.75106C13.0143 3.78427 10.6839 5.32459 6.16938 8.37202C5.5079 8.82624 4.90875 9.04755 4.37193 9.03595C3.78013 9.02317 2.64175 8.70134 1.79548 8.42625C0.757494 8.08885 -0.0674757 7.91046 0.00436067 7.33744C0.0417775 7.03897 0.452793 6.73373 1.23741 6.42172Z" fill="white"/>
               </svg>
-              <span class="text-xl">آیدی تلگرام</span>
+              <span class="lg:text-xl">آیدی تلگرام</span>
             </div>
-            <span class="text-xl">@ulearnit_support</span>
+            <span class="lg:text-xl opacity-70" dir="ltr">@ulearnit_support</span>
           </div>
           <div class="flex items-center justify-between">
             <div class="flex items-center gap-1.5">
@@ -138,26 +173,26 @@
                 <path d="M16.5 6.75C16.5 3.8475 14.1525 1.5 11.25 1.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
               </g>
             </svg>
-            <span class="text-xl">تلفن تماس</span>
+            <span class="lg:text-xl">تلفن تماس</span>
           </div>
-            <span class="text-xl">09154222478</span>
+            <span class="lg:text-xl opacity-70">09154222478</span>
           </div>
         </div>
         <div class="flex self-end gap-4">
-          <img src="~/assets/images/digital.png" alt="digital" class="max-w-[100px]">
-          <img src="~/assets/images/enamad.png" alt="enamad" class="max-w-[100px]">
+          <img src="~/assets/images/digital.png" alt="digital" class="max-w-[70px] md:max-w-[100px]">
+          <img src="~/assets/images/enamad.png" alt="enamad" class="max-w-[70px] md:max-w-[100px]">
         </div>
       </div>
     </div>
 
     <div class="border-t opacity-10 border-dashed w-full "></div>
-    <p class="font-light text-center">
+    <p class="text-xs md:text-base font-light text-center">
       کليه حقوق محصولات و محتوای اين سایت متعلق به یولرنیت می باشد و هر گونه کپی برداری از محتوا و محصولات سایت غیر مجاز و بدون رضایت ماست.
     </p>
   </div>
 </footer>
 </template>
 
-<style scoped>
+<script setup lang="ts">
 
-</style>
+</script>

@@ -261,8 +261,8 @@
         با <span class="text-[#046BEC]">یولرنیت</span>، بازی سازی رو <br>
         مثل آب خوردن یاد بگیر !
       </h2>
-      <p class="text-xs md:text-lg 2xl:text-xl font-light opacity-70">
-        ما اینجا همه تلاشمون رو میکنیم تا بازی سازی و برنامه نویسی رو اصولی <br>
+      <p class="w-3/4 text-center lg:text-right lg:w-full text-xs md:text-lg 2xl:text-xl font-light opacity-70">
+        ما اینجا همه تلاشمون رو میکنیم تا بازی سازی و برنامه نویسی رو اصولی <br class="hidden lg:block">
         و با بهترین کیفیت بهتون آموزش بدیم؛ پس همین الان شروع کنید ...
       </p>
       <div class="flex gap-5 md:gap-10 flex-col md:flex-row">
@@ -281,7 +281,7 @@
           <span class="text-nowrap  absolute left-1/4 -translate-x-1 -translate-y-1 group-hover:translate-x-2 group-hover:translate-y-1 transition-all duration-300">درخواست مشاوره</span>
         </button>
       </div>
-      <div class="w-full grid md:grid-cols-2 gap-4 gap-y-6">
+      <div class="md:w-2/3 mx-auto lg:w-full grid md:grid-cols-2 gap-4 gap-y-6">
         <div class="flex items-center gap-3">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g opacity="0.7">
@@ -366,18 +366,18 @@
       </svg>
       <h4 class="font-extrabold text-4xl">پرفروش ترین ها</h4>
     </div>
-    <div class="container mx-auto grid xl:grid-cols-2 gap-8 2xl:gap-16 mt-20">
-      <div class="relative" v-for="i in 2">
+    <div class="container mx-auto grid xl:grid-cols-2 gap-12 md:gap-8 2xl:gap-16 mt-20">
+      <div class="relative" v-for="i in 2" :key="i">
           <img src="~/assets/images/img_6.png" alt="course1" class="rounded-2xl border border-white/20 aspect-video object-cover">
-          <div class="absolute inset-x-4 bottom-4 flex items-center px-4 py-2 rounded-lg border border-white/20 backdrop-blur bg-black/30 gap-5">
-            <img src="~/assets/images/avatar.png" alt="avatar" class="rounded-2xl max-w-[50px] 2xl:max-w-[80px]">
+          <div class="absolute inset-x-4 -bottom-8 md:bottom-4 flex items-center px-4 py-2 rounded-lg border border-white/20 backdrop-blur bg-black/30 gap-5">
+            <img src="~/assets/images/avatar.png" alt="avatar" class="hidden md:block rounded-2xl max-w-[50px] 2xl:max-w-[80px]">
             <div class="flex-1 flex items-center gap-5">
-              <div class="flex-1 flex items-center justify-between">
+              <div class="flex-1 flex flex-col md:flex-row md:items-center justify-between">
                 <div class="flex flex-col gap-2">
                   <NuxtLink>
                     <strong class="xl:text-xl">دوره جامع آنریل انجین</strong>
                   </NuxtLink>
-                  <div class="flex items-center gap-4 opacity-80 text-xs 2xl:text-sm">
+                  <div class="hidden md:flex items-center gap-4 opacity-80 text-xs 2xl:text-sm">
                     <NuxtLink>
                       سجاد میرشبی
                     </NuxtLink>
@@ -419,7 +419,7 @@
         </button>
       </div>
 
-      <div class="w-4/5 mx-auto grid md:grid-cols-2 xl:grid-cols-3 gap-10">
+      <div class="lg:w-4/5 mx-auto grid md:grid-cols-2 xl:grid-cols-3 gap-10">
         <div class="relative flex flex-col bg-[#080F1F] border border-white/20 rounded-xl" v-for="i in 6" :key="i">
           <NuxtLink to="/">
             <img src="~/assets/images/img_6.png" alt="banner" class="aspect-video object-cover w-full rounded-t-3xl h-full">
@@ -481,7 +481,7 @@
 
   <section class="my-[200px]">
     <div class="container mx-auto">
-      <div class="relative overflow-visible w-full px-14 py-12 flex flex-col gap-7 bg-gradient-to-r from-[#090D16] to-[#111723] rounded-3xl border border-white/10">
+      <div class="relative overflow-visible w-full p-5 md:px-14 md:py-12 flex flex-col gap-7 bg-gradient-to-r from-[#090D16] to-[#111723] rounded-3xl border border-white/10">
         <div class="flex items-center gap-3">
           <svg width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <rect width="37" height="37" fill="url(#pattern0_1643_348)"/>
@@ -497,7 +497,7 @@
         <p class="md:w-[60%] lg:w-[75%] 2xl:w-[80%] text-[10px] md:text-sm lg:text-xl opacity-60">
           تدریس در یولرنیت به دانش و تخصص شما دایره اثری به وسعت کل کشور می‌بخشد. دانش و تجربه‌ای که تاکنون محدود به زمان و جغرافیا بود، در یولرنیت اوج گرفته و فارغ از هر گونه مرزی می‌شود. تدریس در یولرنیت ، تدریس برای آرمان «دانش بدون مرز» است.
         </p>
-        <button class="bg-[#402EBD] text-white text-sm md:text-base 2xl:text-2xl py-2 px-6 w-max rounded-xl" style="box-shadow: 0 0 15px 0 rgba(64,46,189,0.5)">
+        <button class="bg-[#402EBD] text-white text-sm md:text-base 2xl:text-2xl py-2 px-6 w-full md:w-max rounded-xl" style="box-shadow: 0 0 15px 0 rgba(64,46,189,0.5)">
           شروع تدریس
         </button>
         <img src="~/assets/images/private-teaching.png" alt="private teaching" class="hidden md:block absolute md:left-0 lg:left-8 bottom-0 w-1/2 xl:max-w-[350px]">
@@ -521,25 +521,25 @@
           <span class="absolute">مشاهده همه</span>
         </button>
       </div>
-      <div class="grid lg:grid-cols-4 gap-6">
-        <div class="flex items-end col-span-2 row-span-2 relative rounded-2xl overflow-hidden min-h-[300px] lg:min-h-[580px]">
-          <div class="flex flex-col z-[2] w-full p-8 space-y-5">
-            <NuxtLink class="lg:text-3xl font-extrabold">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="flex items-end md:col-span-full lg:col-span-2 lg:row-span-2 relative rounded-lg md:rounded-2xl overflow-hidden aspect-video">
+          <div class="flex flex-col z-[2] w-full px-4 py-2 md:p-8 md:space-y-5">
+            <NuxtLink class="text-lg md:text-2xl lg:text-3xl font-extrabold">
               کنکور را خراب کردم، چیکار کنم؟
             </NuxtLink>
             <div class="flex items-center justify-between">
               <div class="flex items-center gap-4">
                 <NuxtLink class="flex items-center gap-2">
-                  <img src="~/assets/images/avatar.png" alt="writer avatar" class="w-8 h-8 rounded-full object-cover">
-                  <span>پشتیبانی یولرنیت</span>
+                  <img src="~/assets/images/avatar.png" alt="writer avatar" class="w-6 md:w-8 h-6 md:h-8 rounded-full object-cover">
+                  <span class="text-xs md:text-base">پشتیبانی یولرنیت</span>
                 </NuxtLink>
-                <button class="flex items-center gap-2 px-2 py-1 bg-[#FF3F3F]/40 rounded-md text-[#FF6F6F]">
+                <button class="hidden md:flex items-center gap-2 px-2 py-1 bg-[#FF3F3F]/40 rounded-md text-[#FF6F6F]">
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M8.434 13.9393C8.196 14.0202 7.804 14.0202 7.566 13.9393C5.536 13.2719 1 10.4876 1 5.76854C1 3.68539 2.743 2 4.892 2C6.166 2 7.293 2.59326 8 3.51011C8.707 2.59326 9.841 2 11.108 2C13.257 2 15 3.68539 15 5.76854C15 10.4876 10.464 13.2719 8.434 13.9393Z" stroke="#FF6F6F" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
                   <span class="text-xs">4</span>
                 </button>
-                <div class="flex items-center gap-2 px-2 py-1 bg-[#3A6763]/40 rounded-md text-white">
+                <div class="hidden md:flex items-center gap-2 px-2 py-1 bg-[#3A6763]/40 rounded-md text-white">
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M5.33333 12.3333H5C2.33333 12.3333 1 11.6667 1 8.33333V5C1 2.33333 2.33333 1 5 1H10.3333C13 1 14.3333 2.33333 14.3333 5V8.33333C14.3333 11 13 12.3333 10.3333 12.3333H10C9.79333 12.3333 9.59333 12.4333 9.46667 12.6L8.46667 13.9333C8.02667 14.52 7.30667 14.52 6.86667 13.9333L5.86667 12.6C5.76 12.4533 5.51333 12.3333 5.33333 12.3333Z" stroke="#79DFD6" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M4.33301 5H10.9997" stroke="#79DFD6" stroke-linecap="round" stroke-linejoin="round"/>
@@ -548,22 +548,22 @@
                   <span class="text-xs">2</span>
                 </div>
               </div>
-              <div class="flex items-center gap-2 px-4 py-2 rounded-md bg-[#FAFAFA]/10">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <div class="flex items-center gap-2 px-2 md:px-4 py-1 md:py-2 rounded-md bg-[#FAFAFA]/10">
+                <svg class="w-3 md:w-4" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <g opacity="0.7">
                     <path d="M13.8332 8.83333C13.8332 12.0533 11.2198 14.6667 7.99984 14.6667C4.77984 14.6667 2.1665 12.0533 2.1665 8.83333C2.1665 5.61333 4.77984 3 7.99984 3C11.2198 3 13.8332 5.61333 13.8332 8.83333Z" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M8 5.33398V8.66732" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M6 1.33398H10" stroke="white" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
                   </g>
                 </svg>
-                <span class="text-xs opacity-70">زمان مطالعه: 11 دقیقه</span>
+                <span class="text-[10px] md:text-xs opacity-70">زمان مطالعه: 11 دقیقه</span>
               </div>
             </div>
           </div>
           <img src="~/assets/images/blog-banner.png" alt="blog banner" class="absolute z-0 inset-0 w-full h-full object-cover">
           <div class="absolute z-[1] bg-gradient-to-b from-black/0 from-50% to-black/50 inset-0"></div>
         </div>
-        <div class="flex items-end relative rounded-2xl overflow-hidden" v-for="i in 3">
+        <div class="flex items-end relative rounded-lg md:rounded-2xl overflow-hidden aspect-video" v-for="i in 3">
           <div class="flex flex-col z-[2] w-full p-3 2xl:p-6 space-y-3">
             <NuxtLink class="font-bold text-sm 2xl:text-base">
               کنکور را خراب کردم، چیکار کنم؟
@@ -617,19 +617,22 @@
   </section>
 
   <section class="my-52">
-    <div class="container mx-auto h-[170px] bg-gradient-to-r from-[#FF03D1] to-[#FF5900] flex items-center rounded-3xl ">
-      <div class="w-full flex items-center relative justify-between px-10">
-        <img src="~/assets/images/insta.png" alt="instagram" class="absolute right-10 -bottom-1/2 w-[250px]">
-        <div class="flex flex-col mr-[400px] space-y-3">
-          <span class="text-4xl font-black">یولرنیت رو در اینستاگرام دنبال کنید!</span>
-          <span class="text-2xl">کلی پست و مطالب جالب و نکات آموزنده هم اونجا قرار میدیم!</span>
+    <div class="container mx-auto bg-gradient-to-r from-[#FF03D1] to-[#FF5900] flex items-center lg:rounded-3xl ">
+      <div class="w-full flex items-center relative justify-between lg:px-10 lg:py-5">
+        <div class="flex-1"></div>
+        <img src="~/assets/images/insta.png" alt="instagram" class="w-[150px] lg:w-[250px] -translate-y-10 translate-x-5 rotate-12 absolute">
+        <div class="w-2/3 lg:w-3/4 mr-auto flex flex-col lg:flex-row items-center justify-between gap-4 py-5">
+          <div class="flex flex-col gap-3">
+            <span class="md:text-lg lg:text-4xl font-black text-center lg:text-right">یولرنیت رو در اینستاگرام دنبال کنید!</span>
+            <span class="text-xs opacity-70 md:text-sm lg:text-2xl text-center lg:text-right">کلی پست و مطالب جالب و نکات آموزنده هم اونجا قرار میدیم!</span>
+          </div>
+          <button class="bg-white w-full md:w-max md:px-10 py-3 rounded-lg text-black flex items-center justify-center gap-2">
+            <span class="text-xs md:text-xl">اینستاگرام یولرنیت</span>
+            <svg class="w-3 md:w-6" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14.9998 20.4201L8.47984 13.9001C7.70984 13.1301 7.70984 11.8701 8.47984 11.1001L14.9998 4.58008" stroke="black" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
         </div>
-        <button class="bg-white px-10 py-3 rounded-lg text-black flex items-center gap-2">
-          <span class="text-xl">اینستاگرام یولرنیت</span>
-          <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M14.9998 20.4201L8.47984 13.9001C7.70984 13.1301 7.70984 11.8701 8.47984 11.1001L14.9998 4.58008" stroke="black" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
       </div>
     </div>
   </section>

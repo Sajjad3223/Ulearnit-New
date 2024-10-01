@@ -5,19 +5,19 @@
 <template>
 <div class="py-20">
   <div class="flex flex-col container mx-auto gap-10">
-    <div class="w-full flex items-center justify-between">
-      <div class="flex flex-col gap-4 w-1/2 z-[2]">
-        <div class="flex flex-col items-start gap-10">
-          <div class="flex items-start gap-4">
-            <img src="~/assets/images/unity-logo.png" alt="unity" class="max-w-16 rounded-xl">
-            <h2 class="text-5xl font-extrabold">
+    <div class="w-full flex flex-col lg:flex-row items-center gap-20 lg:gap-0">
+      <div class="flex flex-col gap-4 lg:w-1/2 z-[2]">
+        <div class="flex flex-col items-start gap-5 md:gap-10">
+          <div class="flex items-center gap-4">
+            <img src="~/assets/images/unity-logo.png" alt="unity" class="max-w-10 md:max-w-16 rounded-xl">
+            <h2 class="text-xl lg:text-5xl font-extrabold">
               پک جامع آموزش بازی سازی موبایل
             </h2>
           </div>
-          <p class="text-2xl opacity-70">
+          <p class="text-xs md:text-base lg:text-2xl opacity-70">
             توی این پک صفر تا صد بازی سازی برای Android رو یاد میگیری، این پک با موتور بازی سازی یونیتی تهیه شده و از صفر تا خروجی گرفتن و انتشار بازی توی مارکت های ایرانی و خارجی مثل بازار و Google Play رو بررسی کردیم
           </p>
-          <div class="flex items-end gap-5">
+          <div class="hidden lg:flex items-end gap-5">
             <button class="relative w-max flex items-center justify-center group">
               <svg width="224" height="73" viewBox="0 0 224 73" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M223 72V6.96777H25.9942L6.96875 25.1299V72H223Z" stroke="white" stroke-opacity="0.2"/>
@@ -48,39 +48,58 @@
           </div>
         </div>
       </div>
-      <div class="flex-1 relative flex items-center">
+      <div class="flex-1 w-full relative flex items-center">
         <div class="absolute translate-x-1/2 -z-[2] blur-[200px] w-[480px] h-[360px] rotate-[-23deg] bg-[#791791]"></div>
-        <div class="flex items-center relative mr-auto">
-          <img src="~/assets/images/img_6.png" alt="banner" class="absolute left-0 -translate-y-10 aspect-video max-w-[500px] rounded-2xl border border-white/20 -rotate-6 object-cover " >
-          <img src="~/assets/images/img_6.png" alt="banner" class="absolute left-0 rotate-12 translate-x-1/3 aspect-video max-w-[500px] rounded-2xl border border-white/20 object-cover " >
-          <img src="~/assets/images/img_6.png" alt="banner" class="absolute left-0 translate-x-[12%] translate-y-12 aspect-video max-w-[500px] rounded-2xl border border-white/20 -rotate-12 object-cover " >
+        <div class="flex items-center justify-center relative mx-auto">
+          <img src="~/assets/images/img_6.png" alt="banner" class="left-0 -translate-y-4 md:-translate-y-10 aspect-video w-full max-w-[300px] md:max-w-[500px] rounded-md md:rounded-2xl border border-white/20 -rotate-6 object-cover " >
+          <img src="~/assets/images/img_6.png" alt="banner" class="absolute left-0 rotate-6 md:rotate-12 lg:translate-x-1/3 aspect-video w-full max-w-[300px] md:max-w-[500px] rounded-md md:rounded-2xl border border-white/20 object-cover " >
+          <img src="~/assets/images/img_6.png" alt="banner" class="absolute left-0 lg:translate-x-[12%] translate-y-5 md:translate-y-12 aspect-video w-full max-w-[300px] md:max-w-[500px] rounded-md md:rounded-2xl border border-white/20 -rotate-12 object-cover " >
         </div>
       </div>
+      <div class="flex flex-col md:flex-row lg:hidden gap-5 self-start w-full mt-5 md:mt-10 items-center">
+        <div class="flex items-center gap-4">
+          <div class="flex items-center gap-1 bg-[#046BEC]/20 rounded-lg p-2">
+            <svg width="18" height="22" viewBox="0 0 18 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g opacity="0.5">
+                <path d="M17 6V16C17 20 16 21 12 21H6C2 21 1 20 1 16V6C1 2 2 1 6 1H12C16 1 17 2 17 6Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M11 4.5H7" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M8.99995 18.1C9.85599 18.1 10.55 17.406 10.55 16.55C10.55 15.694 9.85599 15 8.99995 15C8.14391 15 7.44995 15.694 7.44995 16.55C7.44995 17.406 8.14391 18.1 8.99995 18.1Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </g>
+            </svg>
+            <span class="text-sm font-extrabold opacity-70">موبایل</span>
+          </div>
+          <div class="flex items-center gap-1 bg-[#046BEC]/20 rounded-lg p-2">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g opacity="0.5">
+                <path d="M13.01 2.92031L18.91 5.54031C20.61 6.29031 20.61 7.53031 18.91 8.28031L13.01 10.9003C12.34 11.2003 11.24 11.2003 10.57 10.9003L4.67002 8.28031C2.97002 7.53031 2.97002 6.29031 4.67002 5.54031L10.57 2.92031C11.24 2.62031 12.34 2.62031 13.01 2.92031Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M3 11C3 11.84 3.63 12.81 4.4 13.15L11.19 16.17C11.71 16.4 12.3 16.4 12.81 16.17L19.6 13.15C20.37 12.81 21 11.84 21 11" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M3 16C3 16.93 3.55 17.77 4.4 18.15L11.19 21.17C11.71 21.4 12.3 21.4 12.81 21.17L19.6 18.15C20.45 17.77 21 16.93 21 16" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </g>
+            </svg>
+            <span class="text-sm font-extrabold opacity-70">شامل 3 دوره</span>
+          </div>
+        </div>
+        <button class="w-max flex-1 self-center flex items-center justify-center group bg-[#046BEC] text-white py-4 px-10 rounded-md">
+          مشاهده پک
+        </button>
+      </div>
     </div>
-    <svg width="1524" height="1" viewBox="0 0 1524 1" fill="none" xmlns="http://www.w3.org/2000/svg" class="my-20">
+    <svg width="1524" height="1" viewBox="0 0 1524 1" fill="none" xmlns="http://www.w3.org/2000/svg" class="my-10 lg:my-20">
       <line opacity="0.3" x1="1524" y1="0.5" y2="0.5" stroke="white" stroke-dasharray="16 16"/>
     </svg>
-    <div class="w-full flex items-center justify-between">
-      <div class="flex-1 relative flex items-center">
-        <div class="absolute -translate-x-full -z-[2] blur-[200px] w-[480px] h-[360px] rotate-[-23deg] bg-[#791791]"></div>
-        <div class="flex items-center relative mx-auto min-w-[400px]">
-          <img src="~/assets/images/img_6.png" alt="banner" class="absolute -right-0 -translate-y-10 aspect-video max-w-[500px] rounded-2xl border border-white/20 -rotate-6 object-cover " >
-          <img src="~/assets/images/img_6.png" alt="banner" class="absolute -right-0 rotate-6 translate-x-1/3 aspect-video max-w-[500px] rounded-2xl border border-white/20 object-cover " >
-          <img src="~/assets/images/img_6.png" alt="banner" class="absolute -right-0 translate-x-[12%] translate-y-12 aspect-video max-w-[500px] rounded-2xl border border-white/20 -rotate-6 object-cover " >
-        </div>
-      </div>
-      <div class="flex flex-col gap-4 w-1/2 z-[2]">
+    <div class="w-full flex flex-col lg:flex-row items-center gap-20 lg:gap-0">
+      <div class="flex flex-col gap-4 lg:w-1/2 z-[2]">
         <div class="flex flex-col items-start gap-10">
-          <div class="flex items-start gap-4">
-            <img src="~/assets/images/unity-logo.png" alt="unity" class="max-w-16 rounded-xl">
-            <h2 class="text-5xl font-extrabold">
+          <div class="flex items-center gap-4">
+            <img src="~/assets/images/unity-logo.png" alt="unity" class="max-w-10 md:max-w-16 rounded-xl">
+            <h2 class="text-xl lg:text-5xl font-extrabold">
               پک جامع آموزش بازی سازی موبایل
             </h2>
           </div>
-          <p class="text-2xl opacity-70">
+          <p class="text-xs md:text-base lg:text-2xl opacity-70">
             توی این پک صفر تا صد بازی سازی برای Android رو یاد میگیری، این پک با موتور بازی سازی یونیتی تهیه شده و از صفر تا خروجی گرفتن و انتشار بازی توی مارکت های ایرانی و خارجی مثل بازار و Google Play رو بررسی کردیم
           </p>
-          <div class="flex items-end gap-5">
+          <div class="hidden lg:flex items-end gap-5">
             <button class="relative w-max flex items-center justify-center group">
               <svg width="224" height="73" viewBox="0 0 224 73" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M223 72V6.96777H25.9942L6.96875 25.1299V72H223Z" stroke="white" stroke-opacity="0.2"/>
@@ -111,8 +130,43 @@
           </div>
         </div>
       </div>
+      <div class="flex-1 w-full relative flex items-center">
+        <div class="absolute translate-x-1/2 -z-[2] blur-[200px] w-[480px] h-[360px] rotate-[-23deg] bg-[#791791]"></div>
+        <div class="flex items-center justify-center relative mx-auto">
+          <img src="~/assets/images/img_6.png" alt="banner" class="left-0 -translate-y-4 md:-translate-y-10 aspect-video w-full max-w-[300px] md:max-w-[500px] rounded-md md:rounded-2xl border border-white/20 -rotate-6 object-cover " >
+          <img src="~/assets/images/img_6.png" alt="banner" class="absolute left-0 rotate-6 md:rotate-12 lg:translate-x-1/3 aspect-video w-full max-w-[300px] md:max-w-[500px] rounded-md md:rounded-2xl border border-white/20 object-cover " >
+          <img src="~/assets/images/img_6.png" alt="banner" class="absolute left-0 lg:translate-x-[12%] translate-y-5 md:translate-y-12 aspect-video w-full max-w-[300px] md:max-w-[500px] rounded-md md:rounded-2xl border border-white/20 -rotate-12 object-cover " >
+        </div>
+      </div>
+      <div class="flex flex-col md:flex-row lg:hidden gap-5 self-start w-full mt-5 md:mt-10 items-center">
+        <div class="flex items-center gap-4">
+          <div class="flex items-center gap-1 bg-[#046BEC]/20 rounded-lg p-2">
+            <svg width="18" height="22" viewBox="0 0 18 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g opacity="0.5">
+                <path d="M17 6V16C17 20 16 21 12 21H6C2 21 1 20 1 16V6C1 2 2 1 6 1H12C16 1 17 2 17 6Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M11 4.5H7" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M8.99995 18.1C9.85599 18.1 10.55 17.406 10.55 16.55C10.55 15.694 9.85599 15 8.99995 15C8.14391 15 7.44995 15.694 7.44995 16.55C7.44995 17.406 8.14391 18.1 8.99995 18.1Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </g>
+            </svg>
+            <span class="text-sm font-extrabold opacity-70">موبایل</span>
+          </div>
+          <div class="flex items-center gap-1 bg-[#046BEC]/20 rounded-lg p-2">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g opacity="0.5">
+                <path d="M13.01 2.92031L18.91 5.54031C20.61 6.29031 20.61 7.53031 18.91 8.28031L13.01 10.9003C12.34 11.2003 11.24 11.2003 10.57 10.9003L4.67002 8.28031C2.97002 7.53031 2.97002 6.29031 4.67002 5.54031L10.57 2.92031C11.24 2.62031 12.34 2.62031 13.01 2.92031Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M3 11C3 11.84 3.63 12.81 4.4 13.15L11.19 16.17C11.71 16.4 12.3 16.4 12.81 16.17L19.6 13.15C20.37 12.81 21 11.84 21 11" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M3 16C3 16.93 3.55 17.77 4.4 18.15L11.19 21.17C11.71 21.4 12.3 21.4 12.81 21.17L19.6 18.15C20.45 17.77 21 16.93 21 16" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </g>
+            </svg>
+            <span class="text-sm font-extrabold opacity-70">شامل 3 دوره</span>
+          </div>
+        </div>
+        <button class="w-max flex-1 self-center flex items-center justify-center group bg-[#046BEC] text-white py-4 px-10 rounded-md">
+          مشاهده پک
+        </button>
+      </div>
     </div>
-    <svg width="1524" height="1" viewBox="0 0 1524 1" fill="none" xmlns="http://www.w3.org/2000/svg" class="my-20">
+    <svg width="1524" height="1" viewBox="0 0 1524 1" fill="none" xmlns="http://www.w3.org/2000/svg" class="my-10 lg:my-20">
       <line opacity="0.3" x1="1524" y1="0.5" y2="0.5" stroke="white" stroke-dasharray="16 16"/>
     </svg>
   </div>
@@ -124,12 +178,12 @@
           <path d="M13.8008 19.3401L41.609 3.28499V35.3952L13.8008 19.3401Z" fill="#046BEC"/>
           <path opacity="0.5" d="M0 19.3401L27.8082 3.28499L27.8082 35.3952L0 19.3401Z" fill="#046BEC"/>
         </svg>
-        <h2>دوره های آموزشی یولرنیت</h2>
+        <h2 class="text-xl md:text-3xl font-semibold">دوره های آموزشی یولرنیت</h2>
       </div>
-      <span>اینجا شروع یه ماجراجویی تازس، قراره رویاهاتو بسازی!</span>
+      <span class="text-xs md:text-base">اینجا شروع یه ماجراجویی تازس، قراره رویاهاتو بسازی!</span>
     </div>
-    <div class="flex gap-10">
-      <div class="w-[23%] h-full flex flex-col px-5 py-8 border rounded-2xl border-white/20 gap-5">
+    <div class="flex flex-col lg:flex-row gap-10">
+      <div class="lg:w-[23%] h-full flex flex-col px-5 py-8 border rounded-2xl border-white/20 gap-5">
         <div class="flex flex-col gap-4">
           <div class="flex items-center gap-2">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -172,7 +226,7 @@
       </div>
       <div class="flex-1 flex flex-col gap-5">
         <div class="flex items-center gap-6">
-          <div class="flex items-center gap-2">
+          <div class="hidden md:flex items-center gap-2">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g opacity="0.5">
                 <path d="M19.9 13.5H4.1C2.6 13.5 2 14.14 2 15.73V19.77C2 21.36 2.6 22 4.1 22H19.9C21.4 22 22 21.36 22 19.77V15.73C22 14.14 21.4 13.5 19.9 13.5Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -181,17 +235,17 @@
             </svg>
             <strong>مرتب سازی:</strong>
           </div>
-          <div class="flex items-center gap-4">
-            <span class="font-black text-[#046BEC]">پرفروش ترین</span>
+          <div class="flex items-center gap-4 text-xs md:text-base">
+            <span class="font-black px-2 lg:px-4 py-1 rounded-md bg-[#046BEC]/20 text-[#046BEC]">پرفروش ترین</span>
             <span class="font-light">جدید ترین</span>
             <span class="font-light">قدیمی ترین</span>
             <span class="font-light">در حال ضبط</span>
           </div>
         </div>
-        <div class="grid grid-cols-3 gap-5">
-          <div class="relative flex flex-col bg-[#080F1F] border border-white/20 rounded-xl" v-for="i in 9" :key="i">
-            <NuxtLink to="/">
-              <img src="~/assets/images/img_6.png" alt="banner" class="aspect-video object-cover w-full rounded-t-3xl h-full">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div class="relative flex flex-col bg-[#080F1F] rounded-xl" v-for="i in 9" :key="i">
+            <NuxtLink to="/course/slug" class="p-2 shadow-md">
+              <img src="~/assets/images/img_6.png" alt="banner" class="aspect-video object-cover w-full rounded-lg h-full border border-white/20" style="box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5)">
             </NuxtLink>
             <div class="flex py-4 px-6 flex-col gap-3">
               <div class="flex flex-col">
@@ -221,7 +275,7 @@
                     <span class="text-xs">02:22:45</span>
                   </div>
                 </div>
-                <div class="bg-[#046BEC] flex items-center px-2 py-1 rounded-lg text-xs font-light absolute left-4 top-4">
+                <div class="bg-[#046BEC]/20 text-[#7BB0F2] flex items-center px-2 py-1 rounded text-xs font-light absolute left-4 top-4">
                   <span class="translate-y-0.5">20%</span>
                 </div>
                 <div class="flex flex-col items-end">
