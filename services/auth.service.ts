@@ -1,8 +1,8 @@
-import {RegisterViewModel} from "~/models/auth/registerViewModel";
+import type {RegisterViewModel} from "~/models/auth/registerViewModel";
 import {FetchApi} from "~/utilities/CustomFetchApi";
-import {ApiResponse} from "~/models/ApiResponse";
-import {LoginViewModel} from "~/models/auth/loginViewModel";
-import {LoginResultDto} from "~/models/auth/loginResultDto";
+import type {ApiResponse} from "~/models/ApiResponse";
+import type {LoginViewModel} from "~/models/auth/loginViewModel";
+import type {LoginResultDto} from "~/models/auth/loginResultDto";
 
 export function RegisterUser(command:RegisterViewModel) : Promise<ApiResponse<undefined>>{
     //@ts-ignore

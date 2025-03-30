@@ -1,41 +1,41 @@
 <template>
 <footer class="bg-[#070B15] py-14 mt-10">
   <div class="lg:hidden fixed inset-x-0 bottom-0 py-5 bg-black/20 rounded-t-2xl backdrop-blur-md z-20 border-t border-white/20 flex items-center justify-center" style="box-shadow: 0 -5px 7px 0 rgba(0,0,50,0.3)">
-    <div class="flex w-full items-center justify-around [&>div>span]:hidden">
-      <div class="flex flex-col md:flex-row items-center gap-1 md:gap-2">
+    <div class="flex w-full items-center justify-around [&>a>span]:hidden">
+      <NuxtLink to="/" class="flex flex-col md:flex-row items-center gap-1 md:gap-2" exact-active-class="text-indigo-500">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path fill="#046BEC77" d="M10.07 2.82L3.14002 8.37C2.36002 8.99 1.86002 10.3 2.03002 11.28L3.36002 19.24C3.60002 20.66 4.96002 21.81 6.40002 21.81H17.6C19.03 21.81 20.4 20.65 20.64 19.24L21.97 11.28C22.13 10.3 21.63 8.99 20.86 8.37L13.93 2.83C12.86 1.97 11.13 1.97 10.07 2.82Z" stroke="#046BEC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M12 18V15" stroke="#046BEC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M10.07 2.82L3.14002 8.37C2.36002 8.99 1.86002 10.3 2.03002 11.28L3.36002 19.24C3.60002 20.66 4.96002 21.81 6.40002 21.81H17.6C19.03 21.81 20.4 20.65 20.64 19.24L21.97 11.28C22.13 10.3 21.63 8.99 20.86 8.37L13.93 2.83C12.86 1.97 11.13 1.97 10.07 2.82Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M12 18V15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
         <span class="text-[10px] font-light">خانه</span>
-      </div>
-      <div class="flex flex-col md:flex-row items-center gap-1 md:gap-2">
+      </NuxtLink>
+      <NuxtLink to="/courses" class="flex flex-col md:flex-row items-center gap-1 md:gap-2" exact-active-class="text-indigo-500">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M21.6601 10.44L20.6801 14.62C19.8401 18.23 18.1801 19.69 15.0601 19.39C14.5601 19.35 14.0201 19.26 13.4401 19.12L11.7601 18.72C7.59006 17.73 6.30006 15.67 7.28006 11.49L8.26006 7.30001C8.46006 6.45001 8.70006 5.71001 9.00006 5.10001C10.1701 2.68001 12.1601 2.03001 15.5001 2.82001L17.1701 3.21001C21.3601 4.19001 22.6401 6.26001 21.6601 10.44Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M15.06 19.39C14.44 19.81 13.66 20.16 12.71 20.47L11.13 20.99C7.15998 22.27 5.06997 21.2 3.77997 17.23L2.49997 13.28C1.21997 9.31001 2.27997 7.21001 6.24997 5.93001L7.82997 5.41001C8.23997 5.28001 8.62997 5.17001 8.99997 5.10001C8.69997 5.71001 8.45997 6.45001 8.25997 7.30001L7.27997 11.49C6.29997 15.67 7.58998 17.73 11.76 18.72L13.44 19.12C14.02 19.26 14.56 19.35 15.06 19.39Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M12.64 8.53L17.49 9.76" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M11.66 12.4L14.56 13.14" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M21.6601 10.44L20.6801 14.62C19.8401 18.23 18.1801 19.69 15.0601 19.39C14.5601 19.35 14.0201 19.26 13.4401 19.12L11.7601 18.72C7.59006 17.73 6.30006 15.67 7.28006 11.49L8.26006 7.30001C8.46006 6.45001 8.70006 5.71001 9.00006 5.10001C10.1701 2.68001 12.1601 2.03001 15.5001 2.82001L17.1701 3.21001C21.3601 4.19001 22.6401 6.26001 21.6601 10.44Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M15.06 19.39C14.44 19.81 13.66 20.16 12.71 20.47L11.13 20.99C7.15998 22.27 5.06997 21.2 3.77997 17.23L2.49997 13.28C1.21997 9.31001 2.27997 7.21001 6.24997 5.93001L7.82997 5.41001C8.23997 5.28001 8.62997 5.17001 8.99997 5.10001C8.69997 5.71001 8.45997 6.45001 8.25997 7.30001L7.27997 11.49C6.29997 15.67 7.58998 17.73 11.76 18.72L13.44 19.12C14.02 19.26 14.56 19.35 15.06 19.39Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M12.64 8.53L17.49 9.76" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M11.66 12.4L14.56 13.14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
         <span class="text-[10px] font-light">دوره ها</span>
-      </div>
-      <div class="flex flex-col md:flex-row items-center gap-1 md:gap-2">
+      </NuxtLink>
+      <NuxtLink to="/cart" class="flex flex-col md:flex-row items-center gap-1 md:gap-2" exact-active-class="text-indigo-500">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M8.81 2L5.19 5.63" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M15.19 2L18.81 5.63" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M2 7.85001C2 6.00001 2.99 5.85001 4.22 5.85001H19.78C21.01 5.85001 22 6.00001 22 7.85001C22 10 21.01 9.85001 19.78 9.85001H4.22C2.99 9.85001 2 10 2 7.85001Z" stroke="white" stroke-width="1.5"/>
-          <path d="M9.76001 14V17.55" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-          <path d="M14.36 14V17.55" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-          <path d="M3.5 10L4.91 18.64C5.23 20.58 6 22 8.86 22H14.89C18 22 18.46 20.64 18.82 18.76L20.5 10" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M8.81 2L5.19 5.63" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M15.19 2L18.81 5.63" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M2 7.85001C2 6.00001 2.99 5.85001 4.22 5.85001H19.78C21.01 5.85001 22 6.00001 22 7.85001C22 10 21.01 9.85001 19.78 9.85001H4.22C2.99 9.85001 2 10 2 7.85001Z" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M9.76001 14V17.55" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M14.36 14V17.55" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M3.5 10L4.91 18.64C5.23 20.58 6 22 8.86 22H14.89C18 22 18.46 20.64 18.82 18.76L20.5 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
         </svg>
         <span class="text-[10px] font-light">سبد خرید</span>
-      </div>
-      <div class="flex flex-col md:flex-row items-center gap-1 md:gap-2">
+      </NuxtLink>
+      <NuxtLink :to="authStore.isLoggedIn ? '/profile' : '/auth'" class="flex flex-col md:flex-row items-center gap-1 md:gap-2" exact-active-class="text-indigo-500">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M20.5899 22C20.5899 18.13 16.7399 15 11.9999 15C7.25991 15 3.40991 18.13 3.40991 22" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M20.5899 22C20.5899 18.13 16.7399 15 11.9999 15C7.25991 15 3.40991 18.13 3.40991 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
         <span class="text-[10px] font-light">حساب کاربری</span>
-      </div>
+      </NuxtLink>
     </div>
   </div>
   <div class="pb-10 lg:pb-0 container mx-auto flex flex-col gap-5 md:gap-12">
@@ -194,5 +194,5 @@
 </template>
 
 <script setup lang="ts">
-
+const authStore = useAuthStore();
 </script>

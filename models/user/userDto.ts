@@ -1,7 +1,6 @@
-export interface UserDto {
-    id: Number;
-    creationDate: Date;
-    isActive: boolean;
+import type {BaseDto} from "~/models/baseDto";
+
+export interface UserDto extends BaseDto{
     firstName: string;
     lastName: string;
     fullName: string;

@@ -1,8 +1,8 @@
-import {CreateTicketCommand} from "~/models/ticket/createTicketCommand";
-import {ApiResponse} from "~/models/ApiResponse";
+import type {CreateTicketCommand} from "~/models/ticket/createTicketCommand";
+import type {ApiResponse} from "~/models/ApiResponse";
 import {FetchApi} from "~/utilities/CustomFetchApi";
-import {TicketDto, TicketFilterParams, TicketFilterResult} from "~/models/ticket/ticketDto";
-import {SendTicketMessageCommand} from "~/models/ticket/sendTicketMessageCommand";
+import type {TicketDto, TicketFilterParams, TicketFilterResult} from "~/models/ticket/ticketDto";
+import type {SendTicketMessageCommand} from "~/models/ticket/sendTicketMessageCommand";
 
 export function CreateTicket(command:CreateTicketCommand):Promise<ApiResponse<number>>{
     // @ts-ignore

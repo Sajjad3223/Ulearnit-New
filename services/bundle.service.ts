@@ -1,10 +1,10 @@
-import {BundleFilterParams, BundleFilterResult} from "~/models/bundle/bundleFilterResult";
-import {ApiResponse} from "~/models/ApiResponse";
+import type {BundleFilterParams, BundleFilterResult} from "~/models/bundle/bundleFilterResult";
+import type {ApiResponse} from "~/models/ApiResponse";
 import {FetchApi} from "~/utilities/CustomFetchApi";
-import {BundleDto} from "~/models/bundle/bundleDto";
-import {CreateBundleCommand} from "~/models/bundle/createBundleCommand";
-import {AddBundleItemCommand} from "~/models/bundle/addBundleItemCommand";
-import {EditBundleCommand} from "~/models/bundle/editBundleCommand";
+import type {BundleDto} from "~/models/bundle/bundleDto";
+import type {CreateBundleCommand} from "~/models/bundle/createBundleCommand";
+import type {AddBundleItemCommand} from "~/models/bundle/addBundleItemCommand";
+import type {EditBundleCommand} from "~/models/bundle/editBundleCommand";
 
 export function GetBundlesByFilter(filterParams:BundleFilterParams):Promise<ApiResponse<BundleFilterResult>>{
     //@ts-ignore

@@ -1,10 +1,10 @@
-import {ApiResponse} from "~/models/ApiResponse";
+import type {ApiResponse} from "~/models/ApiResponse";
 import {FetchApi} from "~/utilities/CustomFetchApi";
-import {QuestionFilterParams, QuestionFilterResult} from "~/models/question/questionFilterParams";
-import {QuestionDto} from "~/models/question/questionDto";
-import {AddQuestionViewModel} from "~/models/question/addQuestionViewModel";
-import {AddAnswerViewModel} from "~/models/question/addAnswerViewModel";
-import {ReactToQuestionViewModel} from "~/models/question/reactToQuestionViewModel";
+import type {QuestionFilterParams, QuestionFilterResult} from "~/models/question/questionFilterParams";
+import type {QuestionDto} from "~/models/question/questionDto";
+import type {AddQuestionViewModel} from "~/models/question/addQuestionViewModel";
+import type {AddAnswerViewModel} from "~/models/question/addAnswerViewModel";
+import type {ReactToQuestionViewModel} from "~/models/question/reactToQuestionViewModel";
 
 export function GetQuestions(filterParams:QuestionFilterParams):Promise<ApiResponse<QuestionFilterResult>>{
    //@ts-ignore

@@ -1,6 +1,6 @@
-import {ApiResponse} from "~/models/ApiResponse";
+import type {ApiResponse} from "~/models/ApiResponse";
 import {FetchApi} from "~/utilities/CustomFetchApi";
-import {UserPanelPendingsViewModel} from "~/models/user/userPanelPendingsViewModel";
+import type {UserPanelPendingsViewModel} from "~/models/user/userPanelPendingsViewModel";
 
 export function GetUserPanelPendings():Promise<ApiResponse<UserPanelPendingsViewModel>>{
     //@ts-ignore

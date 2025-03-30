@@ -4,8 +4,8 @@
       <h4 class="text-4xl font-bold">
         راه های <span class="text-primary">ارتـــباطی</span>
       </h4>
-      <div class="container mx-auto flex flex-col lg:flex-row gap-5 lg:gap-0">
-        <div class="min-w-[35%] flex flex-col bg-white rounded-2xl p-5 gap-8 items-center">
+      <div class="container lg:w-1/2 mx-auto flex flex-col lg:flex-row gap-5 lg:gap-0">
+        <div class="lg:w-1/2 flex flex-col bg-white rounded-2xl p-5 gap-8 items-center">
           <h2 class="text-xl lg:text-2xl text-black font-semibold">فرم تماس با ما</h2>
           <form action="" class="grid md:grid-cols-2 gap-4 w-full text-black">
             <input type="text" class="p-3 text-sm w-full rounded-md bg-black/5 focus:outline-black/10" placeholder="نام و نام خانوادگی">

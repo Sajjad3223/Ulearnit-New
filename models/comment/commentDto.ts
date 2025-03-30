@@ -7,6 +7,8 @@ export interface CommentFilterData {
     parentId: number;
     postId: number;
     postType: EPostType;
+    postTitle:string;
+    postSlug:string;
     text: string;
     sender: SenderDto;
     commentStatus: ECommentStatus;
@@ -25,9 +27,9 @@ export interface SenderDto {
 }
 
 export enum ECommentStatus {
-    Pending,
-    Active,
-    Rejected
+    در_انتظار_تایید,
+    تایید_شده,
+    رد_شده
 }
 
 export enum EPostType {

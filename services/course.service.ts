@@ -1,21 +1,21 @@
-import {ApiResponse} from "~/models/ApiResponse";
+import type {ApiResponse} from "~/models/ApiResponse";
 import {FetchApi} from "~/utilities/CustomFetchApi";
-import {CreateCourseViewModel} from "~/models/course/createCourseViewModel";
-import {CourseDto, EpisodeDto, SectionForSelectDto} from "~/models/course/courseDto";
-import {CreateSectionViewModel} from "~/models/course/createSectionViewModel";
-import {CreateEpisodeViewModel} from "~/models/course/createEpisodeViewModel";
-import {EditCourseViewModel} from "~/models/course/editCourseViewModel";
-import {EditSectionViewModel} from "~/models/course/editSectionViewModel";
-import {EditEpisodeViewModel} from "~/models/course/editEpisodeViewModel";
-import {
+import type {CreateCourseViewModel} from "~/models/course/createCourseViewModel";
+import type {CourseDto, EpisodeDto, SectionForSelectDto} from "~/models/course/courseDto";
+import type {CreateSectionViewModel} from "~/models/course/createSectionViewModel";
+import type {CreateEpisodeViewModel} from "~/models/course/createEpisodeViewModel";
+import type {EditCourseViewModel} from "~/models/course/editCourseViewModel";
+import type {EditSectionViewModel} from "~/models/course/editSectionViewModel";
+import type {EditEpisodeViewModel} from "~/models/course/editEpisodeViewModel";
+import type {
     CourseFilterParams,
     CourseFilterResult, EpisodeFilterParams, EpisodeFilterResult,
     SectionFilterParams,
     SectionFilterResult
 } from "~/models/course/courseSearchResultDto";
-import {FavoriteDto} from "~/models/favoriteDto";
-import {SetDiscountViewModel} from "~/models/course/setDiscountViewModel";
-import {CourseStudentsFilterParams, UserCoursesFilterParams, UserFilterResult} from "~/models/user/userFilterParams";
+import type {FavoriteDto} from "~/models/favoriteDto";
+import type {SetDiscountViewModel} from "~/models/course/setDiscountViewModel";
+import type {CourseStudentsFilterParams, UserCoursesFilterParams, UserFilterResult} from "~/models/user/userFilterParams";
 
 export function GetCourses():Promise<ApiResponse<CourseDto>>{
     //@ts-ignore
@@ -174,6 +174,12 @@ export function GetEpisodeVideoFile(token:string):Promise<any>{
 export function GetEpisodeAttachmentFile(token:string):Promise<any>{
     //@ts-ignore
     return FetchApi(`/Course/GetEpisodeAttachFile?token=${token}`,{
+        method:'GET',
+    });
+}
+export function GetEpisodeAttachment(token:string):Promise<ApiResponse<string>>{
+    //@ts-ignore
+    return FetchApi(`/Course/GetEpisodeAttachment?token=${token}`,{
         method:'GET',
     });
 }

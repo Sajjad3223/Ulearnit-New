@@ -1,0 +1,28 @@
+<script setup lang="ts">
+
+const router = useRouter();
+
+const props = defineProps<{
+  clickFn?:Function
+}>()
+
+const callback = ()=>{
+  if(props.clickFn)
+    props.clickFn();
+  else
+    router.back();
+}
+</script>
+
+<template>
+  <button @click="callback" class="text-xs font-light mb-4 w-max flex items-center gap-1 border px-3 py-1.5 border-white/30 hover:border-white/40 transition-colors duration-300 rounded-lg text-white/70">
+    <svg class="w-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M8.90991 19.92L15.4299 13.4C16.1999 12.63 16.1999 11.37 15.4299 10.6L8.90991 4.08" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <span>بازگشت</span>
+  </button>
+</template>
+
+<style scoped>
+
+</style>

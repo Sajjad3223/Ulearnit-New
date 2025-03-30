@@ -1,11 +1,10 @@
-import {ApiResponse} from "~/models/ApiResponse";
-import {UserDto} from "~/models/user/userDto";
-import {EditUserViewModel} from "~/models/user/editUserViewModel";
 import {FetchApi} from "~/utilities/CustomFetchApi";
-import {ChangePasswordViewModel} from "~/models/user/changePasswordViewModel";
-import {SetUserRolesCommand} from "~/models/user/setUserRolesCommand";
-import {ChargeWalletViewModel} from "~/models/user/ChargeWalletViewModel";
-import {WalletFilterParams, WalletFilterResult} from "~/models/user/walletFilterResult";
+import type {ApiResponse} from "~/models/ApiResponse";
+import type {UserDto} from "~/models/user/userDto";
+import type {EditUserViewModel} from "~/models/user/editUserViewModel";
+import type {ChangePasswordViewModel} from "~/models/user/changePasswordViewModel";
+import type {ChargeWalletViewModel} from "~/models/user/ChargeWalletViewModel";
+import type {WalletFilterParams, WalletFilterResult} from "~/models/user/walletFilterResult";
 
 
 export function GetCurrentUser():Promise<ApiResponse<UserDto>>{

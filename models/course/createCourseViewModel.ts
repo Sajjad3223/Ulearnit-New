@@ -7,12 +7,12 @@ export interface CreateCourseViewModel {
     slug: string;
     description: string;
     categoryId: number;
-    subCategoryId: number;
-    imageName: string;
-    introVideo: string;
+    subCategoryId?: number | null;
+    imageName: string | null;
+    introVideo: string | null;
     courseLevel: ECourseLevel;
     seoData: SeoData;
-    price: number;
+    price: number | null;
     tags: string;
     requirements: string;
 }

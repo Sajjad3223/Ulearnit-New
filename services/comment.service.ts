@@ -1,13 +1,20 @@
 import {FetchApi} from "~/utilities/CustomFetchApi";
-import {CommentFilterParams} from "~/models/comment/commentFilterParams";
-import {CommentFilterResult} from "~/models/comment/commentDto";
-import {ApiResponse} from "~/models/ApiResponse";
-import {SendCommentViewModel} from "~/models/comment/sendCommentViewModel";
-import {ReactToCommentViewModel} from "~/models/comment/reactToCommentViewModel";
+import type {CommentFilterParams} from "~/models/comment/commentFilterParams";
+import type {CommentFilterResult} from "~/models/comment/commentDto";
+import type {ApiResponse} from "~/models/ApiResponse";
+import type {SendCommentViewModel} from "~/models/comment/sendCommentViewModel";
+import type {ReactToCommentViewModel} from "~/models/comment/reactToCommentViewModel";
 
 export function GetComments(FilterParams:CommentFilterParams):Promise<ApiResponse<CommentFilterResult>>{
    //@ts-ignore
     return FetchApi('/Comment',{
+        method:'GET',
+        params:FilterParams
+    });
+}
+export function GetUserComments(FilterParams:CommentFilterParams):Promise<ApiResponse<CommentFilterResult>>{
+   //@ts-ignore
+    return FetchApi('/Comment/user',{
         method:'GET',
         params:FilterParams
     });

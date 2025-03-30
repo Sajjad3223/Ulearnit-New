@@ -1,0 +1,2 @@
+export const requiredError = (fieldName:string)=> `وارد کردن ${fieldName}  ضروری است`;
+export const minError = (fieldName:string,minAmount:number)=> `${fieldName} باید بیشتر از ${minAmount.toLocaleString()} باشد`;

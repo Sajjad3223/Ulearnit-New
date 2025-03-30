@@ -1,10 +1,10 @@
-import {PostDto} from "~/models/blog/postDto";
-import {ApiResponse} from "~/models/ApiResponse";
+import type {PostDto} from "~/models/blog/postDto";
+import type {ApiResponse} from "~/models/ApiResponse";
 import {FetchApi} from "~/utilities/CustomFetchApi";
-import {CreatePostViewModel} from "~/models/blog/createPostViewModel";
-import {RegisterWriterViewModel} from "~/models/blog/registerWriterViewModel";
-import {EditPostViewModel} from "~/models/blog/editPostViewModel";
-import {PostFilterParams, PostFilterResult} from "~/models/post/postFilterData";
+import type {CreatePostViewModel} from "~/models/blog/createPostViewModel";
+import type {RegisterWriterViewModel} from "~/models/blog/registerWriterViewModel";
+import type {EditPostViewModel} from "~/models/blog/editPostViewModel";
+import type {PostFilterParams, PostFilterResult} from "~/models/post/postFilterData";
 
 export function AmIWriter():Promise<ApiResponse<boolean>>{
     //@ts-ignore

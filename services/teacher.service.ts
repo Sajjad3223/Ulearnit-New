@@ -1,7 +1,6 @@
-import {ApiResponse} from "~/models/ApiResponse";
+import type {ApiResponse} from "~/models/ApiResponse";
 import {FetchApi} from "~/utilities/CustomFetchApi";
-import {MasterDto, MasterFilterParams, MasterFilterResult} from "~/models/master/MasterDto";
-import FormData from "form-data";
+import type {MasterDto, MasterFilterParams, MasterFilterResult} from "~/models/master/MasterDto";
 
 export function RegisterMaster(registerData:FormData):Promise<ApiResponse<undefined>>{
     //@ts-ignore

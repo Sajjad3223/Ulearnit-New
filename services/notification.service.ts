@@ -1,6 +1,6 @@
-import {ApiResponse} from "~/models/ApiResponse";
+import type {ApiResponse} from "~/models/ApiResponse";
 import {FetchApi} from "~/utilities/CustomFetchApi";
-import {NotificationFilterParams, NotificationFilterResult} from "~/models/notification/notificationDto";
+import type {NotificationFilterParams, NotificationFilterResult} from "~/models/notification/notificationDto";
 
 export function GetUserNotifications(filterParams:NotificationFilterParams):Promise<ApiResponse<NotificationFilterResult>>{
     //@ts-ignore

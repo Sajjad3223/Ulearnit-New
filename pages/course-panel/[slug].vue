@@ -2,18 +2,23 @@
   <div>
       <!--  Behind Poster   -->
       <div class="absolute inset-x-0 h-auto top-0 -z-10 grid place-items-center">
-        <img src="~/assets/images/unity-banner.png" alt="unity banner" class="w-full h-full max-h-screen object-cover opacity-50">
+        <img :src="`${ApiUrl}/temp/files/${course.imageName}`" alt="unity banner" class="w-full h-full max-h-screen object-cover opacity-50">
       </div>
       <!--  Main Content   -->
       <div class="w-full mt-24">
         <div class="container mx-auto">
           <!--  Course Name   -->
-          <h2 class="text-2xl md:text-5xl font-bold">نام دوره انتخاب شده</h2>
+          <h2 class="text-2xl md:text-5xl font-bold">{{ course.title }}</h2>
           <!--  Episode Player   -->
           <div class="flex flex-col lg:flex-row items-start gap-16 mt-10">
             <main class="flex-1 flex flex-col">
               <div class="relative grid place-items-center">
-                <img src="~/assets/images/course-preview.png" alt=""/>
+                <video ref="videoPlayer" controls class="rounded-2xl aspect-video object-cover" :poster="`${ApiUrl}/temp/files/${course.imageName}`">
+                  <source :src="currentVideo" >
+                </video>
+                <div v-if="loading" class="bg-black/10 backdrop-blur absolute inset-0 z-10 rounded-2xl grid place-items-center">
+                  <ULoading width="100px" />
+                </div>
                 <button class="absolute lg:bottom-16 lg:left-16">
                   <svg class="w-[100px]" opacity="0.6" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g filter="url(#filter0_b_1716_298)">
@@ -37,14 +42,13 @@
                 </button>
               </div>
               <!--  Episode Details   -->
-              <div class="flex flex-col space-y-5 mt-8">
-                <div class="flex items-center justify-between w-full">
-                  <span class="text-indigo-500">قسمت اول</span>
-                  <span> 03:56:05</span>
-                </div>
-                <div class="flex flex-col lg:flex-row lg:items-center justify-between w-full gap-4">
-                  <strong class="text-2xl">مبانی شخصیت سازی</strong>
-                  <div class="flex items-center gap-4 self-end lg:self-auto">
+              <div class="flex flex-col gap-5 mt-8">
+                <div class="flex flex-col lg:flex-row items-start justify-between w-full gap-4">
+                  <div class="flex flex-col gap-2">
+                    <strong class="text-2xl">{{ currentEpisode.title }}</strong>
+                    <span>{{currentEpisode.time}}</span>
+                  </div>
+                  <div class="flex items-center gap-4">
                     <button class="flex items-center gap-1 px-3 py-1 bg-indigo-400/10 rounded-md text-indigo-400">
                       <span>20</span>
                       <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -69,14 +73,14 @@
                   </div>
                 </div>
                 <div class="lg:flex grid grid-cols-2 items-center lg:mr-auto gap-4">
-                  <button class="p-3 rounded-md w-full lg:w-max text-white bg-[#222E49] flex items-center justify-center gap-2 text-xs">
+                  <button v-if="currentEpisode.hasAttachment" class="p-3 rounded-md w-full lg:w-max text-white bg-[#222E49] flex items-center justify-center gap-2 text-xs">
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M11.332 15.1663H4.66536C1.72536 15.1663 0.832031 14.273 0.832031 11.333V4.66634C0.832031 1.72634 1.72536 0.833008 4.66536 0.833008H5.66536C6.83203 0.833008 7.1987 1.21301 7.66536 1.83301L8.66536 3.16634C8.88536 3.45967 8.9187 3.49967 9.33203 3.49967H11.332C14.272 3.49967 15.1654 4.39301 15.1654 7.33301V11.333C15.1654 14.273 14.272 15.1663 11.332 15.1663ZM4.66536 1.83301C2.2787 1.83301 1.83203 2.28634 1.83203 4.66634V11.333C1.83203 13.713 2.2787 14.1663 4.66536 14.1663H11.332C13.7187 14.1663 14.1654 13.713 14.1654 11.333V7.33301C14.1654 4.95301 13.7187 4.49967 11.332 4.49967H9.33203C8.4787 4.49967 8.1987 4.20634 7.86536 3.76634L6.86536 2.43301C6.5187 1.97301 6.41203 1.83301 5.66536 1.83301H4.66536Z" fill="white"/>
                       <path d="M13.332 4.75301C13.0587 4.75301 12.832 4.52634 12.832 4.25301V3.33301C12.832 2.27967 12.3854 1.83301 11.332 1.83301H5.33203C5.0587 1.83301 4.83203 1.60634 4.83203 1.33301C4.83203 1.05967 5.0587 0.833008 5.33203 0.833008H11.332C12.9454 0.833008 13.832 1.71967 13.832 3.33301V4.25301C13.832 4.52634 13.6054 4.75301 13.332 4.75301Z" fill="white"/>
                     </svg>
                     <span>دانلود فایل ضمیمه</span>
                   </button>
-                  <button class="p-3 rounded-md w-full lg:w-max text-white bg-indigo-600 flex items-center justify-center gap-2 text-xs">
+                  <button @click="downloadEpisode" class="p-3 rounded-md w-full lg:w-max text-white bg-indigo-600 flex items-center justify-center gap-2 text-xs">
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M9.9987 15.1663H5.9987C2.3787 15.1663 0.832031 13.6197 0.832031 9.99967V5.99967C0.832031 2.37967 2.3787 0.833008 5.9987 0.833008H9.9987C13.6187 0.833008 15.1654 2.37967 15.1654 5.99967V9.99967C15.1654 13.6197 13.6187 15.1663 9.9987 15.1663ZM5.9987 1.83301C2.92536 1.83301 1.83203 2.92634 1.83203 5.99967V9.99967C1.83203 13.073 2.92536 14.1663 5.9987 14.1663H9.9987C13.072 14.1663 14.1654 13.073 14.1654 9.99967V5.99967C14.1654 2.92634 13.072 1.83301 9.9987 1.83301H5.9987Z" fill="white"/>
                       <path d="M8.00029 10.1731C7.87362 10.1731 7.74695 10.1265 7.64695 10.0265L5.64695 8.02647C5.45362 7.83314 5.45362 7.51314 5.64695 7.3198C5.84029 7.12647 6.16028 7.12647 6.35362 7.3198L8.00029 8.96647L9.64695 7.3198C9.84029 7.12647 10.1603 7.12647 10.3536 7.3198C10.547 7.51314 10.547 7.83314 10.3536 8.02647L8.35362 10.0265C8.25362 10.1265 8.12695 10.1731 8.00029 10.1731Z" fill="white"/>
@@ -118,7 +122,7 @@
             <!--  Sidebar Content   -->
             <aside class="lg:w-1/4 flex flex-col space-y-6">
               <!--  ProgressBars  -->
-              <div class="w-full flex flex-col gap-4">
+              <div v-if="course.userHasCourse" class="w-full flex flex-col gap-4">
                 <div class="w-full flex flex-col gap-2">
                   <div class="flex items-end justify-between">
                     <div class="flex items-center gap-1">
@@ -148,11 +152,26 @@
                   </div>
                 </div>
               </div>
-
+              <div v-else class="w-fll flex flex-col gap-4 p-4 rounded-lg bg-[#111723]">
+                <span class="border border-yellow-500 rounded-md text-yellow-500 py-3 text-xs text-center">شما دانشجوی این دوره نیستید!</span>
+                <div class="flex items-center justify-between">
+                  <span class="text-sm opacity-70">
+                    قیمت دوره
+                  </span>
+                  <BasePrice :price="course.totalPrice" />
+                </div>
+                <UButton w-full @click="signCourse">
+                  برای ثبت نام کلیک کنید
+                </UButton>
+              </div>
               <!--  Seasons and Episodes   -->
               <div class="flex flex-col relative rounded-xl">
+                <div class="flex items-center gap-1">
+                  <strong>لیست ویدئو ها:</strong>
+                  <span class="font-light text-sm">( {{getTotalEpisodesCount()}} ویدئو)</span>
+                </div>
                 <ul>
-                  <course-season v-for="i in 4" />
+                  <course-season v-for="section in course.sections" :section="section" :key="section.id" :userHasCourse="course.userHasCourse" @episodeSelected="showOnline" />
                 </ul>
               </div>
               <!--  Course Teacher   -->
@@ -164,7 +183,7 @@
                   <div class="flex flex-col items-start ">
                     <small class="font-thin">مدرس دوره</small>
                     <NuxtLink class="flex items-center gap-2">
-                      <strong class="text-lg">سجاد میرشبی</strong>
+                      <strong class="text-lg">{{ course.teacher.user.fullName }}</strong>
                       <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path opacity="0.9" d="M5 1L1 5L5 9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                       </svg>
@@ -172,7 +191,7 @@
                   </div>
                 </div>
                 <p class="text-justify font-thin text-sm">
-                  بیش از 4 سال هست که به عنوان یک برنامه نویس در حوزه بازی سازی و طراحی سایت مشغول به کار هستم، بین موتور های بازی سازی بیشتر به آنریل انجین مسلطم و زبان های ++C و #C و همچنین به 3 تفنگدار حوزه وب یعنی HTML CSS و Java Script هم مسلطم. امیدوارم بتونم دانش خودم رو با شما دوستان خوبم به اشتراک بزارم و قدری زکات آموخته های خودم رو ادا کنم.
+                  {{course.teacher.user.description}}
                 </p>
               </div>
             </aside>
@@ -184,36 +203,61 @@
 
 <script setup lang="ts">
 
+import {GetCourseBySlug, GetEpisodeVideo} from "~/services/course.service";
+import type {CourseDto, EpisodeDto} from "~/models/course/courseDto";
+import {ApiUrl} from "~/utilities/ApiUrls";
+import {EItemType} from "~/models/cart/addToCartViewModel";
+import {createElement} from "@ckeditor/ckeditor5-utils";
 
-const expandSeason = ($event:any)=>{
-  const season = $event.target.parentElement;
-  const details = season.querySelector(".details");
-  if(!details.classList.contains("expanded")) {
-    const seasons = document.querySelectorAll("#episodes .details");
-    seasons.forEach(s => {
-      if (s.classList.contains('expanded')) {
-        s.classList.remove('expanded');
-        const expander = s.parentElement.querySelector('.season-expander');
-        expander.classList.toggle('border-transparent');
-        expander.classList.toggle('border-indigo-500');
-        const arrow = expander.querySelector("svg.arrow");
-        arrow.classList.toggle('-rotate-90');
-      }
-    })
+const route = useRoute();
+const slug = route.params.slug;
+const {data,pending} = await useAsyncData('GetCourse',()=>GetCourseBySlug(slug));
+const course:Ref<CourseDto> = ref(data.value?.data!);
+
+useHead({
+  title:'پنل دوره ' + course.value.title
+})
+
+const getTotalEpisodesCount = () => {
+  return course.value.sections.reduce((accumulator, currentValue) => {
+    accumulator += currentValue.episodes.length;
+    return accumulator;
+  }, 0)
+}
+
+const currentEpisode:Ref<EpisodeDto | null> = ref(course.value.sections[0].episodes[0]);
+const currentVideo:Ref<string | null> = ref(`${ApiUrl}/temp/files/${course.value.introVideo}`);
+const loading = ref(false);
+const videoPlayer = ref();
+
+const showOnline = async (episode:EpisodeDto)=>{
+  loading.value = true;
+  const result = await GetEpisodeVideo(episode.token);
+  if(result.isSuccess){
+    currentEpisode.value = episode;
+    const source = document.createElement('source');
+    source.setAttribute('src',`${ApiUrl}/temp/files/${result.data}`);
+    source.setAttribute('type', 'video/mp4');
+
+    videoPlayer.value.innerHTML = '';
+    videoPlayer.value.appendChild(source);
+    videoPlayer.value.src = `${ApiUrl}/temp/files/${result.data}`;
+    videoPlayer.value.play();
   }
-  const arrow = season.querySelector("div svg.arrow");
-  $event.target.classList.toggle('border-transparent');
-  $event.target.classList.toggle('border-indigo-500');
-  details.classList.toggle('expanded');
-  arrow.classList.toggle('-rotate-90');
+  loading.value = false;
 }
-const expandEpisode = ($event:any)=>{
-  const episode = $event.target.parentElement;
-  const details = episode.querySelector(".episode-details");
-  episode.classList.toggle('episode-shadow');
-  episode.classList.toggle('border-b');
-  details.classList.toggle('episode-expanded');
+
+const router = useRouter();
+const toast = useToast();
+const cartStore = useCartStore();
+const signCourse = async ()=>{
+  const result = await cartStore.addToCart({itemType:EItemType.Course,itemId:course.value.id,count:1});
+  if(result){
+    toast.showToast('دوره با موفقیت به سبد خرید اضافه شد!');
+    await router.push('/cart');
+  }
 }
+
 </script>
 
 <style >

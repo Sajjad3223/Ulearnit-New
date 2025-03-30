@@ -2,7 +2,7 @@ import type {BaseFilterParams} from "~/models/baseFilterParams";
 import type {BaseFilterResult} from "~/models/baseFilterResult";
 
 export interface UserFilterParams extends BaseFilterParams {
-    search: string | null;
+    search: string | null | undefined;
     phoneNumber: string | null | undefined;
     email: string | null | undefined;
     id: number | null | undefined;
@@ -13,8 +13,8 @@ export interface CourseStudentsFilterParams extends BaseFilterParams {
 }
 
 export interface UserCoursesFilterParams extends BaseFilterParams {
-    search: string | null;
-    userId: number | null;
+    search: string | null | undefined;
+    userId: number | null | undefined;
 }
 
 export interface UserFilterData {

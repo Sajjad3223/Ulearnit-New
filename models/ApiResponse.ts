@@ -6,10 +6,10 @@ export interface ApiResponse<TData> {
 
 export interface MetaData {
     message: string;
-    appStatusCode: AppStatusCode;
+    appStatusCode: ApiStatusCode;
 }
 
-export enum AppStatusCode {
+export enum ApiStatusCode {
     Success = 1,
     NotFound,
     BadRequest,

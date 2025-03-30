@@ -1,11 +1,11 @@
-import {ApiResponse} from "~/models/ApiResponse";
+import type {ApiResponse} from "~/models/ApiResponse";
 import {FetchApi} from "~/utilities/CustomFetchApi";
-import {QuizFilterParams, QuizFilterResult} from "~/models/quiz/quizFilterData";
-import {InsertQuizViewModel} from "~/models/quiz/commands/insertQuizViewModel";
-import {QuizForStudentDto} from "~/models/quiz/quizDto";
-import {InsertQuizResultViewModel, SignQuizResultViewModel} from "~/models/quiz/commands/insertQuizResultViewModel";
-import {QuizResultFilterParams} from "~/models/quiz/quizResultFilterData";
-import {QuizResultDto} from "~/models/quiz/quizResultDto";
+import type {QuizFilterParams, QuizFilterResult} from "~/models/quiz/quizFilterData";
+import type {InsertQuizViewModel} from "~/models/quiz/commands/insertQuizViewModel";
+import type {QuizForStudentDto} from "~/models/quiz/quizDto";
+import type {InsertQuizResultViewModel, SignQuizResultViewModel} from "~/models/quiz/commands/insertQuizResultViewModel";
+import type {QuizResultFilterParams} from "~/models/quiz/quizResultFilterData";
+import type {QuizResultDto} from "~/models/quiz/quizResultDto";
 
 export function GetQuizzes(filterParams:QuizFilterParams):Promise<ApiResponse<QuizFilterResult>>{
     //@ts-ignore

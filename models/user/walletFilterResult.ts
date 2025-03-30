@@ -12,8 +12,8 @@ export interface WalletDto extends BaseDto {
 }
 
 export enum EWalletType {
-    Deposit,
-    Withdraw
+    واریز,
+    برداشت
 }
 
 export interface WalletFilterParams extends BaseFilterParams {

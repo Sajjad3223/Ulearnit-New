@@ -4,11 +4,23 @@ import type {ECourseLevel, ECourseStatus} from "~/models/course/courseEnums";
 import type {EpisodeDto, SectionDto} from "~/models/course/courseDto";
 
 export interface CourseFilterParams extends BaseFilterParams {
-    search: string | null;
-    categorySlug: string | null;
-    priceFilter: number | null;
-    orderFilter: number | null;
-    requirement: string | null;
+    search?: string | null | undefined;
+    categorySlug?: string | null | undefined;
+    priceFilter?: EPriceFilter | null | undefined;
+    orderFilter?: EOrderFilter | null | undefined;
+    requirement?: string | null | undefined;
+}
+
+export enum EPriceFilter{
+    نقدی,
+    رایگان,
+    همه
+}
+
+export enum EOrderFilter{
+    تاریخ,
+    قیمت,
+    بازدید
 }
 
 export interface SectionFilterParams extends BaseFilterParams {
@@ -30,6 +42,7 @@ export interface CourseCardDto {
     courseLevel: ECourseLevel;
     courseStatus: ECourseStatus;
     episodesCount: number;
+    studentsCount: number;
     price: number;
     discount: number;
     totalPrice: number;

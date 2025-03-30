@@ -1,10 +1,6 @@
-<script setup lang="ts">
-
-</script>
-
 <template>
 <div class="py-20">
-  <div class="flex flex-col container mx-auto gap-10">
+  <div v-if="false" class="flex flex-col container mx-auto gap-10">
     <div class="w-full flex flex-col lg:flex-row items-center gap-20 lg:gap-0">
       <div class="flex flex-col gap-4 lg:w-1/2 z-[2]">
         <div class="flex flex-col items-start gap-5 md:gap-10">
@@ -183,7 +179,7 @@
       <span class="text-xs md:text-base">اینجا شروع یه ماجراجویی تازس، قراره رویاهاتو بسازی!</span>
     </div>
     <div class="flex flex-col lg:flex-row gap-10">
-      <div class="lg:w-[23%] h-full flex flex-col px-5 py-8 border rounded-2xl border-white/20 gap-5">
+      <div class="lg:w-[23%] h-full flex flex-col px-5 py-8 border rounded-lg lg:rounded-2xl border-white/20 gap-5">
         <div class="flex flex-col gap-4">
           <div class="flex items-center gap-2">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -195,15 +191,7 @@
             <strong>جستجو در نتایج</strong>
           </div>
           <div class="relative w-full flex items-center">
-            <input type="text" class="p-4 w-full bg-[#010205] border rounded-xl border-white/30" placeholder="عبارت جستجو ...">
-            <button class="bg-[#046BEC] p-2 absolute left-4 rounded-xl">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g opacity="0.5">
-                  <path d="M11.5 21C16.7467 21 21 16.7467 21 11.5C21 6.25329 16.7467 2 11.5 2C6.25329 2 2 6.25329 2 11.5C2 16.7467 6.25329 21 11.5 21Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M22 22L20 20" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </g>
-              </svg>
-            </button>
+            <input type="text" class="p-4 w-full bg-[#010205] border rounded-xl border-white/30" @change="(e)=>filterParams.search = e.target.value" placeholder="عبارت جستجو ...">
           </div>
         </div>
         <svg width="313" height="1" viewBox="0 0 313 1" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -220,13 +208,13 @@
             <strong>هزینه دوره</strong>
           </div>
           <div class="relative w-full flex items-center">
-
+            <BaseRadioToggle :options="EPriceFilter" v-model="filterParams.priceFilter" name="priceFilter" />
           </div>
         </div>
       </div>
       <div class="flex-1 flex flex-col gap-5">
-        <div class="flex items-center gap-6">
-          <div class="hidden md:flex items-center gap-2">
+        <div class="flex flex-col lg:flex-row lg:items-center gap-6 ">
+          <div class="flex w-max items-center gap-2">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g opacity="0.5">
                 <path d="M19.9 13.5H4.1C2.6 13.5 2 14.14 2 15.73V19.77C2 21.36 2.6 22 4.1 22H19.9C21.4 22 22 21.36 22 19.77V15.73C22 14.14 21.4 13.5 19.9 13.5Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -235,68 +223,29 @@
             </svg>
             <strong>مرتب سازی:</strong>
           </div>
-          <div class="flex items-center gap-4 text-xs md:text-base">
-            <span class="font-black px-2 lg:px-4 py-1 rounded-md bg-[#046BEC]/20 text-[#046BEC]">پرفروش ترین</span>
-            <span class="font-light">جدید ترین</span>
-            <span class="font-light">قدیمی ترین</span>
-            <span class="font-light">در حال ضبط</span>
-          </div>
+          <BaseRadioToggle :options="EOrderFilter" v-model="filterParams.orderFilter" name="filterBy" transparent />
         </div>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-          <div class="relative flex flex-col bg-[#080F1F] rounded-xl" v-for="i in 9" :key="i">
-            <NuxtLink to="/course/slug" class="p-2 shadow-md">
-              <img src="~/assets/images/img_6.png" alt="banner" class="aspect-video object-cover w-full rounded-lg h-full border border-white/20" style="box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5)">
-            </NuxtLink>
-            <div class="flex py-4 px-6 flex-col gap-3">
-              <div class="flex flex-col">
-                <NuxtLink class="font-extrabold text-xl">
-                  دوره آموزش ++C در آنریل انجین
-                </NuxtLink>
-              </div>
-              <p class="opacity-70 font-light text-sm">
-                دوره آموزش Next.js به شما کمک می‌کند SSR را برای React به سادگی راه‌اندازی کنید و یک وبسایت با سئو مناسب با React بوجود آورید.
-              </p>
-              <div class="flex items-center justify-between">
-                <div class="flex flex-col gap-2">
-                  <div class="flex items-center gap-1">
-                    <svg class="w-4" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <g opacity="0.7">
-                        <path d="M8.00008 7.99967C9.84103 7.99967 11.3334 6.50729 11.3334 4.66634C11.3334 2.82539 9.84103 1.33301 8.00008 1.33301C6.15913 1.33301 4.66675 2.82539 4.66675 4.66634C4.66675 6.50729 6.15913 7.99967 8.00008 7.99967Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M13.7268 14.6667C13.7268 12.0867 11.1601 10 8.0001 10C4.8401 10 2.27344 12.0867 2.27344 14.6667" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                      </g>
-                    </svg>
-                    <span class="text-xs">سجاد میرشبی</span>
-                  </div>
-                  <div class="flex items-center gap-1">
-                    <svg class="w-4" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M11.5 6C11.5 8.76 9.26 11 6.5 11C3.74 11 1.5 8.76 1.5 6C1.5 3.24 3.74 1 6.5 1C9.26 1 11.5 3.24 11.5 6Z" stroke="white" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"/>
-                      <path d="M8.35494 7.59085L6.80494 6.66585C6.53494 6.50585 6.31494 6.12085 6.31494 5.80585V3.75586" stroke="white" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    <span class="text-xs">02:22:45</span>
-                  </div>
-                </div>
-                <div class="bg-[#046BEC]/20 text-[#7BB0F2] flex items-center px-2 py-1 rounded text-xs font-light absolute left-4 top-4">
-                  <span class="translate-y-0.5">20%</span>
-                </div>
-                <div class="flex flex-col items-end">
-                  <div class="flex items-center gap-1 opacity-50">
-                    <span class="font-light text-sm line-through">599,000</span>
-                    <span class="text-[10px] font-light opacity-0 leading-[0.8]">تـــــو <br> مان</span>
-                  </div>
-                  <div class="flex items-center gap-1">
-                    <span class="font-extrabold text-xl">499,000</span>
-                    <span class="text-[10px] font-light leading-[0.8]">تـــــو <br> مان</span>
-                  </div>
-                </div>
-              </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5" v-if="!loading">
+          <UCourseCard v-for="course in courses" :key="course.id" :course="course" />
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5" v-else>
+          <div class="w-full flex flex-col min-h-[400px] skeleton bg-slate-900 rounded-xl p-4 justify-between" v-for="i in filterParams.take" :key="i">
+            <div class="flex h-1/2 w-full rounded-md skeleton-el"></div>
+            <div class="flex h-4 w-full rounded-full skeleton-el"></div>
+            <div class="flex flex-col gap-2 w-full">
+              <div class="flex h-2 w-full rounded-full skeleton-el"></div>
+              <div class="flex h-2 w-full rounded-full skeleton-el"></div>
+              <div class="flex h-2 w-1/2 rounded-full skeleton-el"></div>
             </div>
-            <hr class="opacity-20">
-            <NuxtLink to="/" class="flex items-center gap-2 text-[#046BEC] py-4 justify-center hover:text-white transition-colors duration-300">
-              <span>مشاهده دوره</span>
-              <svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="scale-75">
-                <path d="M8.99984 16.9201L2.47984 10.4001C1.70984 9.63008 1.70984 8.37008 2.47984 7.60008L8.99984 1.08008" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </NuxtLink>
+            <div class="flex items-end justify-between w-full">
+              <div class="flex flex-col w-full gap-2">
+                <div class="flex h-3 w-1/2 rounded-full skeleton-el"></div>
+                <div class="flex h-3 w-1/3 rounded-full skeleton-el"></div>
+              </div>
+              <div class="flex h-4 w-1/2 rounded-full skeleton-el"></div>
+            </div>
+            <hr class="opacity-10 -mx-4">
+            <div class="flex self-center h-2 w-1/2 rounded-full skeleton-el"></div>
           </div>
         </div>
       </div>
@@ -306,6 +255,44 @@
 </div>
 </template>
 
-<style scoped>
+<script setup lang="ts">
+import {
+  type CourseCardDto,
+  type CourseFilterParams,
+  EOrderFilter,
+  EPriceFilter
+} from "~/models/course/courseSearchResultDto";
+import {GetCourseFilter} from "~/services/course.service";
+useHead({
+  title:'دوره های آموزشی'
+})
 
-</style>
+const courses:Ref<CourseCardDto[]> = ref([]);
+const loading = ref(false);
+
+const pageId = ref(1);
+const filterParams:CourseFilterParams = reactive({
+  pageId: pageId.value,
+  take:9,
+  search:undefined,
+  priceFilter:EPriceFilter.همه,
+})
+watch(
+    filterParams,
+    async ()=>await getData()
+)
+
+onMounted(async ()=>{
+  await getData();
+})
+
+const getData = async ()=>{
+  filterParams.pageId = pageId.value;
+  loading.value = true;
+  const result = await GetCourseFilter(filterParams);
+  if(result.isSuccess){
+    courses.value = result.data?.data ?? [];
+  }
+  loading.value = false;
+}
+</script>

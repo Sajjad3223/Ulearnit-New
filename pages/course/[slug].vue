@@ -1,26 +1,28 @@
 <template>
 <div>
-  <div class="hidden absolute inset-x-0 h-full lg:h-auto top-0 -z-10 lg:grid place-items-center">
-    <img src="~/assets/images/unity-banner.png" alt="unity banner" class="w-full h-full max-h-screen object-cover">
-    <div class="absolute inset-0" style="background-image: linear-gradient(180deg, rgba(9, 13, 22, 0) 0%, rgba(9,13,22,0.5) 90%);">
+  <div class="hidden absolute inset-x-0 h-full lg:h-auto top-0 lg:grid place-items-center pointer-events-none">
+    <div class="relative w-full h-full max-h-screen pointer-events-none -z-[1]">
+      <img :src="`${ApiUrl}/temp/files/${course.imageName}`" alt="unity banner" class="max-h-screen w-full object-cover opacity-50 pointer-events-none">
+      <div class="absolute inset-0 pointer-events-none" style="background-image: linear-gradient(180deg, rgba(9, 13, 22, 0) 70%, rgba(9,13,22,1) 100%);">
+      </div>
     </div>
-    <div class="absolute bottom-24 lg:bottom-12 lg:right-[10vw] flex flex-col items-center lg:items-start gap-5 md:gap-8">
-      <h2 class="text-3xl md:text-5xl font-black">نام دوره انتخاب شده</h2>
-      <span class="md:text-lg font-light">دوره جامع یونیتی شخصیت سازی</span>
+    <div class="absolute bottom-24 z-20 lg:bottom-12 lg:right-[10vw] flex flex-col items-center lg:items-start gap-5 md:gap-8">
+      <h2 class="text-3xl md:text-5xl font-black">{{ course.title }}</h2>
+      <span class="md:text-lg font-light">{{ course.title }}</span>
       <div class="flex flex-col md:flex-row items-center gap-8">
         <div class="flex items-center gap-2">
           <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M8.48924 10.8701C5.74968 10.8701 3.41016 11.2843 3.41016 12.9432C3.41016 14.602 5.73484 15.0311 8.48924 15.0311C11.2288 15.0311 13.5677 14.6162 13.5677 12.958C13.5677 11.2998 11.2436 10.8701 8.48924 10.8701Z" stroke="#D9D9D9" stroke-linecap="round" stroke-linejoin="round"/>
             <path fill-rule="evenodd" clip-rule="evenodd" d="M8.48905 8.50376C10.2869 8.50376 11.744 7.04594 11.744 5.24812C11.744 3.45031 10.2869 1.99316 8.48905 1.99316C6.69123 1.99316 5.23342 3.45031 5.23342 5.24812C5.22735 7.03987 6.67504 8.49769 8.46612 8.50376H8.48905Z" stroke="#D9D9D9" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
-          <span>سجاد میرشبی</span>
+          <span>{{ course.teacher.user.fullName }}</span>
         </div>
         <div class="flex items-center gap-2">
           <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M15.0524 8.50033C15.0524 12.1192 12.1192 15.0524 8.50033 15.0524C4.88145 15.0524 1.94824 12.1192 1.94824 8.50033C1.94824 4.88145 4.88145 1.94824 8.50033 1.94824C12.1192 1.94824 15.0524 4.88145 15.0524 8.50033Z" stroke="#D9D9D9" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M10.9312 10.5849L8.26074 8.99189V5.55859" stroke="#D9D9D9" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
-          <span>03:56:21</span>
+          <span>{{ course.time }}</span>
         </div>
         <a href="#episodes" class="flex items-center gap-2 px-2 py-1 rounded-lg bg-indigo-500">
           <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -29,7 +31,7 @@
             <path d="M7.96904 5.56803H6.01758" stroke="#D9D9D9" stroke-linecap="round" stroke-linejoin="round"/>
             <path fill-rule="evenodd" clip-rule="evenodd" d="M11.2682 1.94824C11.2682 1.94824 5.83029 1.95108 5.82179 1.95108C3.86679 1.96312 2.65625 3.24945 2.65625 5.21153V11.7254C2.65625 13.6974 3.876 14.9887 5.848 14.9887C5.848 14.9887 11.2852 14.9865 11.2944 14.9865C13.2494 14.9745 14.4606 13.6875 14.4606 11.7254V5.21153C14.4606 3.23953 13.2402 1.94824 11.2682 1.94824Z" stroke="#D9D9D9" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
-          <span>5 قسمت</span>
+          <span>{{ getTotalEpisodesCount() }} قسمت</span>
           <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path opacity="0.9" d="M1 1L5 5L9 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
@@ -38,17 +40,17 @@
     </div>
   </div>
   <div class="lg:hidden container mx-auto mt-10 flex flex-col gap-8">
-    <img src="~/assets/images/unity-banner.png" alt="unity banner" class="w-full rounded-lg border border-white/30">
+    <img :src="`${ApiUrl}/temp/files/${course.imageName}`" alt="unity banner" class="w-full rounded-lg border border-white/30">
     <div class="flex flex-col items-center gap-5 md:gap-8">
-      <h2 class="text-3xl md:text-5xl font-black">نام دوره انتخاب شده</h2>
-      <span class="md:text-lg font-light">دوره جامع یونیتی شخصیت سازی</span>
+      <h2 class="text-3xl md:text-5xl font-black">{{ course.title }}</h2>
+      <span class="md:text-lg font-light">{{ course.title }}</span>
       <div class="flex flex-row items-center gap-6">
         <div class="flex items-center gap-2">
           <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M8.48924 10.8701C5.74968 10.8701 3.41016 11.2843 3.41016 12.9432C3.41016 14.602 5.73484 15.0311 8.48924 15.0311C11.2288 15.0311 13.5677 14.6162 13.5677 12.958C13.5677 11.2998 11.2436 10.8701 8.48924 10.8701Z" stroke="#D9D9D9" stroke-linecap="round" stroke-linejoin="round"/>
             <path fill-rule="evenodd" clip-rule="evenodd" d="M8.48905 8.50376C10.2869 8.50376 11.744 7.04594 11.744 5.24812C11.744 3.45031 10.2869 1.99316 8.48905 1.99316C6.69123 1.99316 5.23342 3.45031 5.23342 5.24812C5.22735 7.03987 6.67504 8.49769 8.46612 8.50376H8.48905Z" stroke="#D9D9D9" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
-          <span>سجاد میرشبی</span>
+          <span>{{ course.teacher.user.fullName }}</span>
         </div>
         <div class="w-px h-6 bg-white/20"></div>
         <div class="flex items-center gap-2">
@@ -56,7 +58,7 @@
             <path fill-rule="evenodd" clip-rule="evenodd" d="M15.0524 8.50033C15.0524 12.1192 12.1192 15.0524 8.50033 15.0524C4.88145 15.0524 1.94824 12.1192 1.94824 8.50033C1.94824 4.88145 4.88145 1.94824 8.50033 1.94824C12.1192 1.94824 15.0524 4.88145 15.0524 8.50033Z" stroke="#D9D9D9" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M10.9312 10.5849L8.26074 8.99189V5.55859" stroke="#D9D9D9" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
-          <span>03:56:21</span>
+          <span>{{ course.time }}</span>
         </div>
       </div>
     </div>
@@ -69,8 +71,10 @@
           <div class="flex flex-col w-full gap-4">
             <strong class="text-2xl">ویدئو معرفی دوره</strong>
             <div class="relative">
-              <img src="~/assets/images/course-preview.png" alt=""/>
-              <button class="absolute bottom-8 left-8">
+              <video controls class="rounded-2xl aspect-video object-cover" :poster="`${ApiUrl}/temp/files/${course.imageName}`">
+                <source :src="`${ApiUrl}/temp/files/${course.introVideo}`" >
+              </video>
+              <button class="hidden absolute bottom-16 left-8">
                 <svg width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <g filter="url(#filter0_b_1716_298)">
                     <circle cx="27.5" cy="27.5" r="27.5" fill="#D9D9D9" fill-opacity="0.4"/>
@@ -120,33 +124,52 @@
                 <path d="M12 2C6.49 2 2 6.49 2 12C2 17.51 6.49 22 12 22C17.51 22 22 17.51 22 12C22 6.49 17.51 2 12 2ZM11.25 8C11.25 7.59 11.59 7.25 12 7.25C12.41 7.25 12.75 7.59 12.75 8V13C12.75 13.41 12.41 13.75 12 13.75C11.59 13.75 11.25 13.41 11.25 13V8ZM12.92 16.38C12.87 16.51 12.8 16.61 12.71 16.71C12.61 16.8 12.5 16.87 12.38 16.92C12.26 16.97 12.13 17 12 17C11.87 17 11.74 16.97 11.62 16.92C11.5 16.87 11.39 16.8 11.29 16.71C11.2 16.61 11.13 16.51 11.08 16.38C11.03 16.26 11 16.13 11 16C11 15.87 11.03 15.74 11.08 15.62C11.13 15.5 11.2 15.39 11.29 15.29C11.39 15.2 11.5 15.13 11.62 15.08C11.86 14.98 12.14 14.98 12.38 15.08C12.5 15.13 12.61 15.2 12.71 15.29C12.8 15.39 12.87 15.5 12.92 15.62C12.97 15.74 13 15.87 13 16C13 16.13 12.97 16.26 12.92 16.38Z" fill="currentColor"/>
               </svg>
               <span>
-                برای اطلاع از ویژگی ها و محتوای دوره پیشنهاد میکنیم حتما ویدئوی تعریف دوره را مشاهده نمایید.
+                برای اطلاع از ویژگی ها و محتوای دوره پیشنهاد میکنیم حتما ویدئوی معرفی دوره را مشاهده نمایید.
               </span>
+            </div>
+            <div class="flex flex-col gap-5">
+              <BaseAccordion>
+                <div class="flex flex-col gap-3" v-html="course.description"></div>
+              </BaseAccordion>
+              <hr class="opacity-0">
+              <hr class="opacity-0">
+              <div class="flex flex-col gap-2">
+                <span class="text-sm opacity-70">پیش نیاز های دوره:</span>
+                <ul class="list-disc pr-4 text-lg flex flex-col gap-1">
+                  <li v-for="(requirement,i) in course.requirements" :key="i">{{requirement}}</li>
+                </ul>
+              </div>
+              <div class="flex flex-col gap-2">
+                <span class="text-sm opacity-70">برچسب ها:</span>
+                <ul class="flex flex-wrap gap-2">
+                  <li class="px-4 py-2 bg-slate-900 rounded-md text-xs" v-for="(tag,i) in course.tags" :key="i">{{tag}}</li>
+                </ul>
+              </div>
             </div>
           </div>
           <hr class="my-8 opacity-20">
           <ul id="episodes" class="flex flex-col space-y-5">
-            <li class="overflow-hidden" v-for="i in 5" :key="i">
+            <li class="overflow-hidden" v-for="section in course.sections" :key="section.id">
               <div class="season-expander border-transparent flex-wrap lg:flex-nowrap" @click="expandSeason"
                    style="box-shadow: 0 5px 20px rgba(7, 10, 17, 0.63);">
                 <strong class="pointer-events-none">
-                  فصل اول - ساخت چند شخصیت برای بازی
+                  {{ section.title }}
                 </strong>
-                <span class="bg-[#25324D] border border-[#25324D] pointer-events-none rounded-lg text-[10px] p-2">5 قسمت - 2 آزمون</span>
+                <span class="bg-[#25324D] border border-[#25324D] pointer-events-none rounded-lg text-[10px] p-2">{{ section.episodes.length }} قسمت - {{ section.sectionQuizzes.length }} آزمون</span>
                 <div class="mr-auto pointer-events-none">
-                  <span>03:56:05</span>
+                  <span>{{ section.time }}</span>
                 </div>
                 <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="arrow transition-transform duration-200 pointer-events-none">
                   <path opacity="0.9" d="M7 1L1 7L7 13" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </div>
               <ul class="details overflow-hidden" >
-                <li class="px-4 md:px-10 transition-shadow duration-300 border-b border-b-indigo-500/50 last:border-none" v-for="j in 5" :key="j">
+                <li class="px-4 md:px-10  transition-shadow duration-300 border-b border-b-indigo-500/50 last:border-none" v-for="(episode , i) in section.episodes" :key="episode.id">
                   <div class="py-6 md:py-8 episode-expander">
-                    <span class="hidden md:block text-indigo-400 text-sm font-thin">1 قسمت اول</span>
-                    <strong class="max-w-[50%] cursor-pointer" @click="expandEpisode">شروع شخصیت سازی</strong>
-                    <small>03:56:05</small>
-                    <button v-if="true" class="relative group grid place-items-center p-2 transition-colors duration-200 rounded-lg hover:bg-white/5">
+                    <span class="hidden md:block text-indigo-300 text-sm">قسمت {{ i + 1 }}</span>
+                    <strong class="md:max-w-[50%] col-span-3 cursor-pointer" @click="expandEpisode">{{ episode.title }}</strong>
+                    <small class="">{{ episode.time }}</small>
+                    <NuxtLink v-if="episode.isFree || course.userHasCourse" :to="`/course-panel/${course.slug}`" class="md:mr-auto relative group grid place-items-center p-2 transition-colors duration-200 rounded-lg hover:bg-white/5">
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2.5C17.2459 2.5 21.5 6.75315 21.5 12C21.5 17.2469 17.2459 21.5 12 21.5C6.75315 21.5 2.5 17.2469 2.5 12C2.5 6.75315 6.75315 2.5 12 2.5Z" stroke="#D9D9D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M15 11.9951C15 11.184 10.8425 8.58912 10.3709 9.0557C9.8993 9.52228 9.85395 14.424 10.3709 14.9346C10.8879 15.4469 15 12.8063 15 11.9951Z" stroke="#D9D9D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -154,25 +177,24 @@
                       <span class="absolute w-max transition-all duration-200 opacity-0 scale-0 translate-y-full group-hover:scale-90 group-hover:translate-y-0 group-hover:opacity-100 -top-2/3 z-20 bg-gray-800 text-xs px-2 py-1 rounded-md pointer-events-none">
                         پخش آنلاین
                       </span>
-                    </button>
-                    <button v-else class="relative group grid place-items-center p-2 transition-colors duration-200 rounded-lg hover:bg-white/5">
+                    </NuxtLink>
+                    <button v-else class="md:mr-auto relative group grid place-items-center p-2 transition-colors duration-200 rounded-lg hover:bg-white/5">
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M16.4237 9.44804V7.30104C16.4237 4.78804 14.3857 2.75004 11.8727 2.75004C9.35973 2.73904 7.31373 4.76704 7.30273 7.28104V7.30104V9.44804" stroke="#F51940" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M15.683 21.25H8.042C5.948 21.25 4.25 19.553 4.25 17.458V13.169C4.25 11.074 5.948 9.37695 8.042 9.37695H15.683C17.777 9.37695 19.475 11.074 19.475 13.169V17.458C19.475 19.553 17.777 21.25 15.683 21.25Z" stroke="#F51940" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         <path d="M11.8633 14.2031V16.4241" stroke="#F51940" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                       </svg>
                       <span class="absolute w-max transition-all duration-200 opacity-0 scale-0 translate-y-full group-hover:scale-90 group-hover:translate-y-0 group-hover:opacity-100 -top-full z-20 bg-gray-800 text-xs px-2 py-1 rounded-md pointer-events-none">
-                        دانشجوی این دوره <br> نیستید
+                        دانشجوی این دوره <br class="md:hidden"> نیستید
                       </span>
                     </button>
                   </div>
                   <div class="episode-details">
                     <p class="w-full text-sm font-light border rounded-lg p-4 border-[#FDFDFD]/20">
-                      در این قسمت با اصول ساخت شخصیت برای بازی آشنا می‌شویم، همچنین یک شخصیت را تا بخشی قابل قبول پیش می‌بریم
-                      در این قسمت با اصول ساخت شخصیت برای بازی آشنا می‌شویم، همچنین یک شخصیت را تا بخشی قابل قبول پیش می‌بریم
+                      {{episode.description}}
                     </p>
-                    <div class="flex gap-4 mt-4">
-                      <button class="px-4 py-2 transition-shadow hover:drop-shadow-xl duration-200 rounded-lg bg-[#25324D] flex items-center gap-2">
+                    <div class="hidden gap-4 mt-4">
+                      <button v-if="episode.hasAttachment" class="px-4 py-2 transition-shadow hover:drop-shadow-xl duration-200 rounded-lg bg-[#25324D] flex items-center gap-2">
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path d="M11.333 15.1663H4.66634C1.72634 15.1663 0.833008 14.273 0.833008 11.333V4.66634C0.833008 1.72634 1.72634 0.833008 4.66634 0.833008H5.66634C6.83301 0.833008 7.19967 1.21301 7.66634 1.83301L8.66634 3.16634C8.88634 3.45967 8.91967 3.49967 9.33301 3.49967H11.333C14.273 3.49967 15.1663 4.39301 15.1663 7.33301V11.333C15.1663 14.273 14.273 15.1663 11.333 15.1663ZM4.66634 1.83301C2.27967 1.83301 1.83301 2.28634 1.83301 4.66634V11.333C1.83301 13.713 2.27967 14.1663 4.66634 14.1663H11.333C13.7197 14.1663 14.1663 13.713 14.1663 11.333V7.33301C14.1663 4.95301 13.7197 4.49967 11.333 4.49967H9.33301C8.47967 4.49967 8.19967 4.20634 7.86634 3.76634L6.86634 2.43301C6.51967 1.97301 6.41301 1.83301 5.66634 1.83301H4.66634Z" fill="white"/>
                           <path d="M13.333 4.75301C13.0597 4.75301 12.833 4.52634 12.833 4.25301V3.33301C12.833 2.27967 12.3863 1.83301 11.333 1.83301H5.33301C5.05967 1.83301 4.83301 1.60634 4.83301 1.33301C4.83301 1.05967 5.05967 0.833008 5.33301 0.833008H11.333C12.9463 0.833008 13.833 1.71967 13.833 3.33301V4.25301C13.833 4.52634 13.6063 4.75301 13.333 4.75301Z" fill="white"/>
@@ -191,23 +213,23 @@
                     </div>
                   </div>
                 </li>
-                <li class="py-8 px-4 md:px-10 text-black border-b border-black/10 bg-[#D0D7EA] last:border-none last:rounded-b-xl" v-for="j in 2" :key="j">
+                <li class="py-8 px-4 md:px-10 text-black border-b border-black/10 bg-[#D0D7EA] last:border-none last:rounded-b-xl" v-for="(quiz,i) in section.sectionQuizzes" :key="quiz.id">
                   <div class="flex items-center justify-between w-full gap-4">
                     <div class="hidden md:flex flex-col md:flex-row items-center gap-4 col-span-2">
                       <span>
-                        1 کوییز اول
+                        کوییز {{i + 1}}
                       </span>
-                      <span class="bg-[#91ACFF] text-white border border-[#91ACFF] rounded-lg text-[10px] p-2 py-1">12 سؤال</span>
+                      <span class="bg-[#91ACFF] text-white border border-[#91ACFF] rounded-lg text-[10px] p-2 py-1">{{ quiz.totalQuestions }} سؤال</span>
                       <div class="hidden bg-[#F51940]/20 border border-[#F51940] rounded-md md:flex items-center gap-1 text-[#F51940] p-2 py-1">
                         <small class="text-[10px]">آسان</small>
                       </div>
                     </div>
                     <div class="flex flex-col gap-1">
                       <strong class="md:mx-auto md:col-span-3">
-                        آزمون شخصیت سازی
+                        {{ quiz.title }}
                       </strong>
                       <div class="flex md:hidden items-center gap-2">
-                        <span class="bg-[#91ACFF] text-white border border-[#91ACFF] rounded-lg text-[10px] p-2 py-1">12 سؤال</span>
+                        <span class="bg-[#91ACFF] text-white border border-[#91ACFF] rounded-lg text-[10px] p-2 py-1">{{ quiz.totalQuestions }} سؤال</span>
                         <div class="bg-[#F51940]/20 border border-[#F51940] rounded-md flex items-center gap-1 text-[#F51940] p-2 py-1">
                           <small class="text-[10px]">آسان</small>
                         </div>
@@ -265,19 +287,23 @@
                   </div>
                 </div>
               </div>
-              <button class="w-full md:w-max border rounded-lg border-white/20 px-8 py-2 text-white/70">
+              <button class="hidden w-full md:w-max border rounded-lg border-white/20 px-8 py-2 text-white/70">
                 + ثبت نظر
               </button>
             </div>
+            <form @submit.prevent="sendComment" class="flex flex-col gap-2 my-4">
+              <FormUInput multiline label="نظر شما" place-holder="نظر خود را وارد کنید" v-model="comment" required name="comment" />
+              <UButton :is-loading="commentLoading" type="submit" class="mr-auto">ثبت دیدگاه</UButton>
+            </form>
             <ul class="md:p-10 md:border rounded-3xl mt-6 border-white/10 flex flex-col space-y-8">
-              <li class="flex flex-col md:flex-row items-start md:py-4 md:px-8 p-4 border border-white/10 bg-[#111723] rounded-lg md:rounded-3xl gap-2 md:gap-5" v-for="i in 5" :key="i">
+              <li class="flex flex-col md:flex-row items-start md:py-4 md:px-8 p-4 border border-white/10 bg-[#111723] rounded-lg md:rounded-3xl gap-2 md:gap-5" v-for="c in comments" :key="c.id">
                 <img src="~/assets/images/avatar.png" alt="avatar" class="w-16 rounded-full">
                 <div class="flex-1 flex flex-col items-start space-y-4 py-4">
                   <div class="flex w-full items-center justify-between">
-                    <strong>نام و نام خانوادگی</strong>
-                    <span class="opacity-70 text-sm font-thin ">1403/12/08</span>
+                    <strong>{{ c.sender.fullName }}</strong>
+                    <span class="opacity-70 text-sm font-thin ">{{ new Date(c.creationDate).toLocaleDateString('fa-Ir') }}</span>
                   </div>
-                  <p class="font-light text-sm">یولرنیت هدف خود را به صورت تخصصی روی حوزه بازی سازی متمرکز کرده است و تمامی آموزش های موجود در سایت حول این محور تهیه و تولید شده اند.</p>
+                  <p class="font-light text-sm">{{c.text}}</p>
                 </div>
               </li>
             </ul>
@@ -338,7 +364,7 @@
               </button>
             </div>
             <div class="flex flex-col space-y-4">
-              <span class="font-lalezar text-2xl">نام دوره انتخاب شده</span>
+              <span class="font-lalezar text-2xl">{{ course.title }}</span>
               <div class="flex items-center justify-between">
                 <div class="flex items-center gap-1">
                   <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -353,7 +379,7 @@
                   </svg>
                   <span>تعداد دانشجو</span>
                 </div>
-                <span>56</span>
+                <span>{{ course.studentsCount }} نفر</span>
               </div>
               <div class="flex items-center justify-between">
                 <div class="flex items-center gap-1">
@@ -366,7 +392,7 @@
 
                   <span>مدت زمان</span>
                 </div>
-                <span>03:56:24</span>
+                <span>{{ course.time }}</span>
               </div>
               <div class="flex items-center justify-between">
                 <div class="flex items-center gap-1">
@@ -380,7 +406,7 @@
                   </svg>
                   <span>وضعیت دوره</span>
                 </div>
-                <span class="text-xs px-3 py-1 rounded-md bg-indigo-500/30">در حال برگزاری</span>
+                <span class="text-xs px-3 py-1 rounded-md bg-indigo-500/30">{{ ECourseStatus[course.courseStatus].replaceAll('_',' ') }}</span>
               </div>
               <div class="flex items-center justify-between">
                 <div class="flex items-center gap-1">
@@ -394,7 +420,7 @@
                   </svg>
                   <span>تعداد جلسات</span>
                 </div>
-                <span>24 جلسه</span>
+                <span>{{ getTotalEpisodesCount() }} جلسه</span>
               </div>
               <hr class="border-opacity-10 border-[#FDFDFD]">
               <div class="flex items-center justify-between">
@@ -408,9 +434,10 @@
                   </svg>
                   <span>هزینه آموزش</span>
                 </div>
-                <span>250,000 تومان</span>
+                <BasePrice :price="course.price" v-if="course.price > 0"/>
+                <span v-else>رایگان!</span>
               </div>
-              <div class="flex items-center justify-between">
+              <div class="flex items-center justify-between" v-if="course.discount > 0">
                 <div class="flex items-center gap-1">
                   <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g opacity="0.3">
@@ -422,9 +449,10 @@
                   </svg>
                   <span>تخفیف</span>
                 </div>
+                <BasePrice :price="course.price * (course.discount / 100)" class="opacity-70" />
                 <span class="text-[#3C42E7]">75,000 تومان</span>
               </div>
-              <div class="flex items-center justify-between">
+              <div class="flex items-center justify-between" v-if="course.discount > 0">
                 <div class="flex items-center gap-1">
                   <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g opacity="0.3">
@@ -434,11 +462,14 @@
                   </svg>
                   <span>قیمت نهایی</span>
                 </div>
-                <strong>175,000 تومان</strong>
+                <BasePrice :price="course.totalPrice"/>
               </div>
-              <button class="bg-[#3C42E7] rounded-lg py-3 text-lg">
+              <button v-if="!course.userHasCourse" @click="signCourse" class="bg-[#3C42E7] rounded-lg py-3 text-lg">
                 ثبت نام در دوره
               </button>
+              <NuxtLink v-else :to="`/course-panel/${course.slug}`" class="text-sm bg-indigo-400/20 hover:bg-indigo-400/30 text-indigo-400 text-center rounded-lg py-2">
+                رفتن به پنل دوره
+              </NuxtLink>
               <NuxtLink class="text-[#F59D19] self-center">
                 پرسش و پاسخ
               </NuxtLink>
@@ -447,12 +478,12 @@
           <div class="p-4 px-6 bg-[#111723] border border-opacity-10 border-[#FDFDFD] rounded-xl flex flex-col space-y-5 relative">
             <div class="flex items-center gap-4">
               <NuxtLink>
-                <img src="~/assets/images/avatar.png" alt="avatar" class="max-w-16 rounded-full">
+                <img :src="`${ApiUrl}/temp/files/${course.teacher.user.avatar}`" :alt="course.teacher.teacherName" class="max-w-16 rounded-full">
               </NuxtLink>
               <div class="flex flex-col items-start ">
                 <small class="font-thin">مدرس دوره</small>
                 <NuxtLink class="flex items-center gap-2">
-                  <strong class="text-lg">سجاد میرشبی</strong>
+                  <strong class="text-lg">{{ course.teacher.user.fullName }}</strong>
                   <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path opacity="0.9" d="M5 1L1 5L5 9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
@@ -460,7 +491,7 @@
               </div>
             </div>
             <p class="text-justify font-thin text-sm">
-              بیش از 4 سال هست که به عنوان یک برنامه نویس در حوزه بازی سازی و طراحی سایت مشغول به کار هستم، بین موتور های بازی سازی بیشتر به آنریل انجین مسلطم و زبان های ++C و #C و همچنین به 3 تفنگدار حوزه وب یعنی HTML CSS و Java Script هم مسلطم. امیدوارم بتونم دانش خودم رو با شما دوستان خوبم به اشتراک بزارم و قدری زکات آموخته های خودم رو ادا کنم.
+              {{course.teacher.user.description}}
             </p>
           </div>
         </aside>
@@ -477,16 +508,14 @@
               <Transition name="fade" mode="out-in">
                 <div v-if="!showMoreDetails" class="flex items-center w-full gap-5" >
                   <div class="flex flex-col gap-2 flex-1">
-                    <strong class="text-xl">نام دوره انتخاب شده</strong>
-                    <div class="flex items-center gap-2">
-                      <strong class="text-xl">255,000</strong>
-                      <span class="text-xs opacity-70">تومان</span>
-                    </div>
+                    <strong class="text-lg">{{ course.title }}</strong>
+                    <BasePrice :price="course.totalPrice" v-if="course.price > 0" />
+                    <span v-else>رایگان!</span>
                   </div>
-                  <button class="bg-indigo-600 text-white w-max py-2 px-8 rounded-md">ثبت نام</button>
+                  <button @click="signCourse" class="bg-indigo-600 text-white w-max py-2 px-8 rounded-md">ثبت نام</button>
                 </div>
                 <div v-else class="flex flex-col items-center w-full gap-8 h-full">
-                  <strong class="text-xl">نام دوره انتخاب شده</strong>
+                  <strong class="text-xl">{{ course.title }}</strong>
                   <div class="flex flex-col w-full gap-5 flex-1">
                     <div class="flex items-center justify-between">
                       <div class="flex items-center gap-1">
@@ -502,7 +531,7 @@
                         </svg>
                         <span>تعداد دانشجو</span>
                       </div>
-                      <span>56</span>
+                      <span>{{ course.studentsCount }}</span>
                     </div>
                     <div class="flex items-center justify-between">
                       <div class="flex items-center gap-1">
@@ -515,7 +544,7 @@
 
                         <span>مدت زمان</span>
                       </div>
-                      <span>03:56:24</span>
+                      <span>{{ course.time }}</span>
                     </div>
                     <div class="flex items-center justify-between">
                       <div class="flex items-center gap-1">
@@ -529,7 +558,7 @@
                         </svg>
                         <span>وضعیت دوره</span>
                       </div>
-                      <span class="text-xs px-3 py-1 rounded-md bg-indigo-500/30">در حال برگزاری</span>
+                      <span class="text-xs px-3 py-1 rounded-md bg-indigo-500/30">{{ ECourseStatus[course.courseStatus].replaceAll('_',' ') }}</span>
                     </div>
                     <div class="flex items-center justify-between">
                       <div class="flex items-center gap-1">
@@ -543,7 +572,7 @@
                         </svg>
                         <span>تعداد جلسات</span>
                       </div>
-                      <span>24 جلسه</span>
+                      <span>{{ getTotalEpisodesCount() }} جلسه</span>
                     </div>
                   </div>
                   <div class="flex flex-col w-full gap-5">
@@ -558,9 +587,10 @@
                         </svg>
                         <span>هزینه آموزش</span>
                       </div>
-                      <span>250,000 تومان</span>
+                      <BasePrice :price="course.price" v-if="course.price > 0" />
+                      <span>رایگان!</span>
                     </div>
-                    <div class="flex items-center justify-between">
+                    <div class="flex items-center justify-between" v-if="course.discount > 0">
                       <div class="flex items-center gap-1">
                         <svg class="w-4 opacity-70" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <g >
@@ -572,9 +602,9 @@
                         </svg>
                         <span>تخفیف</span>
                       </div>
-                      <span class="text-[#3C42E7]">75,000 تومان</span>
+                      <BasePrice class="opacity-70" :price="course.price * (course.discount / 100)" />
                     </div>
-                    <div class="flex items-center justify-between">
+                    <div class="flex items-center justify-between" v-if="course.discount > 0">
                       <div class="flex items-center gap-1">
                         <svg class="w-4 opacity-70" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <g >
@@ -584,10 +614,10 @@
                         </svg>
                         <span>قیمت نهایی</span>
                       </div>
-                      <strong>175,000 تومان</strong>
+                      <BasePrice :price="course.totalPrice" />
                     </div>
                   </div>
-                  <button class="w-full bg-indigo-600 text-white py-2 rounded-md">ثبت نام</button>
+                  <button @click="signCourse" class="w-full bg-indigo-600 text-white py-2 rounded-md">ثبت نام</button>
                 </div>
               </Transition>
             </div>
@@ -599,10 +629,48 @@
 </template>
 
 <script setup lang="ts">
+import {GetCourseBySlug} from "~/services/course.service";
+import type {CourseDto} from "~/models/course/courseDto";
+import {ApiUrl} from "~/utilities/ApiUrls";
+import {ECourseStatus} from "~/models/course/courseEnums";
+import {EItemType} from "~/models/cart/addToCartViewModel";
+import {GetComments, SendComment} from "~/services/comment.service";
+import {type CommentFilterData, EPostType} from "~/models/comment/commentDto";
 
-definePageMeta({
+const route = useRoute();
+const slug = route.params.slug;
+const {data,pending} = await useAsyncData('GetCourse',()=>GetCourseBySlug(slug));
+const course:Ref<CourseDto> = ref(data.value?.data!);
+const comments:Ref<CommentFilterData[]> = ref([]);
 
+useHead({
+  title:course.value.title
 })
+
+onMounted(async ()=>{
+  const result = await GetComments({take:15,pageId:1,postId:course.value.id,postType:EPostType.Course});
+  if(result.isSuccess){
+    comments.value = result.data?.data!;
+  }
+})
+
+const getTotalEpisodesCount = () => {
+  return course.value.sections.reduce((accumulator, currentValue) => {
+    accumulator += currentValue.episodes.length;
+    return accumulator;
+  }, 0)
+}
+
+const router = useRouter();
+const toast = useToast();
+const cartStore = useCartStore();
+const signCourse = async ()=>{
+  const result = await cartStore.addToCart({itemType:EItemType.Course,itemId:course.value.id,count:1});
+  if(result){
+    toast.showToast('دوره با موفقیت به سبد خرید اضافه شد!');
+    await router.push('/cart');
+  }
+}
 
 const showMoreDetails = ref(false);
 const showComments = ref(false);
@@ -636,6 +704,19 @@ const expandEpisode = ($event:any)=>{
   episode.classList.toggle('border-b');
   details.classList.toggle('episode-expanded');
 }
+
+const comment = ref('');
+const commentLoading = ref(false);
+const sendComment = async ()=>{
+  commentLoading.value = true;
+
+  const result = await SendComment({postType:EPostType.Course,postId:course.value.id,parentId:null,text:comment.value})
+  if(result.isSuccess){
+    toast.showToast();
+  }
+  commentLoading.value = false;
+}
+
 </script>
 
 <style>
@@ -660,7 +741,7 @@ body{
   box-shadow: 0 8px 30px rgba(4, 8, 18, 0.69);
 }
 .episode-expander{
-  @apply flex w-full items-center justify-between;
+  @apply flex md:grid grid-cols-6 w-full items-center justify-between flex-wrap md:flex-nowrap;
 }
 .episode-details{
   @apply flex flex-col w-full transition-all duration-300 overflow-hidden items-end max-h-0;

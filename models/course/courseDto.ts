@@ -1,13 +1,11 @@
 import type {SeoData} from "~/models/SeoData";
 import type {MasterDto} from "~/models/master/MasterDto";
-import type {type CategoryDto} from "~/models/category/categoryDTO";
+import type {CategoryDto} from "~/models/category/categoryDTO";
 import type {ECourseLevel, ECourseStatus, EEpisodeStatus} from "~/models/course/courseEnums";
 import type {QuizFilterData} from "~/models/quiz/quizFilterData";
+import type {BaseDto} from "~/models/baseDto";
 
-export interface CourseDto {
-    id: number;
-    creationDate: Date;
-    isActive: boolean;
+export interface CourseDto extends BaseDto{
     title: string;
     slug: string;
     description: string;
@@ -31,11 +29,8 @@ export interface CourseDto {
     shortLink: string;
 }
 
-export interface SectionDto {
-    id: number;
+export interface SectionDto extends BaseDto {
     courseId: number;
-    creationDate: Date;
-    isActive: boolean;
     title: string;
     description: string;
     time: string;
@@ -44,12 +39,9 @@ export interface SectionDto {
     sectionQuizzes: QuizFilterData[];
 }
 
-export interface EpisodeDto {
-    id: number;
+export interface EpisodeDto extends BaseDto{
     courseId: number;
     sectionId: number;
-    creationDate: Date;
-    isActive: boolean;
     title: string;
     englishTitle: string;
     description: string;

@@ -1,8 +1,8 @@
-import {ApiResponse} from "~/models/ApiResponse";
+import type {ApiResponse} from "~/models/ApiResponse";
 import {FetchApi} from "~/utilities/CustomFetchApi";
-import {AddToCartViewModel} from "~/models/cart/addToCartViewModel";
-import {OrderDto} from "~/models/cart/orderDto";
-import {OrderItemCommand} from "~/models/cart/orderItemCommand";
+import type {AddToCartViewModel} from "~/models/cart/addToCartViewModel";
+import type {OrderDto} from "~/models/cart/orderDto";
+import type {OrderItemCommand} from "~/models/cart/orderItemCommand";
 import type {BaseFilterResult} from "~/models/baseFilterResult";
 
 export function GetPendingCart():Promise<ApiResponse<OrderDto>>{

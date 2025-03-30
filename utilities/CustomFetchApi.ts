@@ -1,7 +1,9 @@
-import {$fetch, FetchError, FetchOptions} from "ofetch";
-import {ApiResponse, AppStatusCode} from "~/models/ApiResponse";
+//@ts-nocheck
+import {$fetch, FetchError, type FetchOptions} from "ofetch";
+import {type ApiResponse, ApiStatusCode} from "~/models/ApiResponse";
 import {useAuthStore} from "~/stores/authStore";
 import {ApiUrl} from "~/utilities/ApiUrls";
+import type {LoginResultDto} from "~/models/auth/loginResultDto";
 
 export async function FetchApi<T>(
     url: string,
@@ -18,10 +20,10 @@ export async function FetchApi<T>(
     {
         config.headers = {};
     }
-    if(authStore && authStore.isLogin)
+    if(authStore && authStore.isLoggedIn)
     {
-        const loginData = authStore.loginResult;
-        config.headers['Authorization'] = `Bearer ${loginData?.token}`;
+        const cookie = authStore.getAccessToken();
+        config.headers['Authorization'] = `Bearer ${cookie.token}`;
     }
 
     return $fetch<ApiResponse<T>>(url,config)
@@ -34,7 +36,7 @@ export async function FetchApi<T>(
                 isSuccess:false,
                 metaData:{
                     message: e.response?._data?.MetaData?.Message ?? "مشکلی در عملیات رخ داده است!",
-                    appStatusCode: e.response?._data?.MetaData?.AppStatusCode ?? AppStatusCode.ServerError,
+                    appStatusCode: e.response?._data?.MetaData?.ApiStatusCode ?? ApiStatusCode.ServerError,
                 },
             }
     });

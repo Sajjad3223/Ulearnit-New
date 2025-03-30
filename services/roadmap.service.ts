@@ -1,9 +1,9 @@
-import {ApiResponse} from "~/models/ApiResponse";
-import {RoadmapFilterParams, RoadmapFilterResult, RoadmapPostDto} from "~/models/roadmap/roadmapDto";
+import type {ApiResponse} from "~/models/ApiResponse";
+import type {RoadmapFilterParams, RoadmapFilterResult, RoadmapPostDto} from "~/models/roadmap/roadmapDto";
 import {FetchApi} from "~/utilities/CustomFetchApi";
-import {CreateRoadmapPostCommand} from "~/models/roadmap/createRoadmapPostCommand";
-import {EditRoadmapPostViewModel} from "~/models/roadmap/editPostViewModel";
-import {RegisterRoadmapWriterViewModel} from "~/models/roadmap/registerWriterViewModel";
+import type {CreateRoadmapPostCommand} from "~/models/roadmap/createRoadmapPostCommand";
+import type {EditRoadmapPostViewModel} from "~/models/roadmap/editPostViewModel";
+import type {RegisterRoadmapWriterViewModel} from "~/models/roadmap/registerWriterViewModel";
 
 export function AmIWriter():Promise<ApiResponse<boolean>>{
     //@ts-ignore
